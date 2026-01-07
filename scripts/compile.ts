@@ -22,7 +22,7 @@ const doc = `<!DOCTYPE html>
     </head>
   <body>
    <section>
-      <h1>Before Style</h1>
+      <h1>Before.Style</h1>
       <p>A classless CSS framework.</p>
     </section>
     <section>
@@ -185,5 +185,5 @@ for (const file of files) {
   styles += await Bun.file(file).text();
 }
 
-Bun.write("dist/before.html", doc);
-Bun.write("dist/before.css", styles);
+Bun.write("docs/index.html", doc);
+Bun.write("docs/before.css", styles);
