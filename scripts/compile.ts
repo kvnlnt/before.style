@@ -40,7 +40,7 @@ All components are implemented according to the
     <section>
       <h2>Getting Started</h2>
       <ul>
-        <li><a target="_blank" href="https://github.com/kvnlnt/Before.css">Repo</a></li>
+        <li><a target="_blank" href="https://github.com/kvnlnt/before.style">Repo</a></li>
         <li><a href="#elements">Elements</a></li>
         <li><a href="#components">Components</a></li>
       </ul>
