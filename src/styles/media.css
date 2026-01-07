@@ -43,6 +43,9 @@ iframe {
 /* Picture */
 picture {
   display: block;
+  img {
+    border-radius: 0.25em;
+  }
 }
 
 /* Object and Embed */

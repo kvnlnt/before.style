@@ -8,8 +8,8 @@ export const picture: DocumentedElement = {
     {
       title: "Picture",
       description: "Responsive image container for multiple sources.",
-      example: `<picture>\n  <source srcset="large.jpg" media="(min-width: 800px)">\n  <img src="small.jpg" alt="Responsive image">\n</picture>`,
-      code: `<picture>\n  <source srcset="img.webp" type="image/webp">\n  <img src="img.jpg" alt="Alt">\n</picture>`,
+      example: `<picture>\n  <source srcset="https://picsum.photos/seed/button/800/400" media="(min-width: 800px)">\n  <img src="https://picsum.photos/seed/button/400/200" alt="Responsive image">\n</picture>`,
+      code: `<picture>\n  <source srcset="https://picsum.photos/seed/button/800/400.webp" type="image/webp">\n  <img src="https://picsum.photos/seed/button/400/200" alt="Alt">\n</picture>`,
     },
   ],
 };

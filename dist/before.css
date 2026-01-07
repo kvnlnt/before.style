@@ -34,7 +34,7 @@ img {
   height: auto;
 }
 :root {
-  /* Color Palette (OKLCH: lightness chroma hue) */
+  /* Color Palette Channel Tokens (OKLCH Components: lightness chroma hue) */
   --gray: 0.55 0.01 260;
   --red: 0.65 0.2 25;
   --orange: 0.7 0.18 55;
@@ -42,18 +42,19 @@ img {
   --green: 0.7 0.17 145;
   --blue: 0.65 0.18 250;
   --purple: 0.6 0.2 300;
+  --white: 0.98 0.005 260;
+  --black: 0.15 0.01 260;
 
-  /* Semantic colors */
-  --neutral: var(--gray);
-  --info: var(--blue);
-  --success: var(--green);
-  --warning: var(--yellow);
-  --danger: var(--red);
-  --background: var(--gray);
-  --foreground: var(--gray);
-  --primary: var(--blue);
-  --secondary: var(--gray);
-  --accent: var(--purple);
+  /* Semantic Color Tokens (Resolved but still mixable downstream) */
+  --info: oklch(var(--blue));
+  --success: oklch(var(--green));
+  --warning: oklch(var(--yellow));
+  --error: oklch(var(--red));
+  --bg: oklch(var(--gray));
+  --fg: oklch(var(--gray));
+  --heading: oklch(var(--white));
+  --text: oklch(var(--white) / 0.7);
+  --border: oklch(var(--gray));
 
   /* Fonts */
   --font-body: system-ui, -apple-system, sans-serif;
@@ -66,9 +67,11 @@ img {
 a {
   color: currentColor;
   text-decoration: underline;
-  text-underline-offset: 0.15em;
+  text-underline-offset: 5px;
   transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
   cursor: pointer;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-decoration-thickness: 2px;
 }
 
 a:hover {
@@ -103,27 +106,28 @@ a:visited {
 a[target="_blank"]::after {
   content: " ↗";
   font-size: 0.75em;
-}
-
-a[target="_self"]::before {
-  content: "#";
+  color: color-mix(in srgb, currentColor 30%, transparent);
 }
 
 /* Download links */
 a[download]::before {
   content: "↓ ";
   font-size: 0.85em;
+  color: color-mix(in srgb, currentColor 30%, transparent);
 }
 
 /* Email links */
 a[href^="mailto:"]::before {
   content: "✉ ";
   font-size: 1.35rem;
+  color: color-mix(in srgb, currentColor 30%, transparent);
 }
 
 /* Phone links */
 a[href^="tel:"]::before {
   content: "☎ ";
+  font-size: 0.8rem;
+  color: color-mix(in srgb, currentColor 30%, transparent);
 }
 
 /* Disabled state using aria-disabled */
@@ -131,25 +135,18 @@ a[aria-disabled="true"] {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
-  text-decoration: none;
 }
 
 /* Current page indicator */
 a[aria-current="page"] {
   font-weight: bold;
-  text-decoration: none;
 }
 
 /* optional: Skip link for accessibility */
-/* a[href^="#"]:first-child:focus {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  padding: 0.5em 1em;
-  background: Canvas;
-  color: CanvasText;
-} */
+a[href^="#"]::before {
+  content: "# ";
+  color: color-mix(in srgb, currentColor 30%, transparent);
+}
 /* Blockquote */
 blockquote {
   margin-block: 1em;
@@ -512,6 +509,7 @@ h6 {
   font-weight: 600;
   line-height: 1.25;
   margin-block: 1.5em 0.5em;
+  color: oklch(var(--heading));
 }
 
 h1:first-child,
@@ -648,6 +646,9 @@ iframe {
 /* Picture */
 picture {
   display: block;
+  img {
+    border-radius: 0.25em;
+  }
 }
 
 /* Object and Embed */
@@ -658,6 +659,7 @@ embed {
 /* Paragraph */
 p {
   margin-block: 1em;
+  color: var(--text);
 }
 
 p:first-child {

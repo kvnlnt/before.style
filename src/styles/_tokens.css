@@ -1,5 +1,5 @@
 :root {
-  /* Color Palette (OKLCH: lightness chroma hue) */
+  /* Color Palette Channel Tokens (OKLCH Components: lightness chroma hue) */
   --gray: 0.55 0.01 260;
   --red: 0.65 0.2 25;
   --orange: 0.7 0.18 55;
@@ -7,18 +7,19 @@
   --green: 0.7 0.17 145;
   --blue: 0.65 0.18 250;
   --purple: 0.6 0.2 300;
+  --white: 0.98 0.005 260;
+  --black: 0.15 0.01 260;
 
-  /* Semantic colors */
-  --neutral: var(--gray);
-  --info: var(--blue);
-  --success: var(--green);
-  --warning: var(--yellow);
-  --danger: var(--red);
-  --background: var(--gray);
-  --foreground: var(--gray);
-  --primary: var(--blue);
-  --secondary: var(--gray);
-  --accent: var(--purple);
+  /* Semantic Color Tokens (Resolved but still mixable downstream) */
+  --info: oklch(var(--blue));
+  --success: oklch(var(--green));
+  --warning: oklch(var(--yellow));
+  --error: oklch(var(--red));
+  --bg: oklch(var(--gray));
+  --fg: oklch(var(--gray));
+  --heading: oklch(var(--white));
+  --text: oklch(var(--white) / 0.7);
+  --border: oklch(var(--gray));
 
   /* Fonts */
   --font-body: system-ui, -apple-system, sans-serif;

@@ -1,6 +1,7 @@
 /* Paragraph */
 p {
   margin-block: 1em;
+  color: var(--text);
 }
 
 p:first-child {

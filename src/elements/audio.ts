@@ -7,8 +7,10 @@ export const audio: DocumentedElement = {
     {
       title: "Audio Player",
       description: "Full-width audio player with native controls.",
-      example: `<audio controls>\n  <source src="audio.mp3" type="audio/mpeg">\n  Your browser does not support audio.\n</audio>`,
-      code: `<audio controls src="audio.mp3"></audio>`,
+      example: `<audio controls>\n  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4
+" type="audio/mpeg">\n  Your browser does not support audio.\n</audio>`,
+      code: `<audio controls src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4
+"></audio>`,
     },
   ],
 };

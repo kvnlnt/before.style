@@ -1,4 +1,4 @@
-# oem.style
+# Before.style
 
 ```bash
 # Development
@@ -8,4 +8,4 @@ bun --watch scripts/compile.ts
 bun scripts/compile.ts
 ```
 
-Builds the `oem.html` and `oem.css` files.
+Builds the `Before.html` and `Before.css` files.

@@ -7,8 +7,10 @@ export const video: DocumentedElement = {
     {
       title: "Video Player",
       description: "Responsive video with native controls.",
-      example: `<video controls>\n  <source src="video.mp4" type="video/mp4">\n  Your browser does not support video.\n</video>`,
-      code: `<video controls src="video.mp4"></video>`,
+      example: `<video controls>\n  <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
+" type="video/mp4">\n  Your browser does not support video.\n</video>`,
+      code: `<video controls src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
+"></video>`,
     },
   ],
 };

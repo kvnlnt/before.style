@@ -9,6 +9,7 @@ h6 {
   font-weight: 600;
   line-height: 1.25;
   margin-block: 1.5em 0.5em;
+  color: oklch(var(--heading));
 }
 
 h1:first-child,

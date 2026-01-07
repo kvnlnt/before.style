@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "oem.style",
+      "name": "Before.style",
       "devDependencies": {
         "@types/bun": "latest",
       },

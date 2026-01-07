@@ -3,9 +3,11 @@
 a {
   color: currentColor;
   text-decoration: underline;
-  text-underline-offset: 0.15em;
+  text-underline-offset: 5px;
   transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
   cursor: pointer;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-decoration-thickness: 2px;
 }
 
 a:hover {
@@ -40,27 +42,28 @@ a:visited {
 a[target="_blank"]::after {
   content: " ↗";
   font-size: 0.75em;
-}
-
-a[target="_self"]::before {
-  content: "#";
+  color: color-mix(in srgb, currentColor 30%, transparent);
 }
 
 /* Download links */
 a[download]::before {
   content: "↓ ";
   font-size: 0.85em;
+  color: color-mix(in srgb, currentColor 30%, transparent);
 }
 
 /* Email links */
 a[href^="mailto:"]::before {
   content: "✉ ";
   font-size: 1.35rem;
+  color: color-mix(in srgb, currentColor 30%, transparent);
 }
 
 /* Phone links */
 a[href^="tel:"]::before {
   content: "☎ ";
+  font-size: 0.8rem;
+  color: color-mix(in srgb, currentColor 30%, transparent);
 }
 
 /* Disabled state using aria-disabled */
@@ -68,22 +71,15 @@ a[aria-disabled="true"] {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
-  text-decoration: none;
 }
 
 /* Current page indicator */
 a[aria-current="page"] {
   font-weight: bold;
-  text-decoration: none;
 }
 
 /* optional: Skip link for accessibility */
-/* a[href^="#"]:first-child:focus {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  padding: 0.5em 1em;
-  background: Canvas;
-  color: CanvasText;
-} */
+a[href^="#"]::before {
+  content: "# ";
+  color: color-mix(in srgb, currentColor 30%, transparent);
+}

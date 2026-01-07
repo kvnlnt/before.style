@@ -11,8 +11,8 @@ const doc = `<!DOCTYPE html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OEM Style</title>
-    <link rel="stylesheet" href="oem.css">
+    <title>Before.Style</title>
+    <link rel="stylesheet" href="before.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <style>
       body { padding: 2rem; }
@@ -22,7 +22,7 @@ const doc = `<!DOCTYPE html>
     </head>
   <body>
    <section>
-      <h1>OEM Style</h1>
+      <h1>Before Style</h1>
       <p>A classless CSS framework.</p>
     </section>
     <section>
@@ -40,19 +40,19 @@ All components are implemented according to the
     <section>
       <h2>Getting Started</h2>
       <ul>
-        <li><a target="_blank" href="https://github.com/kvnlnt/oem.css">Repo</a></li>
+        <li><a target="_blank" href="https://github.com/kvnlnt/Before.css">Repo</a></li>
         <li><a href="#elements">Elements</a></li>
         <li><a href="#components">Components</a></li>
       </ul>
       <p>
-        To get started, simply copy/paste the <code>oem.css</code> file into
+        To get started, simply copy/paste the <code>Before.css</code> file into
         your project and link to it in the head of your HTML document.
       </p>
     </section>
     <section id="elements">
       <h2>Elements</h2>
       <p>
-        The following HTML5 elements are styled by OEM Style:
+        The following HTML5 elements are styled by Before Style:
       </p>
       <ul style="list-style-type: none; display: flex; flex-wrap: wrap; row-gap: 0rem; column-gap: 1rem; padding: 0; margin: 0;">
 ${ELEMENTS.map(
@@ -116,7 +116,7 @@ ${ELEMENTS.map(
       <h1>Components</h1>
       <a href="#top">Back to top</a>
       <p>
-        The following ARIA components are styled by OEM Style:
+        The following ARIA components are styled by Before Style:
       </p>
     </section>
     ${COMPONENTS.map(
@@ -185,5 +185,5 @@ for (const file of files) {
   styles += await Bun.file(file).text();
 }
 
-Bun.write("dist/oem.html", doc);
-Bun.write("dist/oem.css", styles);
+Bun.write("dist/before.html", doc);
+Bun.write("dist/before.css", styles);
