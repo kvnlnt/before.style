@@ -1,0 +1,28 @@
+:root {
+  /* Color Palette (OKLCH: lightness chroma hue) */
+  --gray: 0.55 0.01 260;
+  --red: 0.65 0.2 25;
+  --orange: 0.7 0.18 55;
+  --yellow: 0.85 0.18 95;
+  --green: 0.7 0.17 145;
+  --blue: 0.65 0.18 250;
+  --purple: 0.6 0.2 300;
+
+  /* Semantic colors */
+  --neutral: var(--gray);
+  --info: var(--blue);
+  --success: var(--green);
+  --warning: var(--yellow);
+  --danger: var(--red);
+  --background: var(--gray);
+  --foreground: var(--gray);
+  --primary: var(--blue);
+  --secondary: var(--gray);
+  --accent: var(--purple);
+
+  /* Fonts */
+  --font-body: system-ui, -apple-system, sans-serif;
+  --font-heading: system-ui, -apple-system, sans-serif;
+  --font-code: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  --font-mono: ui-monospace, "SF Mono", monospace;
+}

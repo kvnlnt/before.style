@@ -1,0 +1,89 @@
+/* Anchor Element Styles */
+
+a {
+  color: currentColor;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
+  cursor: pointer;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+a:active {
+  opacity: 0.6;
+}
+
+/* Visited state */
+a:visited {
+  color: currentColor;
+  opacity: 0.85;
+}
+
+/* External links - using attribute selector for classless approach */
+a[target="_blank"]::after {
+  content: " ↗";
+  font-size: 0.75em;
+}
+
+a[target="_self"]::before {
+  content: "#";
+}
+
+/* Download links */
+a[download]::before {
+  content: "↓ ";
+  font-size: 0.85em;
+}
+
+/* Email links */
+a[href^="mailto:"]::before {
+  content: "✉ ";
+  font-size: 1.35rem;
+}
+
+/* Phone links */
+a[href^="tel:"]::before {
+  content: "☎ ";
+}
+
+/* Disabled state using aria-disabled */
+a[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/* Current page indicator */
+a[aria-current="page"] {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* optional: Skip link for accessibility */
+/* a[href^="#"]:first-child:focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 0.5em 1em;
+  background: Canvas;
+  color: CanvasText;
+} */

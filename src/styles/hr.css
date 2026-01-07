@@ -1,0 +1,12 @@
+/* Horizontal rule */
+hr {
+  border: none;
+  border-block-start: 1px solid oklch(0.85 0.005 260);
+  margin-block: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  hr {
+    border-color: oklch(0.3 0.01 260);
+  }
+}

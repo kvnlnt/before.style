@@ -1,0 +1,14 @@
+{
+  "name": "oem.style",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun ---watch www.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

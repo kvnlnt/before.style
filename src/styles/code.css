@@ -1,0 +1,68 @@
+/* Inline code */
+code {
+  font-family: var(--font-code);
+  font-size: 0.875em;
+  background: oklch(0.92 0.005 260);
+  padding: 0.125em 0.375em;
+  border-radius: 0.25em;
+}
+
+@media (prefers-color-scheme: dark) {
+  code {
+    background: oklch(0.25 0.01 260);
+  }
+}
+
+/* Preformatted / code blocks */
+pre {
+  font-family: var(--font-code);
+  font-size: 0.875em;
+  line-height: 1.5;
+  background: oklch(0.92 0.005 260);
+  padding: 1em;
+  border-radius: 0.5em;
+  overflow-x: auto;
+  margin-block: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  pre {
+    background: oklch(0.2 0.01 260);
+  }
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Keyboard input */
+kbd {
+  font-family: var(--font-code);
+  font-size: 0.875em;
+  background: oklch(0.95 0.005 260);
+  border: 1px solid oklch(0.8 0.01 260);
+  border-radius: 0.25em;
+  padding: 0.125em 0.375em;
+  box-shadow: 0 1px 0 oklch(0.7 0.01 260);
+}
+
+@media (prefers-color-scheme: dark) {
+  kbd {
+    background: oklch(0.3 0.01 260);
+    border-color: oklch(0.4 0.01 260);
+    box-shadow: 0 1px 0 oklch(0.2 0.01 260);
+  }
+}
+
+/* Sample output */
+samp {
+  font-family: var(--font-code);
+  font-size: 0.875em;
+}
+
+/* Variable */
+var {
+  font-style: italic;
+}

@@ -1,0 +1,19 @@
+/* Dialog */
+dialog {
+  border: none;
+  border-radius: 0.5em;
+  padding: 1.5em;
+  max-width: min(90vw, 40ch);
+  box-shadow: 0 4px 24px oklch(0 0 0 / 0.15);
+}
+
+dialog::backdrop {
+  background: oklch(0 0 0 / 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  dialog {
+    background: oklch(0.2 0.01 260);
+    color: oklch(0.9 0.01 260);
+  }
+}
