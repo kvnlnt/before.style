@@ -11,7 +11,7 @@ const doc = `<!DOCTYPE html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Before.Style</title>
+    <title>Before Style</title>
     <link rel="stylesheet" href="before.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <style>
@@ -22,8 +22,8 @@ const doc = `<!DOCTYPE html>
     </head>
   <body>
    <section>
-      <h1>Before.Style</h1>
-      <p>A classless CSS framework.</p>
+      <h1>::before</h1>
+      <p>Single-File, Classless, Themeable CSS for Semantic HTML</p>
     </section>
     <section>
       <h2>Philosophy & Principles</h2>
