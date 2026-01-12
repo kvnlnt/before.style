@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const q: DocumentedElement = {
   title: "q",
   description: "Represents a short inline quotation.",
-  variant: [
+  example: [
     {
       title: "Inline Quote",
       description: "Automatically wrapped with quotation marks.",

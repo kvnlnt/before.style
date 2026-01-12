@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const footer: DocumentedElement = {
   title: "footer",
-  description:
-    "Represents the footer of a section or page, typically containing authorship or copyright.",
-  variant: [
+  description: "Represents the footer of a section or page, typically containing authorship or copyright.",
+  example: [
     {
       title: "Footer",
       description: "Footer content container.",

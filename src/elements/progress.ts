@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const progress: DocumentedElement = {
   title: "progress",
   description: "Displays the completion progress of a task.",
-  variant: [
+  example: [
     {
       title: "Progress Bar",
       description: "Visual progress indicator using the primary color.",

@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const small: DocumentedElement = {
   title: "small",
   description: "Represents side comments or small print.",
-  variant: [
+  example: [
     {
       title: "Small Print",
       description: "Reduced font size for fine print or disclaimers.",

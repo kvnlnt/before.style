@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const video: DocumentedElement = {
   title: "video",
   description: "Embeds video content with playback controls.",
-  variant: [
+  example: [
     {
       title: "Video Player",
       description: "Responsive video with native controls.",

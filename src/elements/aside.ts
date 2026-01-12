@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const aside: DocumentedElement = {
   title: "aside",
-  description:
-    "Represents content tangentially related to the main content, often used for sidebars.",
-  variant: [
+  description: "Represents content tangentially related to the main content, often used for sidebars.",
+  example: [
     {
       title: "Aside",
       description: "Sidebar or supplementary content with subtle styling.",

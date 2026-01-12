@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const rt: DocumentedElement = {
   title: "rt",
   description: "Specifies the ruby text component of a ruby annotation.",
-  variant: [
+  example: [
     {
       title: "Ruby Text",
       description: "Small annotation text above base character.",

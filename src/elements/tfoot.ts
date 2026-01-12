@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const tfoot: DocumentedElement = {
   title: "tfoot",
   description: "Groups the footer content rows of a table.",
-  variant: [
+  example: [
     {
       title: "Table Footer",
       description: "Container for table footer rows, often for totals.",

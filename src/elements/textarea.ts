@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const textarea: DocumentedElement = {
   title: "textarea",
   description: "Represents a multi-line plain text editing control.",
-  variant: [
+  example: [
     {
       title: "Text Area",
       description: "Multi-line input with resizable height.",

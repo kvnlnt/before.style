@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const tr: DocumentedElement = {
   title: "tr",
   description: "Represents a row of cells in a table.",
-  variant: [
+  example: [
     {
       title: "Table Row",
       description: "Horizontal row containing table cells.",

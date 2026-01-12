@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const main: DocumentedElement = {
   title: "main",
   description: "Represents the dominant content of the body of a document.",
-  variant: [
+  example: [
     {
       title: "Main Content",
       description: "Primary content area of the document.",

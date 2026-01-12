@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const figure: DocumentedElement = {
   title: "figure",
   description: "Represents self-contained content with an optional caption.",
-  variant: [
+  example: [
     {
       title: "Figure with Caption",
       description: "Image container with descriptive caption below.",

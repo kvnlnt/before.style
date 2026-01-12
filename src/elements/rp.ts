@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const rp: DocumentedElement = {
   title: "rp",
-  description:
-    "Provides fallback parentheses for browsers that don't support ruby annotations.",
-  variant: [
+  description: "Provides fallback parentheses for browsers that don't support ruby annotations.",
+  example: [
     {
       title: "Ruby Parentheses",
       description: "Fallback parentheses for non-ruby browsers.",

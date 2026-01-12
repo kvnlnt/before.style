@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const tbody: DocumentedElement = {
   title: "tbody",
   description: "Groups the body content rows of a table.",
-  variant: [
+  example: [
     {
       title: "Table Body",
       description: "Container for table body rows.",

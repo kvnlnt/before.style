@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const th: DocumentedElement = {
   title: "th",
   description: "Represents a header cell in a table.",
-  variant: [
+  example: [
     {
       title: "Table Header",
       description: "Bold header cell with bottom border.",

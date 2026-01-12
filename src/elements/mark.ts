@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const mark: DocumentedElement = {
   title: "mark",
-  description:
-    "Represents text marked or highlighted for reference or notation.",
-  variant: [
+  description: "Represents text marked or highlighted for reference or notation.",
+  example: [
     {
       title: "Highlighted Text",
       description: "Yellow highlight for marking relevant content.",

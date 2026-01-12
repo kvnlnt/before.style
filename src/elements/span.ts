@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const span: DocumentedElement = {
   title: "span",
   description: "A generic inline container for phrasing content.",
-  variant: [
+  example: [
     {
       title: "Span",
       description: "Generic inline container.",

@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const div: DocumentedElement = {
   title: "div",
   description: "A generic container for flow content with no semantic meaning.",
-  variant: [
+  example: [
     {
       title: "Div Container",
       description: "Generic block-level container.",

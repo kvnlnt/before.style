@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const strong: DocumentedElement = {
   title: "strong",
   description: "Indicates text with strong importance or urgency.",
-  variant: [
+  example: [
     {
       title: "Strong Text",
       description: "Bold text for emphasis and importance.",

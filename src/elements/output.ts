@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const output: DocumentedElement = {
   title: "output",
   description: "Container for the result of a calculation or user action.",
-  variant: [
+  example: [
     {
       title: "Output",
       description: "Displays calculation results inline.",

@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const h2: DocumentedElement = {
   title: "h2",
   description: "Represents a second-level section heading.",
-  variant: [
+  example: [
     {
       title: "Heading 2",
       description: "Major section heading at 2rem size.",

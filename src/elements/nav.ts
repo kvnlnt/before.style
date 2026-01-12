@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const nav: DocumentedElement = {
   title: "nav",
   description: "Represents a section with navigation links.",
-  variant: [
+  example: [
     {
       title: "Navigation",
       description: "Navigation block for site or page links.",

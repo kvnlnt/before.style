@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const section: DocumentedElement = {
   title: "section",
   description: "Represents a standalone section of a document.",
-  variant: [
+  example: [
     {
       title: "Section",
       description: "Thematic grouping of content.",

@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const bdo: DocumentedElement = {
   title: "bdo",
   description: "Overrides the current text directionality.",
-  variant: [
+  example: [
     {
       title: "Bidirectional Override",
       description: "Forces text direction override.",

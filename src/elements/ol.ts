@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const ol: DocumentedElement = {
   title: "ol",
   description: "Represents an ordered list of items.",
-  variant: [
+  example: [
     {
       title: "Basic Ordered List",
       description: "A numbered list for sequential content.",

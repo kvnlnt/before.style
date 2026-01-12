@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const caption: DocumentedElement = {
   title: "caption",
   description: "Specifies the title of a table.",
-  variant: [
+  example: [
     {
       title: "Table Caption",
       description: "Descriptive title displayed above the table.",

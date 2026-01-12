@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const ul: DocumentedElement = {
   title: "ul",
   description: "Represents an unordered list of items.",
-  variant: [
+  example: [
     {
       title: "Basic Unordered List",
       description: "A bullet list with proper spacing and indentation.",

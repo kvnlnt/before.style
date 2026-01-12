@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const input: DocumentedElement = {
   title: "input",
   description: "Creates interactive form controls for accepting user data.",
-  variant: [
+  example: [
     {
       title: "Text Input",
       description: "Standard text input with clean borders and focus state.",

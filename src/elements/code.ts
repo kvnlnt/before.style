@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const code: DocumentedElement = {
   title: "code",
   description: "Displays a fragment of computer code.",
-  variant: [
+  example: [
     {
       title: "Inline Code",
       description: "Inline code with subtle background for visibility.",

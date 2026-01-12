@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const iframe: DocumentedElement = {
   title: "iframe",
   description: "Embeds another HTML page within the current page.",
-  variant: [
+  example: [
     {
       title: "Iframe",
       description: "Embedded frame with no border.",

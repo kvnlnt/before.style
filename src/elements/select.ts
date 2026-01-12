@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const select: DocumentedElement = {
   title: "select",
   description: "Represents a control providing a menu of options.",
-  variant: [
+  example: [
     {
       title: "Select Dropdown",
       description: "Dropdown menu for selecting from predefined options.",

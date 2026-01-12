@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const article: DocumentedElement = {
   title: "article",
-  description:
-    "Represents a self-contained composition intended for independent distribution or reuse.",
-  variant: [
+  description: "Represents a self-contained composition intended for independent distribution or reuse.",
+  example: [
     {
       title: "Article",
       description: "Self-contained content block with implicit padding.",

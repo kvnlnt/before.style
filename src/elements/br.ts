@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const br: DocumentedElement = {
   title: "br",
   description: "Produces a line break in text.",
-  variant: [
+  example: [
     {
       title: "Line Break",
       description: "Forces a line break within text.",

@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const thead: DocumentedElement = {
   title: "thead",
   description: "Groups the header content rows of a table.",
-  variant: [
+  example: [
     {
       title: "Table Head",
       description: "Container for table header rows.",

@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const data: DocumentedElement = {
   title: "data",
   description: "Links content with a machine-readable translation.",
-  variant: [
+  example: [
     {
       title: "Data",
       description: "Machine-readable value with human display.",

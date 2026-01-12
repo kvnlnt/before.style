@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const fieldset: DocumentedElement = {
   title: "fieldset",
   description: "Groups related elements within a form.",
-  variant: [
+  example: [
     {
       title: "Form Group",
       description: "Bordered container for grouping related form fields.",

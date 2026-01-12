@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const bdi: DocumentedElement = {
   title: "bdi",
-  description:
-    "Isolates a span of text that might be formatted in a different direction from surrounding text.",
-  variant: [
+  description: "Isolates a span of text that might be formatted in a different direction from surrounding text.",
+  example: [
     {
       title: "Bidirectional Isolation",
       description: "Isolates text direction from surrounding content.",

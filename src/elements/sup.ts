@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const sup: DocumentedElement = {
   title: "sup",
   description: "Represents superscript text.",
-  variant: [
+  example: [
     {
       title: "Superscript",
       description: "Text positioned above the baseline.",

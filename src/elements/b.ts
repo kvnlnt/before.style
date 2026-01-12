@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const b: DocumentedElement = {
   title: "b",
-  description:
-    "Represents text stylistically offset from normal text without conveying extra importance.",
-  variant: [
+  description: "Represents text stylistically offset from normal text without conveying extra importance.",
+  example: [
     {
       title: "Bold",
       description: "Bold text for stylistic offset.",

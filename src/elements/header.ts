@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const header: DocumentedElement = {
   title: "header",
-  description:
-    "Represents introductory content or navigational aids for a section or page.",
-  variant: [
+  description: "Represents introductory content or navigational aids for a section or page.",
+  example: [
     {
       title: "Header",
       description: "Introductory content container.",

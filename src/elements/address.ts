@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const address: DocumentedElement = {
   title: "address",
-  description:
-    "Provides contact information for the nearest article or body ancestor.",
-  variant: [
+  description: "Provides contact information for the nearest article or body ancestor.",
+  example: [
     {
       title: "Address",
       description: "Italic contact information block.",

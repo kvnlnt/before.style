@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const optgroup: DocumentedElement = {
   title: "optgroup",
   description: "Groups related options within a select element.",
-  variant: [
+  example: [
     {
       title: "Option Group",
       description: "Groups options with a bold label.",

@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const ruby: DocumentedElement = {
   title: "ruby",
-  description:
-    "Represents a ruby annotation for showing pronunciation of East Asian characters.",
-  variant: [
+  description: "Represents a ruby annotation for showing pronunciation of East Asian characters.",
+  example: [
     {
       title: "Ruby Annotation",
       description: "Shows pronunciation above characters.",

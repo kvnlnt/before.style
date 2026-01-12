@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const body: DocumentedElement = {
   title: "body",
   description: "Represents the content of an HTML document.",
-  variant: [
+  example: [
     {
       title: "Default Body",
       description:

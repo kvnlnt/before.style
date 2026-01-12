@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const s: DocumentedElement = {
   title: "s",
   description: "Represents text that is no longer accurate or relevant.",
-  variant: [
+  example: [
     {
       title: "Strikethrough",
       description: "Text with line through indicating outdated content.",

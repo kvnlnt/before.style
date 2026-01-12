@@ -62,90 +62,88 @@ img {
   --font-code: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
   --font-mono: ui-monospace, "SF Mono", monospace;
 }
-/* Anchor Element Styles */
-
-a {
-  color: currentColor;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
-  cursor: pointer;
-  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
-  text-decoration-thickness: 2px;
+/* Semantic sections */
+article {
+  margin-block: 2em;
 }
 
-a:hover {
-  opacity: 0.8;
+section {
+  margin-block: 2em;
 }
 
-a:focus {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
+aside {
+  margin-block: 1em;
+  padding: 1em;
+  background: oklch(0.96 0.005 260);
+  border-radius: 0.5em;
 }
 
-a:focus:not(:focus-visible) {
-  outline: none;
+@media (prefers-color-scheme: dark) {
+  aside {
+    background: oklch(0.2 0.01 260);
+  }
 }
 
-a:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
+nav {
+  margin-block: 1em;
 }
 
-a:active {
-  opacity: 0.6;
+header {
+  margin-block-end: 2em;
 }
 
-/* Visited state */
-a:visited {
-  color: currentColor;
-  opacity: 0.85;
+footer {
+  margin-block-start: 2em;
+  padding-block-start: 1em;
+  border-block-start: 1px solid oklch(0.85 0.005 260);
+  font-size: 0.875em;
+  color: oklch(0.5 0.01 260);
 }
 
-/* External links - using attribute selector for classless approach */
-a[target="_blank"]::after {
-  content: " ↗";
-  font-size: 0.75em;
-  color: color-mix(in srgb, currentColor 30%, transparent);
+@media (prefers-color-scheme: dark) {
+  footer {
+    border-color: oklch(0.3 0.01 260);
+    color: oklch(0.6 0.01 260);
+  }
 }
 
-/* Download links */
-a[download]::before {
-  content: "↓ ";
-  font-size: 0.85em;
-  color: color-mix(in srgb, currentColor 30%, transparent);
+main {
+  margin-block: 1em;
 }
 
-/* Email links */
-a[href^="mailto:"]::before {
-  content: "✉ ";
-  font-size: 1.35rem;
-  color: color-mix(in srgb, currentColor 30%, transparent);
+hgroup {
+  margin-block: 1.5em 0.5em;
 }
 
-/* Phone links */
-a[href^="tel:"]::before {
-  content: "☎ ";
-  font-size: 0.8rem;
-  color: color-mix(in srgb, currentColor 30%, transparent);
+hgroup > * {
+  margin-block: 0;
 }
 
-/* Disabled state using aria-disabled */
-a[aria-disabled="true"] {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
+hgroup > p {
+  color: oklch(0.5 0.01 260);
 }
 
-/* Current page indicator */
-a[aria-current="page"] {
-  font-weight: bold;
+@media (prefers-color-scheme: dark) {
+  hgroup > p {
+    color: oklch(0.6 0.01 260);
+  }
+}
+/* Body */
+body {
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: oklch(0.2 0.01 260);
+  background: oklch(0.98 0.005 260);
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-/* optional: Skip link for accessibility */
-a[href^="#"]::before {
-  content: "# ";
-  color: color-mix(in srgb, currentColor 30%, transparent);
+@media (prefers-color-scheme: dark) {
+  body {
+    color: oklch(0.9 0.01 260);
+    background: oklch(0.15 0.01 260);
+  }
 }
 /* Blockquote */
 blockquote {
@@ -180,23 +178,6 @@ q::before {
 }
 q::after {
   content: close-quote;
-}
-/* Body */
-body {
-  font-family: var(--font-body);
-  line-height: 1.6;
-  color: oklch(0.2 0.01 260);
-  background: oklch(0.98 0.005 260);
-  max-width: 65ch;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    color: oklch(0.9 0.01 260);
-    background: oklch(0.15 0.01 260);
-  }
 }
 /* Inline code */
 code {
@@ -320,24 +301,133 @@ details > :not(summary) {
 details > :last-child {
   padding-block-end: 1em;
 }
-/* Dialog */
-dialog {
-  border: none;
-  border-radius: 0.5em;
-  padding: 1.5em;
-  max-width: min(90vw, 40ch);
-  box-shadow: 0 4px 24px oklch(0 0 0 / 0.15);
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-block: 1.5em 0.5em;
+  color: oklch(var(--heading));
 }
 
-dialog::backdrop {
-  background: oklch(0 0 0 / 0.5);
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-block-start: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  dialog {
-    background: oklch(0.2 0.01 260);
-    color: oklch(0.9 0.01 260);
-  }
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 1rem;
+}
+h5 {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+h6 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+/* Anchor Element Styles */
+
+a {
+  color: currentColor;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
+  cursor: pointer;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-decoration-thickness: 2px;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+a:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+a:active {
+  opacity: 0.6;
+}
+
+/* Visited state */
+a:visited {
+  color: currentColor;
+  opacity: 0.85;
+}
+
+/* External links - using attribute selector for classless approach */
+a[target="_blank"]::after {
+  content: " ↗";
+  font-size: 0.75em;
+  color: color-mix(in srgb, currentColor 30%, transparent);
+}
+
+/* Download links */
+a[download]::before {
+  content: "↓ ";
+  font-size: 0.85em;
+  color: color-mix(in srgb, currentColor 30%, transparent);
+}
+
+/* Email links */
+a[href^="mailto:"]::before {
+  content: "✉ ";
+  font-size: 1.35rem;
+  color: color-mix(in srgb, currentColor 30%, transparent);
+}
+
+/* Phone links */
+a[href^="tel:"]::before {
+  content: "☎ ";
+  font-size: 0.8rem;
+  color: color-mix(in srgb, currentColor 30%, transparent);
+}
+
+/* Disabled state using aria-disabled */
+a[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Current page indicator */
+a[aria-current="page"] {
+  font-weight: bold;
+}
+
+/* optional: Skip link for accessibility */
+a[href^="#"]::before {
+  content: "# ";
+  color: color-mix(in srgb, currentColor 30%, transparent);
 }
 /* Form */
 form {
@@ -498,109 +588,6 @@ meter {
   width: 100%;
   height: 0.5em;
 }
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.25;
-  margin-block: 1.5em 0.5em;
-  color: oklch(var(--heading));
-}
-
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-block-start: 0;
-}
-
-h1 {
-  font-size: 2rem;
-}
-h2 {
-  font-size: 1.5rem;
-}
-h3 {
-  font-size: 1.25rem;
-}
-h4 {
-  font-size: 1rem;
-}
-h5 {
-  font-size: 0.875rem;
-  text-transform: uppercase;
-}
-h6 {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-/* Horizontal rule */
-hr {
-  border: none;
-  border-block-start: 1px solid oklch(0.85 0.005 260);
-  margin-block: 2em;
-}
-
-@media (prefers-color-scheme: dark) {
-  hr {
-    border-color: oklch(0.3 0.01 260);
-  }
-}
-/* Lists */
-ul,
-ol {
-  margin-block: 1em;
-  padding-inline-start: 1.5em;
-}
-
-ul {
-  list-style-type: disc;
-}
-ol {
-  list-style-type: decimal;
-}
-
-li {
-  margin-block: 0.25em;
-}
-
-li::marker {
-  color: oklch(var(--neutral));
-}
-
-/* Nested lists */
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-  margin-block: 0.25em;
-}
-
-/* Description lists */
-dl {
-  margin-block: 1em;
-}
-
-dt {
-  font-weight: 600;
-  margin-block-start: 1em;
-}
-
-dt:first-child {
-  margin-block-start: 0;
-}
-
-dd {
-  margin-inline-start: 1.5em;
-  margin-block: 0.25em;
-}
 /* Images */
 img {
   max-width: 100%;
@@ -655,98 +642,6 @@ picture {
 object,
 embed {
   max-width: 100%;
-}
-/* Paragraph */
-p {
-  margin-block: 1em;
-  color: var(--text);
-}
-
-p:first-child {
-  margin-block-start: 0;
-}
-
-p:last-child {
-  margin-block-end: 0;
-}
-/* Semantic sections */
-article {
-  margin-block: 2em;
-}
-
-section {
-  margin-block: 2em;
-}
-
-aside {
-  margin-block: 1em;
-  padding: 1em;
-  background: oklch(0.96 0.005 260);
-  border-radius: 0.5em;
-}
-
-@media (prefers-color-scheme: dark) {
-  aside {
-    background: oklch(0.2 0.01 260);
-  }
-}
-
-nav {
-  margin-block: 1em;
-}
-
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  margin: 0;
-}
-
-header {
-  margin-block-end: 2em;
-}
-
-footer {
-  margin-block-start: 2em;
-  padding-block-start: 1em;
-  border-block-start: 1px solid oklch(0.85 0.005 260);
-  font-size: 0.875em;
-  color: oklch(0.5 0.01 260);
-}
-
-@media (prefers-color-scheme: dark) {
-  footer {
-    border-color: oklch(0.3 0.01 260);
-    color: oklch(0.6 0.01 260);
-  }
-}
-
-main {
-  margin-block: 1em;
-}
-
-hgroup {
-  margin-block: 1.5em 0.5em;
-}
-
-hgroup > * {
-  margin-block: 0;
-}
-
-hgroup > p {
-  color: oklch(0.5 0.01 260);
-}
-
-@media (prefers-color-scheme: dark) {
-  hgroup > p {
-    color: oklch(0.6 0.01 260);
-  }
 }
 /* Table */
 table {
@@ -898,4 +793,457 @@ u {
   text-decoration: underline;
   text-decoration-style: wavy;
   text-decoration-color: oklch(var(--danger));
+}
+/* Paragraph */
+p {
+  margin-block: 1em;
+  color: var(--text);
+}
+
+p:first-child {
+  margin-block-start: 0;
+}
+
+p:last-child {
+  margin-block-end: 0;
+}
+/* Dialog */
+dialog {
+  border: none;
+  border-radius: 0.5em;
+  padding: 1.5em;
+  max-width: min(90vw, 40ch);
+  box-shadow: 0 4px 24px oklch(0 0 0 / 0.15);
+}
+
+dialog::backdrop {
+  background: oklch(0 0 0 / 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  dialog {
+    background: oklch(0.2 0.01 260);
+    color: oklch(0.9 0.01 260);
+  }
+}
+/* Horizontal rule */
+hr {
+  border: none;
+  border-block-start: 1px solid oklch(0.85 0.005 260);
+  margin-block: 2em;
+}
+
+@media (prefers-color-scheme: dark) {
+  hr {
+    border-color: oklch(0.3 0.01 260);
+  }
+}
+/* Lists */
+ul,
+ol {
+  margin-block: 1em;
+  padding-inline-start: 1.5em;
+}
+
+ul {
+  list-style-type: disc;
+}
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-block: 0.25em;
+}
+
+li::marker {
+  color: oklch(var(--neutral));
+}
+
+/* Nested lists */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-block: 0.25em;
+}
+
+/* Description lists */
+dl {
+  margin-block: 1em;
+}
+
+dt {
+  font-weight: 600;
+  margin-block-start: 1em;
+}
+
+dt:first-child {
+  margin-block-start: 0;
+}
+
+dd {
+  margin-inline-start: 1.5em;
+  margin-block: 0.25em;
+}
+/* Accordion Component */
+/* Uses native details/summary with the name attribute for exclusive behavior */
+
+details[name] {
+  border: 1px solid oklch(0.85 0.005 260);
+  border-radius: 0.5em;
+  margin-block-end: 0.5em;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  details[name] {
+    border-color: oklch(0.35 0.01 260);
+  }
+}
+
+details[name] > summary {
+  padding: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+details[name] > summary::-webkit-details-marker {
+  display: none;
+}
+
+details[name] > summary::after {
+  content: "+";
+  float: inline-end;
+  font-size: 1.25em;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+details[name][open] > summary::after {
+  content: "−";
+}
+
+details[name] > :not(summary) {
+  padding-inline: 1em;
+}
+
+details[name] > :last-child {
+  padding-block-end: 1em;
+}
+
+/* Nested accordions */
+details[name] details {
+  margin: 0.5em 0;
+  border-inline-start: 2px solid oklch(0.7 0.1 250);
+  padding-inline-start: 1em;
+  border-radius: 0;
+  border-block: none;
+  border-inline-end: none;
+}
+
+details[name] details > summary {
+  font-weight: 500;
+  padding: 0.5em 0;
+}
+
+details[name] details > summary::after {
+  content: "▸";
+}
+
+details[name] details[open] > summary::after {
+  content: "▸";
+  transform: rotate(90deg);
+}
+/* Menu Component */
+/* Pure CSS navigation menu with support for nesting, sticky positioning, and layout options */
+
+/* Base menu styles */
+nav[role="navigation"] {
+  font-family: inherit;
+}
+
+nav[role="navigation"] ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav[role="navigation"] li {
+  position: relative;
+}
+
+nav[role="navigation"] a,
+nav[role="navigation"] button {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.75em 1em;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Reset anchor hash prefix from elements/a.ts */
+nav[role="navigation"] a[href^="#"]::before {
+  content: none;
+}
+
+nav[role="navigation"] a:hover,
+nav[role="navigation"] a:focus,
+nav[role="navigation"] button:hover,
+nav[role="navigation"] button:focus {
+  background-color: oklch(0.95 0 0);
+  outline: none;
+}
+
+nav[role="navigation"] a[aria-current="page"] {
+  font-weight: 600;
+  background-color: oklch(0.92 0.02 250);
+}
+
+@media (prefers-color-scheme: dark) {
+  nav[role="navigation"] a:hover,
+  nav[role="navigation"] a:focus,
+  nav[role="navigation"] button:hover,
+  nav[role="navigation"] button:focus {
+    background-color: oklch(0.25 0.01 260);
+  }
+
+  nav[role="navigation"] a[aria-current="page"] {
+    background-color: oklch(0.3 0.02 250);
+  }
+}
+
+/* ============================================================================
+   Horizontal Layout (default)
+   ============================================================================ */
+
+nav[role="navigation"][aria-orientation="horizontal"] > ul,
+nav[role="navigation"]:not([aria-orientation]) > ul {
+  flex-direction: row;
+}
+
+nav[role="navigation"][aria-orientation="horizontal"] > ul > li,
+nav[role="navigation"]:not([aria-orientation]) > ul > li {
+  border-inline-end: 1px solid oklch(0.9 0 0);
+}
+
+nav[role="navigation"][aria-orientation="horizontal"] > ul > li:last-child,
+nav[role="navigation"]:not([aria-orientation]) > ul > li:last-child {
+  border-inline-end: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  nav[role="navigation"][aria-orientation="horizontal"] > ul > li,
+  nav[role="navigation"]:not([aria-orientation]) > ul > li {
+    border-color: oklch(0.35 0.01 260);
+  }
+}
+
+/* Horizontal submenu positioning */
+nav[role="navigation"][aria-orientation="horizontal"] ul ul,
+nav[role="navigation"]:not([aria-orientation]) ul ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 12em;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  flex-direction: column;
+  background: oklch(1 0 0);
+  border: 1px solid oklch(0.85 0.005 260);
+  border-radius: 0.5em;
+  box-shadow: 0 4px 12px oklch(0 0 0 / 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.5em);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  z-index: 100;
+}
+
+@media (prefers-color-scheme: dark) {
+  nav[role="navigation"][aria-orientation="horizontal"] ul ul,
+  nav[role="navigation"]:not([aria-orientation]) ul ul {
+    background: oklch(0.2 0.01 260);
+    border-color: oklch(0.35 0.01 260);
+    box-shadow: 0 4px 12px oklch(0 0 0 / 0.3);
+  }
+}
+
+/* Show submenu on hover/focus */
+nav[role="navigation"] li:hover > ul,
+nav[role="navigation"] li:focus-within > ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Nested submenu positioning (horizontal) */
+nav[role="navigation"][aria-orientation="horizontal"] ul ul ul,
+nav[role="navigation"]:not([aria-orientation]) ul ul ul {
+  top: 0;
+  left: 100%;
+}
+
+/* ============================================================================
+   Vertical Layout
+   ============================================================================ */
+
+nav[role="navigation"][aria-orientation="vertical"] > ul {
+  flex-direction: column;
+}
+
+nav[role="navigation"][aria-orientation="vertical"] li {
+  border-block-end: 1px solid oklch(0.9 0 0);
+}
+
+nav[role="navigation"][aria-orientation="vertical"] li:last-child {
+  border-block-end: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  nav[role="navigation"][aria-orientation="vertical"] li {
+    border-color: oklch(0.35 0.01 260);
+  }
+}
+
+/* Vertical submenu positioning */
+nav[role="navigation"][aria-orientation="vertical"] ul ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 12em;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  flex-direction: column;
+  background: oklch(1 0 0);
+  border: 1px solid oklch(0.85 0.005 260);
+  border-radius: 0.5em;
+  box-shadow: 0 4px 12px oklch(0 0 0 / 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-0.5em);
+  transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+  z-index: 100;
+}
+
+@media (prefers-color-scheme: dark) {
+  nav[role="navigation"][aria-orientation="vertical"] ul ul {
+    background: oklch(0.2 0.01 260);
+    border-color: oklch(0.35 0.01 260);
+    box-shadow: 0 4px 12px oklch(0 0 0 / 0.3);
+  }
+}
+
+nav[role="navigation"][aria-orientation="vertical"] li:hover > ul,
+nav[role="navigation"][aria-orientation="vertical"] li:focus-within > ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+/* ============================================================================
+   Sticky Positioning
+   ============================================================================ */
+
+nav[role="navigation"][data-sticky] {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: oklch(1 0 0);
+  border-block-end: 1px solid oklch(0.85 0.005 260);
+}
+
+nav[role="navigation"][data-sticky="bottom"] {
+  top: auto;
+  bottom: 0;
+  border-block-end: none;
+  border-block-start: 1px solid oklch(0.85 0.005 260);
+}
+
+@media (prefers-color-scheme: dark) {
+  nav[role="navigation"][data-sticky] {
+    background: oklch(0.15 0.01 260);
+    border-color: oklch(0.35 0.01 260);
+  }
+}
+
+/* ============================================================================
+   Submenu Indicators
+   ============================================================================ */
+
+nav[role="navigation"] li:has(> ul) > a::after,
+nav[role="navigation"] li:has(> ul) > button::after {
+  content: "";
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  border-inline-end: 2px solid currentColor;
+  border-block-end: 2px solid currentColor;
+  margin-inline-start: auto;
+}
+
+/* Horizontal: arrow points down for top-level */
+nav[role="navigation"][aria-orientation="horizontal"] > ul > li:has(> ul) > a::after,
+nav[role="navigation"][aria-orientation="horizontal"] > ul > li:has(> ul) > button::after,
+nav[role="navigation"]:not([aria-orientation]) > ul > li:has(> ul) > a::after,
+nav[role="navigation"]:not([aria-orientation]) > ul > li:has(> ul) > button::after {
+  transform: rotate(45deg);
+  margin-block-end: 0.2em;
+}
+
+/* Nested submenus: arrow points right */
+nav[role="navigation"][aria-orientation="horizontal"] ul ul li:has(> ul) > a::after,
+nav[role="navigation"][aria-orientation="horizontal"] ul ul li:has(> ul) > button::after,
+nav[role="navigation"]:not([aria-orientation]) ul ul li:has(> ul) > a::after,
+nav[role="navigation"]:not([aria-orientation]) ul ul li:has(> ul) > button::after {
+  transform: rotate(-45deg);
+}
+
+/* Vertical: arrow always points right */
+nav[role="navigation"][aria-orientation="vertical"] li:has(> ul) > a::after,
+nav[role="navigation"][aria-orientation="vertical"] li:has(> ul) > button::after {
+  transform: rotate(-45deg);
+}
+
+/* ============================================================================
+   Menu Dividers
+   ============================================================================ */
+
+nav[role="navigation"] li[role="separator"] {
+  height: 1px;
+  margin: 0.25em 0;
+  background: oklch(0.85 0.005 260);
+}
+
+nav[role="navigation"][aria-orientation="horizontal"] > ul > li[role="separator"],
+nav[role="navigation"]:not([aria-orientation]) > ul > li[role="separator"] {
+  width: 1px;
+  height: auto;
+  margin: 0 0.25em;
+}
+
+@media (prefers-color-scheme: dark) {
+  nav[role="navigation"] li[role="separator"] {
+    background: oklch(0.35 0.01 260);
+  }
+}
+
+/* ============================================================================
+   Disabled Menu Items
+   ============================================================================ */
+
+nav[role="navigation"] a[aria-disabled="true"],
+nav[role="navigation"] button[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
 }

@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const hr: DocumentedElement = {
   title: "hr",
   description: "Represents a thematic break between paragraph-level elements.",
-  variant: [
+  example: [
     {
       title: "Horizontal Rule",
       description: "A subtle line to separate content sections.",

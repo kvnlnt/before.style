@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const h6: DocumentedElement = {
   title: "h6",
   description: "Represents the lowest level section heading.",
-  variant: [
+  example: [
     {
       title: "Heading 6",
       description: "Smallest heading at 0.875rem size.",

@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const img: DocumentedElement = {
   title: "img",
   description: "Embeds an image into the document.",
-  variant: [
+  example: [
     {
       title: "Image",
       description: "Responsive image that scales to its container.",

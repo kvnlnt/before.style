@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const legend: DocumentedElement = {
   title: "legend",
   description: "Represents a caption for a fieldset.",
-  variant: [
+  example: [
     {
       title: "Fieldset Legend",
       description: "Caption displayed on fieldset border.",

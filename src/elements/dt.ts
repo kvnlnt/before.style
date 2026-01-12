@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const dt: DocumentedElement = {
   title: "dt",
   description: "Specifies a term in a description list.",
-  variant: [
+  example: [
     {
       title: "Definition Term",
       description: "Bold term in a definition list.",

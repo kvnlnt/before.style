@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const blockquote: DocumentedElement = {
   title: "blockquote",
   description: "Indicates an extended quotation from another source.",
-  variant: [
+  example: [
     {
       title: "Block Quote",
       description: "Indented with a left border to distinguish quoted content.",

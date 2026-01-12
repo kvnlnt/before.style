@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const i: DocumentedElement = {
   title: "i",
-  description:
-    "Represents text in an alternate voice or mood, such as technical terms or foreign phrases.",
-  variant: [
+  description: "Represents text in an alternate voice or mood, such as technical terms or foreign phrases.",
+  example: [
     {
       title: "Italic",
       description: "Italic text for alternate voice or mood.",

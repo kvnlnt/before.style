@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const hgroup: DocumentedElement = {
   title: "hgroup",
   description: "Groups a heading with related content such as subheadings.",
-  variant: [
+  example: [
     {
       title: "Heading Group",
       description: "Groups heading with subtitle, reduced spacing between.",

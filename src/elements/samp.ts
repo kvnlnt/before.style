@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const samp: DocumentedElement = {
   title: "samp",
   description: "Represents sample output from a computer program.",
-  variant: [
+  example: [
     {
       title: "Sample Output",
       description: "Monospace font for computer output.",

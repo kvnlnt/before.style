@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const wbr: DocumentedElement = {
   title: "wbr",
   description: "Represents an optional line break opportunity.",
-  variant: [
+  example: [
     {
       title: "Word Break Opportunity",
       description: "Suggests where a line break may occur.",

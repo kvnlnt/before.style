@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const datalist: DocumentedElement = {
   title: "datalist",
-  description:
-    "Contains a set of option elements representing predefined options for an input.",
-  variant: [
+  description: "Contains a set of option elements representing predefined options for an input.",
+  example: [
     {
       title: "Datalist",
       description: "Provides autocomplete options for an input.",

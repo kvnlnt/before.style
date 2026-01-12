@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const em: DocumentedElement = {
   title: "em",
   description: "Marks text with stress emphasis.",
-  variant: [
+  example: [
     {
       title: "Emphasized Text",
       description: "Italic text for stress emphasis.",

@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const sub: DocumentedElement = {
   title: "sub",
   description: "Represents subscript text.",
-  variant: [
+  example: [
     {
       title: "Subscript",
       description: "Text positioned below the baseline.",

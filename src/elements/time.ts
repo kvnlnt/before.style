@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const time: DocumentedElement = {
   title: "time",
-  description:
-    "Represents a specific period in time or a machine-readable datetime.",
-  variant: [
+  description: "Represents a specific period in time or a machine-readable datetime.",
+  example: [
     {
       title: "Time",
       description: "Machine-readable date/time with human display.",

@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const td: DocumentedElement = {
   title: "td",
   description: "Represents a data cell in a table.",
-  variant: [
+  example: [
     {
       title: "Table Data Cell",
       description: "Standard data cell with padding and border.",

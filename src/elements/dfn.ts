@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const dfn: DocumentedElement = {
   title: "dfn",
   description: "Indicates the defining instance of a term.",
-  variant: [
+  example: [
     {
       title: "Definition",
       description: "Italic styling for terms being defined.",

@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const details: DocumentedElement = {
   title: "details",
-  description:
-    "Creates a disclosure widget from which the user can obtain additional information.",
-  variant: [
+  description: "Creates a disclosure widget from which the user can obtain additional information.",
+  example: [
     {
       title: "Disclosure Widget",
       description: "Expandable content with toggle control.",

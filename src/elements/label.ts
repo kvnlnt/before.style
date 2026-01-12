@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const label: DocumentedElement = {
   title: "label",
   description: "Represents a caption for an item in a user interface.",
-  variant: [
+  example: [
     {
       title: "Form Label",
       description: "Block-level label with subtle weight.",

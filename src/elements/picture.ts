@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const picture: DocumentedElement = {
   title: "picture",
-  description:
-    "Contains source elements and one img element for responsive images.",
-  variant: [
+  description: "Contains source elements and one img element for responsive images.",
+  example: [
     {
       title: "Picture",
       description: "Responsive image container for multiple sources.",

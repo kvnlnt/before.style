@@ -1,10 +1,10 @@
 export type DocumentedElement = {
   title: string;
   description?: string;
-  variant?: {
+  example?: {
     title: string;
     description?: string;
-    example?: string;
+    preview?: string;
     code?: string;
   }[];
 };
@@ -12,10 +12,10 @@ export type DocumentedElement = {
 export type DocumentedComponent = {
   title: string;
   description?: string;
-  variant?: {
+  example?: {
     title: string;
     description?: string;
-    example?: string;
+    preview?: string;
     code?: string;
   }[];
 };

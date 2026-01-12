@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const abbr: DocumentedElement = {
   title: "abbr",
-  description:
-    "Represents an abbreviation or acronym with an optional title for the full description.",
-  variant: [
+  description: "Represents an abbreviation or acronym with an optional title for the full description.",
+  example: [
     {
       title: "Abbreviation",
       description: "Dotted underline indicates hover for full text.",

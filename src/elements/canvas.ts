@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const canvas: DocumentedElement = {
   title: "canvas",
-  description:
-    "Container for graphics drawn via scripting (usually JavaScript).",
-  variant: [
+  description: "Container for graphics drawn via scripting (usually JavaScript).",
+  example: [
     {
       title: "Canvas",
       description: "Drawing surface with responsive sizing.",

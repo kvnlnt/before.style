@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const summary: DocumentedElement = {
   title: "summary",
   description: "Specifies a visible heading for a details element.",
-  variant: [
+  example: [
     {
       title: "Summary",
       description: "Clickable heading that toggles the details content.",

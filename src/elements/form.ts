@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const form: DocumentedElement = {
   title: "form",
-  description:
-    "Represents a section containing interactive controls for submitting information.",
-  variant: [
+  description: "Represents a section containing interactive controls for submitting information.",
+  example: [
     {
       title: "Basic Form",
       description: "A simple form with inputs and a submit button.",

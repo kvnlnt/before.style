@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const li: DocumentedElement = {
   title: "li",
   description: "Represents an item in a list.",
-  variant: [
+  example: [
     {
       title: "List Item",
       description: "Individual list items with comfortable spacing.",

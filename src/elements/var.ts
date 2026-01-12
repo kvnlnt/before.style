@@ -2,9 +2,8 @@ import type { DocumentedElement } from "../types";
 
 export const varElement: DocumentedElement = {
   title: "var",
-  description:
-    "Represents the name of a variable in a mathematical or programming context.",
-  variant: [
+  description: "Represents the name of a variable in a mathematical or programming context.",
+  example: [
     {
       title: "Variable",
       description: "Italic monospace for variable names.",

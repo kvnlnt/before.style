@@ -3,7 +3,7 @@ import type { DocumentedElement } from "../types";
 export const ins: DocumentedElement = {
   title: "ins",
   description: "Represents text that has been added to a document.",
-  variant: [
+  example: [
     {
       title: "Inserted Text",
       description: "Underlined to indicate newly added content.",
