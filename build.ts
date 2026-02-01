@@ -1,5 +1,7 @@
 export type Library = {
   version: string;
+  name: string;
+  description: string;
   reset: {
     [selector: string]: Partial<CSSStyleDeclaration> | { [selector: string]: Partial<CSSStyleDeclaration> };
   };
@@ -40,6 +42,15 @@ export type Library = {
 };
 
 export const library: Library = {
+  name: "Before",
+  description: `Before is a classless, semantic style reset that styles HTML5 elements directly, providing accessible defaults without relying on
+<a target="_blank" href="https://css-tricks.com/different-ways-to-write-css/">utility-first CSS libraries</a> or overly complex frameworks.
+It is themeable (via <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS custom properties</a>) and designed for
+<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement">progressive enhancement</a>, allowing further customization through classes, components, or frameworks when desired.
+By targeting <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantic_html">semantic HTML</a>, it provides a rock-solid, long-term foundation.
+All components are implemented according to the
+<a href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA Authoring Practices Guide (APG)</a>, ensuring they are accessible, predictable, and keyboard-friendly, so your semantic HTML remains usable for everyone.
+    `,
   version: "1.0.0",
   reset: {
     html: {
@@ -3051,7 +3062,248 @@ Line 2
     },
     {
       title: "Tabs",
-      description: "A set of layered content panels where only one panel is displayed at a time.",
+      description:
+        "A set of layered content panels where only one panel is displayed at a time. Uses CSS-only functionality with radio inputs for state management.",
+      styles: {
+        // Container
+        '[role="tablist"]': {
+          display: "flex",
+          gap: "0",
+          borderBlockEnd: "2px solid var(--surface_muted)",
+          margin: "0",
+          padding: "0",
+          listStyle: "none",
+        },
+        // Vertical orientation
+        '[role="tablist"][aria-orientation="vertical"]': {
+          flexDirection: "column",
+          borderBlockEnd: "none",
+          borderInlineEnd: "2px solid var(--surface_muted)",
+          width: "fit-content",
+        },
+        // Hide radio inputs
+        '[role="tablist"] input[type="radio"]': {
+          position: "absolute",
+          opacity: "0",
+          pointerEvents: "none",
+        },
+        // Tab buttons (labels)
+        '[role="tablist"] label': {
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "0.5em",
+          padding: "0.75em 1.25em",
+          cursor: "pointer",
+          fontWeight: "500",
+          color: "inherit",
+          opacity: "0.7",
+          borderBlockEnd: "2px solid transparent",
+          marginBlockEnd: "-2px",
+          transition: "opacity 0.15s ease, border-color 0.15s ease, background-color 0.15s ease",
+          whiteSpace: "nowrap",
+          userSelect: "none",
+        },
+        '[role="tablist"][aria-orientation="vertical"] label': {
+          borderBlockEnd: "none",
+          borderInlineEnd: "2px solid transparent",
+          marginBlockEnd: "0",
+          marginInlineEnd: "-2px",
+        },
+        // Hover state
+        '[role="tablist"] label:hover': {
+          opacity: "1",
+          backgroundColor: "var(--surface_raised)",
+        },
+        // Focus state
+        '[role="tablist"] input[type="radio"]:focus-visible + label': {
+          outline: "2px solid var(--surface_interactive)",
+          outlineOffset: "-2px",
+        },
+        // Selected tab
+        '[role="tablist"] input[type="radio"]:checked + label': {
+          opacity: "1",
+          borderColor: "var(--surface_interactive)",
+          color: "inherit",
+        },
+        // Tab panels container
+        '[role="tablist"] + [role="group"]': {
+          marginBlockStart: "1em",
+        },
+        '[role="tablist"][aria-orientation="vertical"] + [role="group"]': {
+          marginBlockStart: "0",
+          marginInlineStart: "1em",
+        },
+        // Individual tab panels - hidden by default
+        '[role="tabpanel"]': {
+          display: "none",
+          animation: "fadeIn 0.2s ease",
+        },
+        // Show panel when corresponding radio is checked
+        // These selectors use the :has() selector for CSS-only tab switching
+        '[role="tablist"]:has(#tab1:checked) ~ [role="group"] [aria-labelledby="tab1-label"]': {
+          display: "block",
+        },
+        '[role="tablist"]:has(#tab2:checked) ~ [role="group"] [aria-labelledby="tab2-label"]': {
+          display: "block",
+        },
+        '[role="tablist"]:has(#tab3:checked) ~ [role="group"] [aria-labelledby="tab3-label"]': {
+          display: "block",
+        },
+        '[role="tablist"]:has(#tab4:checked) ~ [role="group"] [aria-labelledby="tab4-label"]': {
+          display: "block",
+        },
+        '[role="tablist"]:has(#tab5:checked) ~ [role="group"] [aria-labelledby="tab5-label"]': {
+          display: "block",
+        },
+        // Vertical tabs demo
+        '[role="tablist"]:has(#vtab1:checked) ~ [role="group"] [aria-labelledby="vtab1-label"]': {
+          display: "block",
+        },
+        '[role="tablist"]:has(#vtab2:checked) ~ [role="group"] [aria-labelledby="vtab2-label"]': {
+          display: "block",
+        },
+        '[role="tablist"]:has(#vtab3:checked) ~ [role="group"] [aria-labelledby="vtab3-label"]': {
+          display: "block",
+        },
+        // Disabled tabs demo
+        '[role="tablist"]:has(#dtab1:checked) ~ [role="group"] [aria-labelledby="dtab1-label"]': {
+          display: "block",
+        },
+        '[role="tablist"]:has(#dtab2:checked) ~ [role="group"] [aria-labelledby="dtab2-label"]': {
+          display: "block",
+        },
+        '[role="tablist"]:has(#dtab3:checked) ~ [role="group"] [aria-labelledby="dtab3-label"]': {
+          display: "block",
+        },
+        // Fade in animation
+        "@keyframes fadeIn": {
+          from: { opacity: "0", transform: "translateY(4px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        // Disabled tab
+        '[role="tablist"] input[type="radio"]:disabled + label': {
+          opacity: "0.4",
+          cursor: "not-allowed",
+        },
+        // Dark mode
+        "@media (prefers-color-scheme: dark)": {
+          '[role="tablist"]': {
+            borderColor: "var(--surface_border_dark)",
+          },
+          '[role="tablist"][aria-orientation="vertical"]': {
+            borderColor: "var(--surface_border_dark)",
+          },
+          '[role="tablist"] label:hover': {
+            backgroundColor: "var(--surface_overlay_dark)",
+          },
+        },
+      },
+      example: [
+        {
+          title: "Horizontal Tabs",
+          description: "Standard horizontal tabs with radio inputs for CSS-only state management.",
+          preview: `<div>
+  <ul role="tablist" aria-label="Settings tabs">
+    <li><input type="radio" name="tabs-demo" id="tab1" checked /><label for="tab1" id="tab1-label">General</label></li>
+    <li><input type="radio" name="tabs-demo" id="tab2" /><label for="tab2" id="tab2-label">Profile</label></li>
+    <li><input type="radio" name="tabs-demo" id="tab3" /><label for="tab3" id="tab3-label">Security</label></li>
+  </ul>
+  <div role="group" aria-label="Tab panels">
+    <div role="tabpanel" aria-labelledby="tab1-label">
+      <h4>General Settings</h4>
+      <p>Configure your general application settings here.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="tab2-label">
+      <h4>Profile Settings</h4>
+      <p>Update your profile information and preferences.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="tab3-label">
+      <h4>Security Settings</h4>
+      <p>Manage your password and security options.</p>
+    </div>
+  </div>
+</div>`,
+          code: `<ul role="tablist" aria-label="Settings tabs">
+  <li>
+    <input type="radio" name="tabs" id="tab1" checked />
+    <label for="tab1" id="tab1-label">General</label>
+  </li>
+  <li>
+    <input type="radio" name="tabs" id="tab2" />
+    <label for="tab2" id="tab2-label">Profile</label>
+  </li>
+</ul>
+<div role="group" aria-label="Tab panels">
+  <div role="tabpanel" aria-labelledby="tab1-label">
+    <p>General content...</p>
+  </div>
+  <div role="tabpanel" aria-labelledby="tab2-label">
+    <p>Profile content...</p>
+  </div>
+</div>`,
+        },
+        {
+          title: "Vertical Tabs",
+          description: "Vertical tab orientation for sidebar-style navigation. Use aria-orientation='vertical'.",
+          preview: `<div style="display: flex;">
+  <ul role="tablist" aria-label="Navigation tabs" aria-orientation="vertical">
+    <li><input type="radio" name="vtabs-demo" id="vtab1" checked /><label for="vtab1" id="vtab1-label">Dashboard</label></li>
+    <li><input type="radio" name="vtabs-demo" id="vtab2" /><label for="vtab2" id="vtab2-label">Analytics</label></li>
+    <li><input type="radio" name="vtabs-demo" id="vtab3" /><label for="vtab3" id="vtab3-label">Reports</label></li>
+  </ul>
+  <div role="group" aria-label="Tab panels">
+    <div role="tabpanel" aria-labelledby="vtab1-label">
+      <h4>Dashboard</h4>
+      <p>Welcome to your dashboard overview.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="vtab2-label">
+      <h4>Analytics</h4>
+      <p>View your analytics and metrics here.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="vtab3-label">
+      <h4>Reports</h4>
+      <p>Generate and download reports.</p>
+    </div>
+  </div>
+</div>`,
+          code: `<div style="display: flex;">
+  <ul role="tablist" aria-orientation="vertical">
+    <li>
+      <input type="radio" name="vtabs" id="vtab1" checked />
+      <label for="vtab1">Dashboard</label>
+    </li>
+    <!-- More tabs... -->
+  </ul>
+  <div role="group" aria-label="Tab panels">
+    <!-- Panels... -->
+  </div>
+</div>`,
+        },
+        {
+          title: "Tabs with Disabled State",
+          description: "Tabs can be disabled using the disabled attribute on the radio input.",
+          preview: `<div>
+  <ul role="tablist" aria-label="Feature tabs">
+    <li><input type="radio" name="dtabs-demo" id="dtab1" checked /><label for="dtab1" id="dtab1-label">Active</label></li>
+    <li><input type="radio" name="dtabs-demo" id="dtab2" disabled /><label for="dtab2" id="dtab2-label">Disabled</label></li>
+    <li><input type="radio" name="dtabs-demo" id="dtab3" /><label for="dtab3" id="dtab3-label">Available</label></li>
+  </ul>
+  <div role="group" aria-label="Tab panels">
+    <div role="tabpanel" aria-labelledby="dtab1-label">
+      <p>This tab is active and selectable.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="dtab2-label">
+      <p>This content is not accessible.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="dtab3-label">
+      <p>This tab is also available for selection.</p>
+    </div>
+  </div>
+</div>`,
+          code: `<input type="radio" name="tabs" id="tab2" disabled />
+<label for="tab2">Disabled Tab</label>`,
+        },
+      ],
     },
     {
       title: "Toolbar",
@@ -3077,121 +3329,124 @@ Line 2
 };
 
 function compile() {
-  // render html
-  const html = `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Before Style</title>
-    <link rel="stylesheet" href="before.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-  </head>
-  <body>
-    <nav role="navigation" aria-label="Main navigation" aria-orientation="horizontal" data-sticky>
-      <ul>
-        <li><a href="#top">::before</a></li>
-        <li>
-          <a href="#elements">Elements</a>
-          <ul>${library.elements.map((el) => `<li><a href="#${el.tag}">${el.tag}</a></li>`).join("\n")}</ul>
-        </li>
-        <li>
-          <a href="#components">Components</a>
-          <ul>${library.components.map((component) => `<li><a href="#${component.title.toLowerCase()}">${component.title}</a></li>`).join("\n")}</ul>
-        </li>
-        <li><a href="https://github.com/kvnlnt/before.style" target="_blank">GitHub</a></li>
-      </ul>
-    </nav>
-    <section>
-      <h2>Philosophy & Principles</h2>
-      <p>
-        A classless, semantic style reset that styles HTML5 elements directly, providing accessible defaults without relying on
-        <a target="_blank" href="https://css-tricks.com/different-ways-to-write-css/">utility-first CSS libraries</a> or overly complex frameworks.
-        It is themeable (via <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS custom properties</a>) and designed for
-        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement">progressive enhancement</a>, allowing further customization through classes, components, or frameworks when desired.
-        By targeting <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantic_html">semantic HTML</a>, it provides a rock-solid, long-term foundation.
-        All components are implemented according to the
-        <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA Authoring Practices Guide (APG)</a>, ensuring they are accessible, predictable, and keyboard-friendly, so your semantic HTML remains usable for everyone.
-      </p>
-    </section>
-    <section>
-      <h2>Getting Started</h2>
-      <p>
-        To get started, simply copy/paste the <code>Before.css</code> file into
-        your project and link to it in the head of your HTML document.
-      </p>
-    </section>
-    <section id="elements">
-      <h2>Elements</h2>
-      <p>
-        The following HTML5 elements are styled by Before Style:
-      </p>
-      <ul style="list-style-type: none; display: flex; flex-wrap: wrap; row-gap: 0rem; column-gap: 1rem; padding: 0; margin: 0;">
-        ${library.elements.map((el) => `<li><a href="#${el.tag}">&lt;${el.tag}&gt;</a></li>`).join("\n")}
-      </ul>
-    </section>
-    ${library.elements
-      .map(
-        (el) => `<section id="${el.tag}">
-        <h3>&lt;${el.tag}&gt; - ${el.title}</h3>
-        <p>${el.description}</p>
-      ${
-        el.variants &&
-        el.variants
-          .map(
-            (variant) => `
-              <details>
-              <summary>${variant.title}</summary>
-              <article>
-                <h4>${variant.title}</h4>
-                <p>${variant.description}</p>
-                <div class="preview">
-                ${variant.markup}
-                </div>
-                <pre><code class="language-html">${variant.markup && variant.markup.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>
-              </article>
-              </details>`,
-          )
-          .join("\n")
-      }
-    </section>`,
-      )
-      .join("\n")}
-    <section id="components">
-      <h2>Components</h2>
-      <p>
-        The following components are built using semantic HTML and styled by Before Style:
-      </p>
-       <ul style="list-style-type: none; display: flex; flex-wrap: wrap; row-gap: 0rem; column-gap: 1rem; padding: 0; margin: 0;">
-        ${library.components.map((el) => `<li><a href="#${el.title.toLowerCase()}">${el.title}</a></li>`).join("\n")}
-      </ul>
-    </section>
-    ${library.components
-      .map(
-        (component) => `<section id="${component.title.toLowerCase()}">
+  // Helper to escape HTML for code display
+  const escapeHtml = (str: string) => str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  // Helper to render a navigation list
+  const renderNavList = (items: { href: string; label: string }[]) =>
+    items.map(({ href, label }) => `<li><a href="${href}">${label}</a></li>`).join("\n");
+
+  // Helper to render a tag link list
+  const renderTagList = (items: { id: string; label: string }[]) =>
+    items.map(({ id, label }) => `<li><a href="#${id}">${label}</a></li>`).join("\n");
+
+  // Helper to render an element variant
+  const renderVariant = (variant: { title: string; description?: string; markup?: string }) => `
+    <details>
+      <summary>${variant.title}</summary>
+      <article>
+        <h4>${variant.title}</h4>
+        <p>${variant.description ?? ""}</p>
+        <div class="preview">${variant.markup ?? ""}</div>
+        <pre><code class="language-html">${escapeHtml(variant.markup ?? "")}</code></pre>
+      </article>
+    </details>`;
+
+  // Helper to render an element section
+  const renderElementSection = (el: (typeof library.elements)[0]) => `
+    <section id="${el.tag}">
+      <h3>&lt;${el.tag}&gt; - ${el.title}</h3>
+      <p>${el.description}</p>
+      ${el.variants?.map(renderVariant).join("\n") ?? ""}
+    </section>`;
+
+  // Helper to render a component example
+  const renderExample = (example: { title: string; description?: string; preview?: string; code?: string }) => `
+    <article>
+      <h4>${example.title}</h4>
+      <p>${example.description ?? ""}</p>
+      <div class="preview">${example.preview ?? ""}</div>
+      <pre><code class="language-html">${escapeHtml(example.code ?? "")}</code></pre>
+    </article>`;
+
+  // Helper to render a component section
+  const renderComponentSection = (component: (typeof library.components)[0]) => `
+    <section id="${component.title.toLowerCase()}">
       <h3>${component.title}</h3>
       <p>${component.description}</p>
-      ${
-        component.example &&
-        component.example
-          .map(
-            (example) => `<article>
-        <h4>${example.title}</h4>
-        <p>${example.description}</p>
-        <div class="preview">
-          ${example.preview}
-        </div>
-        <pre><code class="language-html">${example.code && example.code.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>
-      </article>`,
-          )
-          .join("\n")
-      }
-    </section>`,
-      )
-      .join("\n")}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  </body>
+      ${component.example?.map(renderExample).join("\n") ?? ""}
+    </section>`;
+
+  // Build navigation data
+  const elementNavItems = library.elements.map((el) => ({ href: `#${el.tag}`, label: el.tag }));
+  const componentNavItems = library.components.map((c) => ({ href: `#${c.title.toLowerCase()}`, label: c.title }));
+  const elementTagLinks = library.elements.map((el) => ({ id: el.tag, label: `&lt;${el.tag}&gt;` }));
+  const componentTagLinks = library.components.map((c) => ({ id: c.title.toLowerCase(), label: c.title }));
+
+  // Render HTML
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${library.name}</title>
+  <link rel="stylesheet" href="before.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+  <nav role="navigation" aria-label="Main navigation" aria-orientation="horizontal" data-sticky>
+    <ul>
+      <li><a href="#top">${library.name}</a></li>
+      <li>
+        <a href="#elements">Elements</a>
+        <ul>${renderNavList(elementNavItems)}</ul>
+      </li>
+      <li>
+        <a href="#components">Components</a>
+        <ul>${renderNavList(componentNavItems)}</ul>
+      </li>
+      <li><a href="https://github.com/kvnlnt/before.style" target="_blank">GitHub</a></li>
+    </ul>
+  </nav>
+  <section>
+    <h2>Philosophy & Principles</h2>
+    <p>
+      ${library.description}
+    </p>
+  </section>
+
+  <section>
+    <h2>Getting Started</h2>
+    <p>
+      To get started, simply copy/paste the <code>Before.css</code> file into
+      your project and link to it in the head of your HTML document.
+    </p>
+  </section>
+
+  <section id="elements">
+    <h2>Elements</h2>
+    <p>The following HTML5 elements are styled by Before Style:</p>
+    <ul style="list-style-type: none; display: flex; flex-wrap: wrap; row-gap: 0rem; column-gap: 1rem; padding: 0; margin: 0;">
+      ${renderTagList(elementTagLinks)}
+    </ul>
+  </section>
+
+  ${library.elements.map(renderElementSection).join("\n")}
+
+  <section id="components">
+    <h2>Components</h2>
+    <p>The following components are built using semantic HTML and styled by Before Style:</p>
+    <ul style="list-style-type: none; display: flex; flex-wrap: wrap; row-gap: 0rem; column-gap: 1rem; padding: 0; margin: 0;">
+      ${renderTagList(componentTagLinks)}
+    </ul>
+  </section>
+
+  ${library.components.map(renderComponentSection).join("\n")}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
 </html>`;
+
   Bun.file("docs/before.html").write(html);
 
   // Helper to convert camelCase to kebab-case
@@ -3204,7 +3459,7 @@ function compile() {
       .join("\n");
   };
 
-  // Helper to render a selector block (handles nested media queries)
+  // Helper to render a selector block (handles nested media queries and keyframes)
   const renderBlock = (selector: string, value: unknown): string => {
     if (selector.startsWith("@media")) {
       // It's a media query - value is an object of selectors
@@ -3212,6 +3467,19 @@ function compile() {
         .map(
           ([innerSelector, innerStyles]) =>
             `  ${innerSelector} {\n${renderStyles(innerStyles as Record<string, unknown>)
+              .split("\n")
+              .map((l) => "  " + l)
+              .join("\n")}\n  }`,
+        )
+        .join("\n");
+      return `${selector} {\n${innerRules}\n}`;
+    }
+    if (selector.startsWith("@keyframes")) {
+      // It's a keyframes rule - value is an object of keyframe stops (from, to, percentages)
+      const innerRules = Object.entries(value as Record<string, unknown>)
+        .map(
+          ([stop, styles]) =>
+            `  ${stop} {\n${renderStyles(styles as Record<string, unknown>)
               .split("\n")
               .map((l) => "  " + l)
               .join("\n")}\n  }`,
@@ -3272,6 +3540,191 @@ ${library.components
   .join("\n\n")}
 `;
   Bun.file("docs/before.css").write(css);
+
+  // Generate minified CSS
+  const minifiedCss = css
+    .replace(/\/\*[\s\S]*?\*\//g, "") // Remove comments
+    .replace(/\s+/g, " ") // Collapse whitespace
+    .replace(/\s*{\s*/g, "{") // Remove space around {
+    .replace(/\s*}\s*/g, "}") // Remove space around }
+    .replace(/\s*;\s*/g, ";") // Remove space around ;
+    .replace(/\s*:\s*/g, ":") // Remove space around :
+    .replace(/;\}/g, "}"); // Remove ; before }
+
+  Bun.file("docs/before.min.css").write(minifiedCss);
+
+  /* ==========================================================================
+   Skills - Generate a Skills.md file for agents
+   ========================================================================== */
+
+  // Helper to render element documentation
+  const renderElementDoc = (el: (typeof library.elements)[0]) => {
+    const variants = el.variants
+      ?.map(
+        (v) => `
+#### ${v.title}
+
+${v.description ?? ""}
+
+\`\`\`html
+${v.markup ?? ""}
+\`\`\``,
+      )
+      .join("\n");
+
+    return `### \`<${el.tag}>\` - ${el.title}
+
+${el.description ?? ""}
+
+${variants ?? ""}`;
+  };
+
+  // Helper to render component documentation
+  const renderComponentDoc = (comp: (typeof library.components)[0]) => {
+    const examples = comp.example
+      ?.map(
+        (ex) => `
+#### ${ex.title}
+
+${ex.description ?? ""}
+
+\`\`\`html
+${ex.code ?? ex.preview ?? ""}
+\`\`\``,
+      )
+      .join("\n");
+
+    // Extract selectors used by this component
+    const selectors = comp.styles
+      ? Object.keys(comp.styles)
+          .filter((s) => !s.startsWith("@"))
+          .slice(0, 5)
+          .map((s) => `\`${s}\``)
+          .join(", ")
+      : "";
+
+    return `### ${comp.title}
+
+${comp.description ?? ""}
+
+${selectors ? `**Selectors:** ${selectors}` : ""}
+
+${examples ?? ""}`;
+  };
+
+  // Generate the skill.md content
+  const skillMd = `# ${library.name} ${library.version} - Agent Skill Guide
+
+## Strategy
+${library.description}
+
+This document teaches AI agents how to write correct HTML markup that works with the Before Style classless CSS library.
+
+## Core Principle: Classless CSS
+
+**Before Style is a classless CSS library.** This means:
+
+- ❌ **Never use CSS classes** (no \`class="..."\` attributes)
+- ✅ **Use semantic HTML elements** (\`<nav>\`, \`<article>\`, \`<section>\`, etc.)
+- ✅ **Use ARIA roles and attributes** (\`role="tablist"\`, \`aria-orientation="vertical"\`)
+- ✅ **Use HTML5 native attributes** (\`name="accordion-group"\`, \`open\`, \`disabled\`)
+- ✅ **Use data attributes** (\`data-sticky\`, \`data-variant="..."\`)
+
+---
+
+## Tokens (CSS Custom Properties)
+
+The library provides these CSS custom properties for theming:
+
+\`\`\`css
+:root {
+${Object.entries(library.tokens)
+  .map(([token, value]) => `  ${token}: ${value};`)
+  .join("\n")}
+}
+\`\`\`
+
+---
+
+## Elements
+
+The following HTML5 elements are styled by Before Style:
+
+${library.elements.map(renderElementDoc).join("\n\n---\n\n")}
+
+---
+
+## Components
+
+The following components are built using semantic HTML:
+
+${library.components.map(renderComponentDoc).join("\n\n---\n\n")}
+
+---
+
+## Quick Reference
+
+### Selector Patterns
+
+| Pattern | Purpose |
+|---------|---------|
+| \`nav[role="navigation"]\` | Navigation menu |
+| \`nav[aria-orientation="vertical"]\` | Vertical navigation |
+| \`nav[data-sticky]\` | Sticky navigation |
+| \`details[name]\` | Accordion (grouped) |
+| \`[role="tablist"]\` | Tab container |
+| \`[role="tabpanel"]\` | Tab panel |
+| \`[role="group"]\` | Tab panels container |
+| \`li[role="separator"]\` | Menu divider |
+| \`a[aria-current="page"]\` | Current page indicator |
+
+### Do's and Don'ts
+
+| ✅ DO | ❌ DON'T |
+|-------|----------|
+| Use semantic HTML5 elements | Use div soup |
+| Use ARIA roles for components | Use CSS classes |
+| Use ARIA attributes for state | Forget accessibility |
+| Use HTML5 native attributes | Use inline styles for layout |
+| Use data attributes when needed | Mix with class-based frameworks |
+
+---
+
+## Page Template
+
+\`\`\`html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Title</title>
+  <link rel="stylesheet" href="before.css">
+</head>
+<body>
+  <nav role="navigation" aria-label="Main" data-sticky>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <section>
+      <h1>Page Heading</h1>
+      <p>Content goes here.</p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>© 2026 Company Name</p>
+  </footer>
+</body>
+</html>
+\`\`\`
+`;
+
+  Bun.file("docs/before.md").write(skillMd);
 }
 
 compile();

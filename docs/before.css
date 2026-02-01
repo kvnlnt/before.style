@@ -1184,3 +1184,150 @@ nav[role="navigation"] a[aria-disabled="true"], nav[role="navigation"] button[ar
   pointer-events: none;
   cursor: not-allowed;
 }
+
+[role="tablist"] {
+  display: flex;
+  gap: 0;
+  border-block-end: 2px solid var(--surface_muted);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+[role="tablist"][aria-orientation="vertical"] {
+  flex-direction: column;
+  border-block-end: none;
+  border-inline-end: 2px solid var(--surface_muted);
+  width: fit-content;
+}
+
+[role="tablist"] input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+[role="tablist"] label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.75em 1.25em;
+  cursor: pointer;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.7;
+  border-block-end: 2px solid transparent;
+  margin-block-end: -2px;
+  transition: opacity 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+}
+
+[role="tablist"][aria-orientation="vertical"] label {
+  border-block-end: none;
+  border-inline-end: 2px solid transparent;
+  margin-block-end: 0;
+  margin-inline-end: -2px;
+}
+
+[role="tablist"] label:hover {
+  opacity: 1;
+  background-color: var(--surface_raised);
+}
+
+[role="tablist"] input[type="radio"]:focus-visible + label {
+  outline: 2px solid var(--surface_interactive);
+  outline-offset: -2px;
+}
+
+[role="tablist"] input[type="radio"]:checked + label {
+  opacity: 1;
+  border-color: var(--surface_interactive);
+  color: inherit;
+}
+
+[role="tablist"] + [role="group"] {
+  margin-block-start: 1em;
+}
+
+[role="tablist"][aria-orientation="vertical"] + [role="group"] {
+  margin-block-start: 0;
+  margin-inline-start: 1em;
+}
+
+[role="tabpanel"] {
+  display: none;
+  animation: fadeIn 0.2s ease;
+}
+
+[role="tablist"]:has(#tab1:checked) ~ [role="group"] [aria-labelledby="tab1-label"] {
+  display: block;
+}
+
+[role="tablist"]:has(#tab2:checked) ~ [role="group"] [aria-labelledby="tab2-label"] {
+  display: block;
+}
+
+[role="tablist"]:has(#tab3:checked) ~ [role="group"] [aria-labelledby="tab3-label"] {
+  display: block;
+}
+
+[role="tablist"]:has(#tab4:checked) ~ [role="group"] [aria-labelledby="tab4-label"] {
+  display: block;
+}
+
+[role="tablist"]:has(#tab5:checked) ~ [role="group"] [aria-labelledby="tab5-label"] {
+  display: block;
+}
+
+[role="tablist"]:has(#vtab1:checked) ~ [role="group"] [aria-labelledby="vtab1-label"] {
+  display: block;
+}
+
+[role="tablist"]:has(#vtab2:checked) ~ [role="group"] [aria-labelledby="vtab2-label"] {
+  display: block;
+}
+
+[role="tablist"]:has(#vtab3:checked) ~ [role="group"] [aria-labelledby="vtab3-label"] {
+  display: block;
+}
+
+[role="tablist"]:has(#dtab1:checked) ~ [role="group"] [aria-labelledby="dtab1-label"] {
+  display: block;
+}
+
+[role="tablist"]:has(#dtab2:checked) ~ [role="group"] [aria-labelledby="dtab2-label"] {
+  display: block;
+}
+
+[role="tablist"]:has(#dtab3:checked) ~ [role="group"] [aria-labelledby="dtab3-label"] {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[role="tablist"] input[type="radio"]:disabled + label {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (prefers-color-scheme: dark) {
+  [role="tablist"] {
+    border-color: var(--surface_border_dark);
+  }
+  [role="tablist"][aria-orientation="vertical"] {
+    border-color: var(--surface_border_dark);
+  }
+  [role="tablist"] label:hover {
+    background-color: var(--surface_overlay_dark);
+  }
+}
