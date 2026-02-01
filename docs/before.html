@@ -1,0 +1,2395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before Style</title>
+    <link rel="stylesheet" href="before.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  </head>
+  <body>
+    <nav role="navigation" aria-label="Main navigation" aria-orientation="horizontal" data-sticky>
+      <ul>
+        <li><a href="#top">::before</a></li>
+        <li>
+          <a href="#elements">Elements</a>
+          <ul><li><a href="#a">a</a></li>
+<li><a href="#abbr">abbr</a></li>
+<li><a href="#address">address</a></li>
+<li><a href="#area">area</a></li>
+<li><a href="#article">article</a></li>
+<li><a href="#aside">aside</a></li>
+<li><a href="#audio">audio</a></li>
+<li><a href="#b">b</a></li>
+<li><a href="#bdi">bdi</a></li>
+<li><a href="#bdo">bdo</a></li>
+<li><a href="#blockquote">blockquote</a></li>
+<li><a href="#body">body</a></li>
+<li><a href="#br">br</a></li>
+<li><a href="#canvas">canvas</a></li>
+<li><a href="#caption">caption</a></li>
+<li><a href="#cite">cite</a></li>
+<li><a href="#code">code</a></li>
+<li><a href="#col">col</a></li>
+<li><a href="#colgroup">colgroup</a></li>
+<li><a href="#data">data</a></li>
+<li><a href="#datalist">datalist</a></li>
+<li><a href="#dd">dd</a></li>
+<li><a href="#del">del</a></li>
+<li><a href="#details">details</a></li>
+<li><a href="#dialog">dialog</a></li>
+<li><a href="#dfn">dfn</a></li>
+<li><a href="#div">div</a></li>
+<li><a href="#dl">dl</a></li>
+<li><a href="#dt">dt</a></li>
+<li><a href="#em">em</a></li>
+<li><a href="#embed">embed</a></li>
+<li><a href="#fieldset">fieldset</a></li>
+<li><a href="#figcaption">figcaption</a></li>
+<li><a href="#figure">figure</a></li>
+<li><a href="#footer">footer</a></li>
+<li><a href="#form">form</a></li>
+<li><a href="#h1">h1</a></li>
+<li><a href="#h2">h2</a></li>
+<li><a href="#h3">h3</a></li>
+<li><a href="#h4">h4</a></li>
+<li><a href="#h5">h5</a></li>
+<li><a href="#h6">h6</a></li>
+<li><a href="#head">head</a></li>
+<li><a href="#header">header</a></li>
+<li><a href="#hgroup">hgroup</a></li>
+<li><a href="#hr">hr</a></li>
+<li><a href="#html">html</a></li>
+<li><a href="#i">i</a></li>
+<li><a href="#iframe">iframe</a></li>
+<li><a href="#img">img</a></li>
+<li><a href="#input">input</a></li>
+<li><a href="#ins">ins</a></li>
+<li><a href="#kbd">kbd</a></li>
+<li><a href="#label">label</a></li>
+<li><a href="#legend">legend</a></li>
+<li><a href="#li">li</a></li>
+<li><a href="#main">main</a></li>
+<li><a href="#map">map</a></li>
+<li><a href="#mark">mark</a></li>
+<li><a href="#meta">meta</a></li>
+<li><a href="#nav">nav</a></li>
+<li><a href="#noscript">noscript</a></li>
+<li><a href="#object">object</a></li>
+<li><a href="#ol">ol</a></li>
+<li><a href="#optgroup">optgroup</a></li>
+<li><a href="#option">option</a></li>
+<li><a href="#output">output</a></li>
+<li><a href="#p">p</a></li>
+<li><a href="#picture">picture</a></li>
+<li><a href="#pre">pre</a></li>
+<li><a href="#progress">progress</a></li>
+<li><a href="#q">q</a></li>
+<li><a href="#rp">rp</a></li>
+<li><a href="#rt">rt</a></li>
+<li><a href="#ruby">ruby</a></li>
+<li><a href="#s">s</a></li>
+<li><a href="#samp">samp</a></li>
+<li><a href="#script">script</a></li>
+<li><a href="#section">section</a></li>
+<li><a href="#select">select</a></li>
+<li><a href="#slot">slot</a></li>
+<li><a href="#small">small</a></li>
+<li><a href="#source">source</a></li>
+<li><a href="#span">span</a></li>
+<li><a href="#strong">strong</a></li>
+<li><a href="#style">style</a></li>
+<li><a href="#sub">sub</a></li>
+<li><a href="#summary">summary</a></li>
+<li><a href="#sup">sup</a></li>
+<li><a href="#table">table</a></li>
+<li><a href="#tbody">tbody</a></li>
+<li><a href="#td">td</a></li>
+<li><a href="#template">template</a></li>
+<li><a href="#textarea">textarea</a></li>
+<li><a href="#tfoot">tfoot</a></li>
+<li><a href="#th">th</a></li>
+<li><a href="#thead">thead</a></li>
+<li><a href="#time">time</a></li>
+<li><a href="#title">title</a></li>
+<li><a href="#tr">tr</a></li>
+<li><a href="#track">track</a></li>
+<li><a href="#u">u</a></li>
+<li><a href="#ul">ul</a></li>
+<li><a href="#var">var</a></li>
+<li><a href="#video">video</a></li>
+<li><a href="#wbr">wbr</a></li></ul>
+        </li>
+        <li>
+          <a href="#components">Components</a>
+          <ul><li><a href="#accordion">Accordion</a></li>
+<li><a href="#alert">Alert</a></li>
+<li><a href="#breadcrumb">Breadcrumb</a></li>
+<li><a href="#button">Button</a></li>
+<li><a href="#carousel">Carousel</a></li>
+<li><a href="#checkbox">Checkbox</a></li>
+<li><a href="#combobox">Combobox</a></li>
+<li><a href="#dialog">Dialog</a></li>
+<li><a href="#disclosure">Disclosure</a></li>
+<li><a href="#feed">Feed</a></li>
+<li><a href="#grid">Grid</a></li>
+<li><a href="#header">Header</a></li>
+<li><a href="#landmarks">Landmarks</a></li>
+<li><a href="#link">Link</a></li>
+<li><a href="#listbox">Listbox</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#meter">Meter</a></li>
+<li><a href="#radio">Radio</a></li>
+<li><a href="#slider">Slider</a></li>
+<li><a href="#spinbutton">Spinbutton</a></li>
+<li><a href="#switch">Switch</a></li>
+<li><a href="#table">Table</a></li>
+<li><a href="#tabs">Tabs</a></li>
+<li><a href="#toolbar">Toolbar</a></li>
+<li><a href="#tooltip">Tooltip</a></li>
+<li><a href="#treegrid">Treegrid</a></li>
+<li><a href="#treeview">Treeview</a></li>
+<li><a href="#window splitter">Window Splitter</a></li></ul>
+        </li>
+        <li><a href="https://github.com/kvnlnt/before.style" target="_blank">GitHub</a></li>
+      </ul>
+    </nav>
+    <section>
+      <h2>Philosophy & Principles</h2>
+      <p>
+        A classless, semantic style reset that styles HTML5 elements directly, providing accessible defaults without relying on
+        <a target="_blank" href="https://css-tricks.com/different-ways-to-write-css/">utility-first CSS libraries</a> or overly complex frameworks.
+        It is themeable (via <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS custom properties</a>) and designed for
+        <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement">progressive enhancement</a>, allowing further customization through classes, components, or frameworks when desired.
+        By targeting <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantic_html">semantic HTML</a>, it provides a rock-solid, long-term foundation.
+        All components are implemented according to the
+        <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA Authoring Practices Guide (APG)</a>, ensuring they are accessible, predictable, and keyboard-friendly, so your semantic HTML remains usable for everyone.
+      </p>
+    </section>
+    <section>
+      <h2>Getting Started</h2>
+      <p>
+        To get started, simply copy/paste the <code>Before.css</code> file into
+        your project and link to it in the head of your HTML document.
+      </p>
+    </section>
+    <section id="elements">
+      <h2>Elements</h2>
+      <p>
+        The following HTML5 elements are styled by Before Style:
+      </p>
+      <ul style="list-style-type: none; display: flex; flex-wrap: wrap; row-gap: 0rem; column-gap: 1rem; padding: 0; margin: 0;">
+        <li><a href="#a">&lt;a&gt;</a></li>
+<li><a href="#abbr">&lt;abbr&gt;</a></li>
+<li><a href="#address">&lt;address&gt;</a></li>
+<li><a href="#area">&lt;area&gt;</a></li>
+<li><a href="#article">&lt;article&gt;</a></li>
+<li><a href="#aside">&lt;aside&gt;</a></li>
+<li><a href="#audio">&lt;audio&gt;</a></li>
+<li><a href="#b">&lt;b&gt;</a></li>
+<li><a href="#bdi">&lt;bdi&gt;</a></li>
+<li><a href="#bdo">&lt;bdo&gt;</a></li>
+<li><a href="#blockquote">&lt;blockquote&gt;</a></li>
+<li><a href="#body">&lt;body&gt;</a></li>
+<li><a href="#br">&lt;br&gt;</a></li>
+<li><a href="#canvas">&lt;canvas&gt;</a></li>
+<li><a href="#caption">&lt;caption&gt;</a></li>
+<li><a href="#cite">&lt;cite&gt;</a></li>
+<li><a href="#code">&lt;code&gt;</a></li>
+<li><a href="#col">&lt;col&gt;</a></li>
+<li><a href="#colgroup">&lt;colgroup&gt;</a></li>
+<li><a href="#data">&lt;data&gt;</a></li>
+<li><a href="#datalist">&lt;datalist&gt;</a></li>
+<li><a href="#dd">&lt;dd&gt;</a></li>
+<li><a href="#del">&lt;del&gt;</a></li>
+<li><a href="#details">&lt;details&gt;</a></li>
+<li><a href="#dialog">&lt;dialog&gt;</a></li>
+<li><a href="#dfn">&lt;dfn&gt;</a></li>
+<li><a href="#div">&lt;div&gt;</a></li>
+<li><a href="#dl">&lt;dl&gt;</a></li>
+<li><a href="#dt">&lt;dt&gt;</a></li>
+<li><a href="#em">&lt;em&gt;</a></li>
+<li><a href="#embed">&lt;embed&gt;</a></li>
+<li><a href="#fieldset">&lt;fieldset&gt;</a></li>
+<li><a href="#figcaption">&lt;figcaption&gt;</a></li>
+<li><a href="#figure">&lt;figure&gt;</a></li>
+<li><a href="#footer">&lt;footer&gt;</a></li>
+<li><a href="#form">&lt;form&gt;</a></li>
+<li><a href="#h1">&lt;h1&gt;</a></li>
+<li><a href="#h2">&lt;h2&gt;</a></li>
+<li><a href="#h3">&lt;h3&gt;</a></li>
+<li><a href="#h4">&lt;h4&gt;</a></li>
+<li><a href="#h5">&lt;h5&gt;</a></li>
+<li><a href="#h6">&lt;h6&gt;</a></li>
+<li><a href="#head">&lt;head&gt;</a></li>
+<li><a href="#header">&lt;header&gt;</a></li>
+<li><a href="#hgroup">&lt;hgroup&gt;</a></li>
+<li><a href="#hr">&lt;hr&gt;</a></li>
+<li><a href="#html">&lt;html&gt;</a></li>
+<li><a href="#i">&lt;i&gt;</a></li>
+<li><a href="#iframe">&lt;iframe&gt;</a></li>
+<li><a href="#img">&lt;img&gt;</a></li>
+<li><a href="#input">&lt;input&gt;</a></li>
+<li><a href="#ins">&lt;ins&gt;</a></li>
+<li><a href="#kbd">&lt;kbd&gt;</a></li>
+<li><a href="#label">&lt;label&gt;</a></li>
+<li><a href="#legend">&lt;legend&gt;</a></li>
+<li><a href="#li">&lt;li&gt;</a></li>
+<li><a href="#main">&lt;main&gt;</a></li>
+<li><a href="#map">&lt;map&gt;</a></li>
+<li><a href="#mark">&lt;mark&gt;</a></li>
+<li><a href="#meta">&lt;meta&gt;</a></li>
+<li><a href="#nav">&lt;nav&gt;</a></li>
+<li><a href="#noscript">&lt;noscript&gt;</a></li>
+<li><a href="#object">&lt;object&gt;</a></li>
+<li><a href="#ol">&lt;ol&gt;</a></li>
+<li><a href="#optgroup">&lt;optgroup&gt;</a></li>
+<li><a href="#option">&lt;option&gt;</a></li>
+<li><a href="#output">&lt;output&gt;</a></li>
+<li><a href="#p">&lt;p&gt;</a></li>
+<li><a href="#picture">&lt;picture&gt;</a></li>
+<li><a href="#pre">&lt;pre&gt;</a></li>
+<li><a href="#progress">&lt;progress&gt;</a></li>
+<li><a href="#q">&lt;q&gt;</a></li>
+<li><a href="#rp">&lt;rp&gt;</a></li>
+<li><a href="#rt">&lt;rt&gt;</a></li>
+<li><a href="#ruby">&lt;ruby&gt;</a></li>
+<li><a href="#s">&lt;s&gt;</a></li>
+<li><a href="#samp">&lt;samp&gt;</a></li>
+<li><a href="#script">&lt;script&gt;</a></li>
+<li><a href="#section">&lt;section&gt;</a></li>
+<li><a href="#select">&lt;select&gt;</a></li>
+<li><a href="#slot">&lt;slot&gt;</a></li>
+<li><a href="#small">&lt;small&gt;</a></li>
+<li><a href="#source">&lt;source&gt;</a></li>
+<li><a href="#span">&lt;span&gt;</a></li>
+<li><a href="#strong">&lt;strong&gt;</a></li>
+<li><a href="#style">&lt;style&gt;</a></li>
+<li><a href="#sub">&lt;sub&gt;</a></li>
+<li><a href="#summary">&lt;summary&gt;</a></li>
+<li><a href="#sup">&lt;sup&gt;</a></li>
+<li><a href="#table">&lt;table&gt;</a></li>
+<li><a href="#tbody">&lt;tbody&gt;</a></li>
+<li><a href="#td">&lt;td&gt;</a></li>
+<li><a href="#template">&lt;template&gt;</a></li>
+<li><a href="#textarea">&lt;textarea&gt;</a></li>
+<li><a href="#tfoot">&lt;tfoot&gt;</a></li>
+<li><a href="#th">&lt;th&gt;</a></li>
+<li><a href="#thead">&lt;thead&gt;</a></li>
+<li><a href="#time">&lt;time&gt;</a></li>
+<li><a href="#title">&lt;title&gt;</a></li>
+<li><a href="#tr">&lt;tr&gt;</a></li>
+<li><a href="#track">&lt;track&gt;</a></li>
+<li><a href="#u">&lt;u&gt;</a></li>
+<li><a href="#ul">&lt;ul&gt;</a></li>
+<li><a href="#var">&lt;var&gt;</a></li>
+<li><a href="#video">&lt;video&gt;</a></li>
+<li><a href="#wbr">&lt;wbr&gt;</a></li>
+      </ul>
+    </section>
+    <section id="a">
+      <h3>&lt;a&gt; - a</h3>
+      <p>Anchor element that creates a hyperlink to other pages, files, or locations.</p>
+      <article>
+        <h4>Default Link</h4>
+        <p>A standard hyperlink with underline styling that inherits the current text color.</p>
+        <div class="preview">
+          <a href="#">Click here to learn more</a>
+        </div>
+        <pre><code class="language-html">&lt;a href="#"&gt;Click here to learn more&lt;/a&gt;</code></pre>
+      </article>
+<article>
+        <h4>Visited Link</h4>
+        <p>Links that have been visited maintain the current color with slightly reduced opacity.</p>
+        <div class="preview">
+          <a href="#visited-example">Previously visited link</a>
+        </div>
+        <pre><code class="language-html">&lt;a href="#visited-example"&gt;Previously visited link&lt;/a&gt;</code></pre>
+      </article>
+<article>
+        <h4>External Link</h4>
+        <p>Links with target="_blank" automatically display an external link indicator (↗).</p>
+        <div class="preview">
+          <a href="https://example.com" target="_blank" rel="noopener noreferrer">Visit Example.com</a>
+        </div>
+        <pre><code class="language-html">&lt;a href="https://example.com" target="_blank" rel="noopener noreferrer"&gt;Visit Example.com&lt;/a&gt;</code></pre>
+      </article>
+<article>
+        <h4>Download Link</h4>
+        <p>Links with the download attribute display a download indicator (↓) before the text.</p>
+        <div class="preview">
+          <a href="/files/document.pdf" download>Download PDF</a>
+        </div>
+        <pre><code class="language-html">&lt;a href="/files/document.pdf" download&gt;Download PDF&lt;/a&gt;</code></pre>
+      </article>
+<article>
+        <h4>Email Link</h4>
+        <p>Links with mailto: protocol display an email icon (✉) before the text.</p>
+        <div class="preview">
+          <a href="mailto:hello@example.com">hello@example.com</a>
+        </div>
+        <pre><code class="language-html">&lt;a href="mailto:hello@example.com"&gt;hello@example.com&lt;/a&gt;</code></pre>
+      </article>
+<article>
+        <h4>Phone Link</h4>
+        <p>Links with tel: protocol display a phone icon (📞) before the text.</p>
+        <div class="preview">
+          <a href="tel:+1234567890">+1 (234) 567-890</a>
+        </div>
+        <pre><code class="language-html">&lt;a href="tel:+1234567890"&gt;+1 (234) 567-890&lt;/a&gt;</code></pre>
+      </article>
+<article>
+        <h4>Disabled Link</h4>
+        <p>Use aria-disabled="true" to visually disable a link while maintaining accessibility.</p>
+        <div class="preview">
+          <a href="#" aria-disabled="true">Unavailable link</a>
+        </div>
+        <pre><code class="language-html">&lt;a href="#" aria-disabled="true"&gt;Unavailable link&lt;/a&gt;</code></pre>
+      </article>
+<article>
+        <h4>Current Page Link</h4>
+        <p>Use aria-current="page" to indicate the current page in navigation. The link appears bold without underline.</p>
+        <div class="preview">
+          <nav>
+  <a href="/">Home</a>
+  <a href="/about" aria-current="page">About</a>
+  <a href="/contact">Contact</a>
+</nav>
+        </div>
+        <pre><code class="language-html">&lt;nav&gt;
+  &lt;a href="/"&gt;Home&lt;/a&gt;
+  &lt;a href="/about" aria-current="page"&gt;About&lt;/a&gt;
+  &lt;a href="/contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+      </article>
+<article>
+        <h4>Skip Link</h4>
+        <p>A hidden link that becomes visible on focus, allowing keyboard users to skip to main content.</p>
+        <div class="preview">
+          <a href="#main-content">Skip to main content</a>
+<main id="main-content">Main content here...</main>
+        </div>
+        <pre><code class="language-html">&lt;a href="#main-content"&gt;Skip to main content&lt;/a&gt;
+&lt;main id="main-content"&gt;Main content here...&lt;/main&gt;</code></pre>
+      </article>
+    </section>
+<section id="abbr">
+      <h3>&lt;abbr&gt; - abbr</h3>
+      <p>Represents an abbreviation or acronym with an optional title for the full description.</p>
+      <article>
+        <h4>Abbreviation</h4>
+        <p>Dotted underline indicates hover for full text.</p>
+        <div class="preview">
+          <p>The <abbr title="World Wide Web">WWW</abbr> changed everything.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;The &lt;abbr title="World Wide Web"&gt;WWW&lt;/abbr&gt; changed everything.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="address">
+      <h3>&lt;address&gt; - address</h3>
+      <p>Provides contact information for the nearest article or body ancestor.</p>
+      <article>
+        <h4>Address</h4>
+        <p>Italic contact information block.</p>
+        <div class="preview">
+          <address>
+  Contact: <a href="mailto:info@example.com">info@example.com</a><br>
+  123 Main St, City
+</address>
+        </div>
+        <pre><code class="language-html">&lt;address&gt;
+  Contact: &lt;a href="mailto:info@example.com"&gt;info@example.com&lt;/a&gt;&lt;br&gt;
+  123 Main St, City
+&lt;/address&gt;</code></pre>
+      </article>
+    </section>
+<section id="area">
+      <h3>&lt;area&gt; - area</h3>
+      <p>Defines a clickable area inside an image map.</p>
+      
+    </section>
+<section id="article">
+      <h3>&lt;article&gt; - article</h3>
+      <p>Represents a self-contained composition intended for independent distribution or reuse.</p>
+      <article>
+        <h4>Article</h4>
+        <p>Self-contained content block with implicit padding.</p>
+        <div class="preview">
+          <article>
+  <h2>Article Title</h2>
+  <p>Article content goes here...</p>
+</article>
+        </div>
+        <pre><code class="language-html">&lt;article&gt;
+  &lt;h2&gt;Article Title&lt;/h2&gt;
+  &lt;p&gt;Article content goes here...&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+      </article>
+    </section>
+<section id="aside">
+      <h3>&lt;aside&gt; - aside</h3>
+      <p>Represents content tangentially related to the main content, often used for sidebars.</p>
+      <article>
+        <h4>Aside</h4>
+        <p>Sidebar or supplementary content with subtle styling.</p>
+        <div class="preview">
+          <aside>
+  <h3>Related Links</h3>
+  <ul>
+    <li><a href="#">Link one</a></li>
+    <li><a href="#">Link two</a></li>
+  </ul>
+</aside>
+        </div>
+        <pre><code class="language-html">&lt;aside&gt;
+  &lt;h3&gt;Related Links&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Link one&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Link two&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
+      </article>
+    </section>
+<section id="audio">
+      <h3>&lt;audio&gt; - audio</h3>
+      <p>Embeds sound content with controls for playback.</p>
+      <article>
+        <h4>Audio Player</h4>
+        <p>Full-width audio player with native controls.</p>
+        <div class="preview">
+          <audio controls>
+  <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4
+" type="audio/mpeg">
+  Your browser does not support audio.
+</audio>
+        </div>
+        <pre><code class="language-html">&lt;audio controls&gt;
+  &lt;source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4
+" type="audio/mpeg"&gt;
+  Your browser does not support audio.
+&lt;/audio&gt;</code></pre>
+      </article>
+    </section>
+<section id="b">
+      <h3>&lt;b&gt; - b</h3>
+      <p>Represents text stylistically offset from normal text without conveying extra importance.</p>
+      <article>
+        <h4>Bold</h4>
+        <p>Bold text for stylistic offset.</p>
+        <div class="preview">
+          <p>The <b>quick</b> brown fox jumps.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;The &lt;b&gt;quick&lt;/b&gt; brown fox jumps.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="bdi">
+      <h3>&lt;bdi&gt; - bdi</h3>
+      <p>Isolates a span of text that might be formatted in a different direction from surrounding text.</p>
+      <article>
+        <h4>Bidirectional Isolation</h4>
+        <p>Isolates text direction from surrounding content.</p>
+        <div class="preview">
+          <p>User: <bdi>محمد</bdi> - 5 posts</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;User: &lt;bdi&gt;محمد&lt;/bdi&gt; - 5 posts&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="bdo">
+      <h3>&lt;bdo&gt; - bdo</h3>
+      <p>Overrides the current text directionality.</p>
+      <article>
+        <h4>Bidirectional Override</h4>
+        <p>Forces text direction override.</p>
+        <div class="preview">
+          <p><bdo dir="rtl">This text is reversed</bdo></p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;&lt;bdo dir="rtl"&gt;This text is reversed&lt;/bdo&gt;&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="blockquote">
+      <h3>&lt;blockquote&gt; - blockquote</h3>
+      <p>Indicates an extended quotation from another source.</p>
+      <article>
+        <h4>Block Quote</h4>
+        <p>Indented with a left border to distinguish quoted content.</p>
+        <div class="preview">
+          <blockquote>
+  <p>The only way to do great work is to love what you do.</p>
+</blockquote>
+        </div>
+        <pre><code class="language-html">&lt;blockquote&gt;
+  &lt;p&gt;The only way to do great work is to love what you do.&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+      </article>
+    </section>
+<section id="body">
+      <h3>&lt;body&gt; - body</h3>
+      <p>Represents the content of an HTML document.</p>
+      <article>
+        <h4>Default Body</h4>
+        <p>Clean, readable defaults with system fonts, comfortable line height, and responsive max-width for optimal reading.</p>
+        <div class="preview">
+          <p>The body element provides the foundation for all content. It uses system fonts for fast loading and familiar appearance.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;The body element provides the foundation for all content. It uses system fonts for fast loading and familiar appearance.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="br">
+      <h3>&lt;br&gt; - br</h3>
+      <p>Produces a line break in text.</p>
+      <article>
+        <h4>Line Break</h4>
+        <p>Forces a line break within text.</p>
+        <div class="preview">
+          <p>Line one<br>Line two</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Line one&lt;br&gt;Line two&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="canvas">
+      <h3>&lt;canvas&gt; - canvas</h3>
+      <p>Container for graphics drawn via scripting (usually JavaScript).</p>
+      <article>
+        <h4>Canvas</h4>
+        <p>Drawing surface with responsive sizing.</p>
+        <div class="preview">
+          <canvas width="300" height="150">
+  Your browser does not support canvas.
+</canvas>
+        </div>
+        <pre><code class="language-html">&lt;canvas width="300" height="150"&gt;
+  Your browser does not support canvas.
+&lt;/canvas&gt;</code></pre>
+      </article>
+    </section>
+<section id="caption">
+      <h3>&lt;caption&gt; - caption</h3>
+      <p>Specifies the title of a table.</p>
+      <article>
+        <h4>Table Caption</h4>
+        <p>Descriptive title displayed above the table.</p>
+        <div class="preview">
+          <table>
+  <caption>Monthly Sales Data</caption>
+  <tr><th>Month</th><th>Sales</th></tr>
+  <tr><td>Jan</td><td>$1,000</td></tr>
+</table>
+        </div>
+        <pre><code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Monthly Sales Data&lt;/caption&gt;
+  &lt;tr&gt;&lt;th&gt;Month&lt;/th&gt;&lt;th&gt;Sales&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Jan&lt;/td&gt;&lt;td&gt;$1,000&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      </article>
+    </section>
+<section id="cite">
+      <h3>&lt;cite&gt; - cite</h3>
+      <p>Represents the title of a creative work being referenced.</p>
+      <article>
+        <h4>Citation</h4>
+        <p>Italic text for referencing creative works.</p>
+        <div class="preview">
+          <p>My favorite book is <cite>The Great Gatsby</cite>.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;My favorite book is &lt;cite&gt;The Great Gatsby&lt;/cite&gt;.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="code">
+      <h3>&lt;code&gt; - code</h3>
+      <p>Displays a fragment of computer code.</p>
+      <article>
+        <h4>Inline Code</h4>
+        <p>Inline code with subtle background for visibility.</p>
+        <div class="preview">
+          <p>Use the <code>console.log()</code> function to debug.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Use the &lt;code&gt;console.log()&lt;/code&gt; function to debug.&lt;/p&gt;</code></pre>
+      </article>
+<article>
+        <h4>Code Block</h4>
+        <p>Wrap code in pre for multi-line code blocks.</p>
+        <div class="preview">
+          <pre><code>function greet(name) {
+  return "Hello, " + name;
+}</code></pre>
+        </div>
+        <pre><code class="language-html">&lt;pre&gt;&lt;code&gt;function greet(name) {
+  return "Hello, " + name;
+}&lt;/code&gt;&lt;/pre&gt;</code></pre>
+      </article>
+    </section>
+<section id="col">
+      <h3>&lt;col&gt; - col</h3>
+      <p>Definesss a column within a table and is used for styling columns.</p>
+      
+    </section>
+<section id="colgroup">
+      <h3>&lt;colgroup&gt; - colgroup</h3>
+      <p>Groups one or more columns in a table for formatting.</p>
+      
+    </section>
+<section id="data">
+      <h3>&lt;data&gt; - data</h3>
+      <p>Links content with a machine-readable translation.</p>
+      <article>
+        <h4>Data</h4>
+        <p>Machine-readable value with human display.</p>
+        <div class="preview">
+          <p>Price: <data value="49.99">$49.99</data></p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Price: &lt;data value="49.99"&gt;$49.99&lt;/data&gt;&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="datalist">
+      <h3>&lt;datalist&gt; - datalist</h3>
+      <p>Contains a set of option elements representing predefined options for an input.</p>
+      <article>
+        <h4>Datalist</h4>
+        <p>Provides autocomplete options for an input.</p>
+        <div class="preview">
+          <input list="browsers" placeholder="Choose a browser">
+<datalist id="browsers">
+  <option value="Chrome">
+  <option value="Firefox">
+  <option value="Safari">
+</datalist>
+        </div>
+        <pre><code class="language-html">&lt;input list="browsers" placeholder="Choose a browser"&gt;
+&lt;datalist id="browsers"&gt;
+  &lt;option value="Chrome"&gt;
+  &lt;option value="Firefox"&gt;
+  &lt;option value="Safari"&gt;
+&lt;/datalist&gt;</code></pre>
+      </article>
+    </section>
+<section id="dd">
+      <h3>&lt;dd&gt; - dd</h3>
+      <p>Provides the description or value for a term in a description list.</p>
+      <article>
+        <h4>Definition Description</h4>
+        <p>Indented description for a term.</p>
+        <div class="preview">
+          <dl>
+  <dt>CSS</dt>
+  <dd>Cascading Style Sheets</dd>
+</dl>
+        </div>
+        <pre><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+      </article>
+    </section>
+<section id="del">
+      <h3>&lt;del&gt; - del</h3>
+      <p>Represents text that has been deleted from a document.</p>
+      <article>
+        <h4>Deleted Text</h4>
+        <p>Strikethrough styling to indicate removed content.</p>
+        <div class="preview">
+          <p>Price: <del>$50</del> $30</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Price: &lt;del&gt;$50&lt;/del&gt; $30&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="details">
+      <h3>&lt;details&gt; - details</h3>
+      <p>Creates a disclosure widget from which the user can obtain additional information.</p>
+      <article>
+        <h4>Disclosure Widget</h4>
+        <p>Expandable content with toggle control.</p>
+        <div class="preview">
+          <details>
+  <summary>Click to expand</summary>
+  <p>Hidden content revealed when expanded.</p>
+</details>
+        </div>
+        <pre><code class="language-html">&lt;details&gt;
+  &lt;summary&gt;Click to expand&lt;/summary&gt;
+  &lt;p&gt;Hidden content revealed when expanded.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+      </article>
+    </section>
+<section id="dialog">
+      <h3>&lt;dialog&gt; - dialog</h3>
+      <p>Represents a dialog box or other interactive component.</p>
+      <article>
+        <h4>Dialog</h4>
+        <p>A modal dialog box for user interaction.</p>
+        <div class="preview">
+          <dialog open>
+  <p>This is a dialog box.</p>
+  <button>Close</button>
+</dialog>
+        </div>
+        <pre><code class="language-html">&lt;dialog open&gt;
+  &lt;p&gt;This is a dialog box.&lt;/p&gt;
+  &lt;button&gt;Close&lt;/button&gt;
+&lt;/dialog&gt;</code></pre>
+      </article>
+    </section>
+<section id="dfn">
+      <h3>&lt;dfn&gt; - dfn</h3>
+      <p>Indicates the defining instance of a term.</p>
+      <article>
+        <h4>Definition</h4>
+        <p>Italic styling for terms being defined.</p>
+        <div class="preview">
+          <p>A <dfn>pixel</dfn> is the smallest unit of a digital image.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;A &lt;dfn&gt;pixel&lt;/dfn&gt; is the smallest unit of a digital image.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="div">
+      <h3>&lt;div&gt; - div</h3>
+      <p>A generic container for flow content with no semantic meaning.</p>
+      <article>
+        <h4>Div Container</h4>
+        <p>Generic block-level container.</p>
+        <div class="preview">
+          <div>
+  <p>Content inside a div.</p>
+</div>
+        </div>
+        <pre><code class="language-html">&lt;div&gt;
+  &lt;p&gt;Content inside a div.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </article>
+    </section>
+<section id="dl">
+      <h3>&lt;dl&gt; - dl</h3>
+      <p>Represents a description list of term-description pairs.</p>
+      <article>
+        <h4>Description List</h4>
+        <p>A list of terms and their descriptions, perfect for glossaries or metadata.</p>
+        <div class="preview">
+          <dl>
+  <dt>Term</dt>
+  <dd>The definition or description of the term.</dd>
+  <dt>Another Term</dt>
+  <dd>Another definition.</dd>
+</dl>
+        </div>
+        <pre><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;Term&lt;/dt&gt;
+  &lt;dd&gt;The definition or description of the term.&lt;/dd&gt;
+  &lt;dt&gt;Another Term&lt;/dt&gt;
+  &lt;dd&gt;Another definition.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+      </article>
+    </section>
+<section id="dt">
+      <h3>&lt;dt&gt; - dt</h3>
+      <p>Specifies a term in a description list.</p>
+      <article>
+        <h4>Definition Term</h4>
+        <p>Bold term in a definition list.</p>
+        <div class="preview">
+          <dl>
+  <dt>HTML</dt>
+  <dd>HyperText Markup Language</dd>
+</dl>
+        </div>
+        <pre><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+      </article>
+    </section>
+<section id="em">
+      <h3>&lt;em&gt; - em</h3>
+      <p>Marks text with stress emphasis.</p>
+      <article>
+        <h4>Emphasized Text</h4>
+        <p>Italic text for stress emphasis.</p>
+        <div class="preview">
+          <p>I <em>really</em> mean it.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;I &lt;em&gt;really&lt;/em&gt; mean it.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="embed">
+      <h3>&lt;embed&gt; - embed</h3>
+      <p>Embeds external content from an external application or plugin.</p>
+      undefined
+    </section>
+<section id="fieldset">
+      <h3>&lt;fieldset&gt; - fieldset</h3>
+      <p>Groups related elements within a form.</p>
+      <article>
+        <h4>Form Group</h4>
+        <p>Bordered container for grouping related form fields.</p>
+        <div class="preview">
+          <fieldset>
+  <legend>Personal Info</legend>
+  <label>Name</label>
+  <input type="text">
+  <label>Email</label>
+  <input type="email">
+</fieldset>
+        </div>
+        <pre><code class="language-html">&lt;fieldset&gt;
+  &lt;legend&gt;Personal Info&lt;/legend&gt;
+  &lt;label&gt;Name&lt;/label&gt;
+  &lt;input type="text"&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input type="email"&gt;
+&lt;/fieldset&gt;</code></pre>
+      </article>
+    </section>
+<section id="figcaption">
+      <h3>&lt;figcaption&gt; - figcaption</h3>
+      <p>Represents a caption or legend for a figure.</p>
+      <article>
+        <h4>Figure Caption</h4>
+        <p>Smaller, muted text for describing figure content.</p>
+        <div class="preview">
+          <figcaption>Photo by Jane Doe, 2024</figcaption>
+        </div>
+        <pre><code class="language-html">&lt;figcaption&gt;Photo by Jane Doe, 2024&lt;/figcaption&gt;</code></pre>
+      </article>
+    </section>
+<section id="figure">
+      <h3>&lt;figure&gt; - figure</h3>
+      <p>Represents self-contained content with an optional caption.</p>
+      <article>
+        <h4>Figure with Caption</h4>
+        <p>Image container with descriptive caption below.</p>
+        <div class="preview">
+          <figure>
+  <img src="https://picsum.photos/400/200" alt="Sample">
+  <figcaption>A descriptive caption for the image.</figcaption>
+</figure>
+        </div>
+        <pre><code class="language-html">&lt;figure&gt;
+  &lt;img src="https://picsum.photos/400/200" alt="Sample"&gt;
+  &lt;figcaption&gt;A descriptive caption for the image.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+      </article>
+    </section>
+<section id="footer">
+      <h3>&lt;footer&gt; - footer</h3>
+      <p>Represents the footer of a section or page, typically containing authorship or copyright.</p>
+      <article>
+        <h4>Footer</h4>
+        <p>Footer content container.</p>
+        <div class="preview">
+          <footer>
+  <p>&copy; 2024 Company Name</p>
+</footer>
+        </div>
+        <pre><code class="language-html">&lt;footer&gt;
+  &lt;p&gt;&copy; 2024 Company Name&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+      </article>
+    </section>
+<section id="form">
+      <h3>&lt;form&gt; - form</h3>
+      <p>Represents a section containing interactive controls for submitting information.</p>
+      <article>
+        <h4>Basic Form</h4>
+        <p>A simple form with inputs and a submit button.</p>
+        <div class="preview">
+          <form>
+  <label>Name</label>
+  <input type="text" placeholder="Your name">
+  <label>Email</label>
+  <input type="email" placeholder="you@example.com">
+  <button type="submit">Submit</button>
+</form>
+        </div>
+        <pre><code class="language-html">&lt;form&gt;
+  &lt;label&gt;Name&lt;/label&gt;
+  &lt;input type="text" placeholder="Your name"&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input type="email" placeholder="you@example.com"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </article>
+    </section>
+<section id="h1">
+      <h3>&lt;h1&gt; - h1</h3>
+      <p>Represents the highest level section heading.</p>
+      <article>
+        <h4>Page Heading</h4>
+        <p>The main heading of the page. Bold and large for clear hierarchy.</p>
+        <div class="preview">
+          <h1>Main Page Title</h1>
+        </div>
+        <pre><code class="language-html">&lt;h1&gt;Main Page Title&lt;/h1&gt;</code></pre>
+      </article>
+    </section>
+<section id="h2">
+      <h3>&lt;h2&gt; - h2</h3>
+      <p>Represents a second-level section heading.</p>
+      <article>
+        <h4>Heading 2</h4>
+        <p>Major section heading at 2rem size.</p>
+        <div class="preview">
+          <h2>Section Heading</h2>
+        </div>
+        <pre><code class="language-html">&lt;h2&gt;Section Heading&lt;/h2&gt;</code></pre>
+      </article>
+    </section>
+<section id="h3">
+      <h3>&lt;h3&gt; - h3</h3>
+      <p>Represents a third-level section heading.</p>
+      <article>
+        <h4>Heading 3</h4>
+        <p>Subsection heading at 1.5rem size.</p>
+        <div class="preview">
+          <h3>Subsection Heading</h3>
+        </div>
+        <pre><code class="language-html">&lt;h3&gt;Subsection Heading&lt;/h3&gt;</code></pre>
+      </article>
+    </section>
+<section id="h4">
+      <h3>&lt;h4&gt; - h4</h3>
+      <p>Represents a fourth-level section heading.</p>
+      <article>
+        <h4>Heading 4</h4>
+        <p>Minor heading at 1.25rem size.</p>
+        <div class="preview">
+          <h4>Minor Heading</h4>
+        </div>
+        <pre><code class="language-html">&lt;h4&gt;Minor Heading&lt;/h4&gt;</code></pre>
+      </article>
+    </section>
+<section id="h5">
+      <h3>&lt;h5&gt; - h5</h3>
+      <p>Represents a fifth-level section heading.</p>
+      <article>
+        <h4>Heading 5</h4>
+        <p>Small heading at 1rem size.</p>
+        <div class="preview">
+          <h5>Small Heading</h5>
+        </div>
+        <pre><code class="language-html">&lt;h5&gt;Small Heading&lt;/h5&gt;</code></pre>
+      </article>
+    </section>
+<section id="h6">
+      <h3>&lt;h6&gt; - h6</h3>
+      <p>Represents the lowest level section heading.</p>
+      <article>
+        <h4>Heading 6</h4>
+        <p>Smallest heading at 0.875rem size.</p>
+        <div class="preview">
+          <h6>Smallest Heading</h6>
+        </div>
+        <pre><code class="language-html">&lt;h6&gt;Smallest Heading&lt;/h6&gt;</code></pre>
+      </article>
+    </section>
+<section id="head">
+      <h3>&lt;head&gt; - head</h3>
+      <p>Contains machine-readable metadata about the document.</p>
+      undefined
+    </section>
+<section id="header">
+      <h3>&lt;header&gt; - header</h3>
+      <p>Represents introductory content or navigational aids for a section or page.</p>
+      <article>
+        <h4>Header</h4>
+        <p>Introductory content container.</p>
+        <div class="preview">
+          <header>
+  <h1>Site Title</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+  </nav>
+</header>
+        </div>
+        <pre><code class="language-html">&lt;header&gt;
+  &lt;h1&gt;Site Title&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+    &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+      </article>
+    </section>
+<section id="hgroup">
+      <h3>&lt;hgroup&gt; - hgroup</h3>
+      <p>Groups a heading with related content such as subheadings.</p>
+      <article>
+        <h4>Heading Group</h4>
+        <p>Groups heading with subtitle, reduced spacing between.</p>
+        <div class="preview">
+          <hgroup>
+  <h1>Main Title</h1>
+  <p>Subtitle or tagline</p>
+</hgroup>
+        </div>
+        <pre><code class="language-html">&lt;hgroup&gt;
+  &lt;h1&gt;Main Title&lt;/h1&gt;
+  &lt;p&gt;Subtitle or tagline&lt;/p&gt;
+&lt;/hgroup&gt;</code></pre>
+      </article>
+    </section>
+<section id="hr">
+      <h3>&lt;hr&gt; - hr</h3>
+      <p>Represents a thematic break between paragraph-level elements.</p>
+      <article>
+        <h4>Horizontal Rule</h4>
+        <p>A subtle line to separate content sections.</p>
+        <div class="preview">
+          <p>Content above the break.</p>
+<hr>
+<p>Content below the break.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Content above the break.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Content below the break.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="html">
+      <h3>&lt;html&gt; - html</h3>
+      <p>The root element of an HTML document.</p>
+      undefined
+    </section>
+<section id="i">
+      <h3>&lt;i&gt; - i</h3>
+      <p>Represents text in an alternate voice or mood, such as technical terms or foreign phrases.</p>
+      <article>
+        <h4>Italic</h4>
+        <p>Italic text for alternate voice or mood.</p>
+        <div class="preview">
+          <p>The word <i>café</i> is from French.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;The word &lt;i&gt;café&lt;/i&gt; is from French.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="iframe">
+      <h3>&lt;iframe&gt; - iframe</h3>
+      <p>Embeds another HTML page within the current page.</p>
+      <article>
+        <h4>Iframe</h4>
+        <p>Embedded frame with no border.</p>
+        <div class="preview">
+          <iframe src="https://example.com" title="Embedded page"></iframe>
+        </div>
+        <pre><code class="language-html">&lt;iframe src="https://example.com" title="Embedded page"&gt;&lt;/iframe&gt;</code></pre>
+      </article>
+    </section>
+<section id="img">
+      <h3>&lt;img&gt; - img</h3>
+      <p>Embeds an image into the document.</p>
+      <article>
+        <h4>Image</h4>
+        <p>Responsive image that scales to its container.</p>
+        <div class="preview">
+          <img src="https://picsum.photos/400/200" alt="Sample image">
+        </div>
+        <pre><code class="language-html">&lt;img src="https://picsum.photos/400/200" alt="Sample image"&gt;</code></pre>
+      </article>
+    </section>
+<section id="input">
+      <h3>&lt;input&gt; - input</h3>
+      <p>Creates interactive form controls for accepting user data.</p>
+      <article>
+        <h4>Text Input</h4>
+        <p>Standard text input with clean borders and focus state.</p>
+        <div class="preview">
+          <input type="text" placeholder="Enter text...">
+        </div>
+        <pre><code class="language-html">&lt;input type="text" placeholder="Enter text..."&gt;</code></pre>
+      </article>
+<article>
+        <h4>Checkbox</h4>
+        <p>Checkbox input using system accent color.</p>
+        <div class="preview">
+          <label><input type="checkbox"> Accept terms</label>
+        </div>
+        <pre><code class="language-html">&lt;label&gt;&lt;input type="checkbox"&gt; Accept terms&lt;/label&gt;</code></pre>
+      </article>
+<article>
+        <h4>Radio</h4>
+        <p>Radio button for single selection from a group.</p>
+        <div class="preview">
+          <label><input type="radio" name="option"> Option A</label>
+<label><input type="radio" name="option"> Option B</label>
+        </div>
+        <pre><code class="language-html">&lt;label&gt;&lt;input type="radio" name="option"&gt; Option A&lt;/label&gt;
+&lt;label&gt;&lt;input type="radio" name="option"&gt; Option B&lt;/label&gt;</code></pre>
+      </article>
+    </section>
+<section id="ins">
+      <h3>&lt;ins&gt; - ins</h3>
+      <p>Represents text that has been added to a document.</p>
+      <article>
+        <h4>Inserted Text</h4>
+        <p>Underlined to indicate newly added content.</p>
+        <div class="preview">
+          <p>We now offer <ins>free shipping</ins> on all orders.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;We now offer &lt;ins&gt;free shipping&lt;/ins&gt; on all orders.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="kbd">
+      <h3>&lt;kbd&gt; - kbd</h3>
+      <p>Represents user keyboard input.</p>
+      <article>
+        <h4>Keyboard Key</h4>
+        <p>Styled like a physical keyboard key with border and shadow.</p>
+        <div class="preview">
+          <p>Press <kbd>Ctrl</kbd> + <kbd>S</kbd> to save.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Press &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt; to save.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="label">
+      <h3>&lt;label&gt; - label</h3>
+      <p>Represents a caption for an item in a user interface.</p>
+      <article>
+        <h4>Form Label</h4>
+        <p>Block-level label with subtle weight.</p>
+        <div class="preview">
+          <label>Username</label>
+<input type="text">
+        </div>
+        <pre><code class="language-html">&lt;label&gt;Username&lt;/label&gt;
+&lt;input type="text"&gt;</code></pre>
+      </article>
+    </section>
+<section id="legend">
+      <h3>&lt;legend&gt; - legend</h3>
+      <p>Represents a caption for a fieldset.</p>
+      <article>
+        <h4>Fieldset Legend</h4>
+        <p>Caption displayed on fieldset border.</p>
+        <div class="preview">
+          <fieldset>
+  <legend>Account Info</legend>
+  <label>Email</label>
+  <input type="email">
+</fieldset>
+        </div>
+        <pre><code class="language-html">&lt;fieldset&gt;
+  &lt;legend&gt;Account Info&lt;/legend&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input type="email"&gt;
+&lt;/fieldset&gt;</code></pre>
+      </article>
+    </section>
+<section id="li">
+      <h3>&lt;li&gt; - li</h3>
+      <p>Represents an item in a list.</p>
+      <article>
+        <h4>List Item</h4>
+        <p>Individual list items with comfortable spacing.</p>
+        <div class="preview">
+          <ul>
+  <li>A single list item with proper vertical rhythm</li>
+</ul>
+        </div>
+        <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;A single list item with proper vertical rhythm&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </article>
+    </section>
+<section id="main">
+      <h3>&lt;main&gt; - main</h3>
+      <p>Represents the dominant content of the body of a document.</p>
+      <article>
+        <h4>Main Content</h4>
+        <p>Primary content area of the document.</p>
+        <div class="preview">
+          <main>
+  <h1>Page Title</h1>
+  <p>Main content goes here...</p>
+</main>
+        </div>
+        <pre><code class="language-html">&lt;main&gt;
+  &lt;h1&gt;Page Title&lt;/h1&gt;
+  &lt;p&gt;Main content goes here...&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+      </article>
+    </section>
+<section id="map">
+      <h3>&lt;map&gt; - map</h3>
+      <p>Defines an image map with clickable areas.</p>
+      undefined
+    </section>
+<section id="mark">
+      <h3>&lt;mark&gt; - mark</h3>
+      <p>Represents text marked or highlighted for reference or notation.</p>
+      <article>
+        <h4>Highlighted Text</h4>
+        <p>Yellow highlight for marking relevant content.</p>
+        <div class="preview">
+          <p>Search results: The <mark>quick brown fox</mark> jumps over the lazy dog.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Search results: The &lt;mark&gt;quick brown fox&lt;/mark&gt; jumps over the lazy dog.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="meta">
+      <h3>&lt;meta&gt; - meta</h3>
+      <p>Represents metadata that cannot be expressed with other HTML elements.</p>
+      undefined
+    </section>
+<section id="nav">
+      <h3>&lt;nav&gt; - nav</h3>
+      <p>Represents a section with navigation links.</p>
+      <article>
+        <h4>Navigation</h4>
+        <p>Navigation block for site or page links.</p>
+        <div class="preview">
+          <nav>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+        </div>
+        <pre><code class="language-html">&lt;nav&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt;
+  &lt;a href="#"&gt;About&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+      </article>
+    </section>
+<section id="noscript">
+      <h3>&lt;noscript&gt; - noscript</h3>
+      <p>Defines content to display when scripts are not supported or disabled.</p>
+      undefined
+    </section>
+<section id="object">
+      <h3>&lt;object&gt; - object</h3>
+      <p>Represents an external resource such as an image, plugin, or nested browsing context.</p>
+      undefined
+    </section>
+<section id="ol">
+      <h3>&lt;ol&gt; - ol</h3>
+      <p>Represents an ordered list of items.</p>
+      <article>
+        <h4>Basic Ordered List</h4>
+        <p>A numbered list for sequential content.</p>
+        <div class="preview">
+          <ol>
+  <li>First step</li>
+  <li>Second step</li>
+  <li>Third step</li>
+</ol>
+        </div>
+        <pre><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;First step&lt;/li&gt;
+  &lt;li&gt;Second step&lt;/li&gt;
+  &lt;li&gt;Third step&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      </article>
+    </section>
+<section id="optgroup">
+      <h3>&lt;optgroup&gt; - optgroup</h3>
+      <p>Groups related options within a select element.</p>
+      <article>
+        <h4>Option Group</h4>
+        <p>Groups options with a bold label.</p>
+        <div class="preview">
+          <select>
+  <optgroup label="Fruits">
+    <option>Apple</option>
+    <option>Banana</option>
+  </optgroup>
+  <optgroup label="Vegetables">
+    <option>Carrot</option>
+  </optgroup>
+</select>
+        </div>
+        <pre><code class="language-html">&lt;select&gt;
+  &lt;optgroup label="Fruits"&gt;
+    &lt;option&gt;Apple&lt;/option&gt;
+    &lt;option&gt;Banana&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="Vegetables"&gt;
+    &lt;option&gt;Carrot&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+      </article>
+    </section>
+<section id="option">
+      <h3>&lt;option&gt; - option</h3>
+      <p>Represents an option in a select element or datalist.</p>
+      <article>
+        <h4>Option</h4>
+        <p>Selectable item within a dropdown.</p>
+        <div class="preview">
+          <select>
+  <option value="1">First option</option>
+  <option value="2">Second option</option>
+</select>
+        </div>
+        <pre><code class="language-html">&lt;select&gt;
+  &lt;option value="1"&gt;First option&lt;/option&gt;
+  &lt;option value="2"&gt;Second option&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+      </article>
+    </section>
+<section id="output">
+      <h3>&lt;output&gt; - output</h3>
+      <p>Container for the result of a calculation or user action.</p>
+      <article>
+        <h4>Output</h4>
+        <p>Displays calculation results inline.</p>
+        <div class="preview">
+          <p>Total: <output>42</output></p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Total: &lt;output&gt;42&lt;/output&gt;&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="p">
+      <h3>&lt;p&gt; - p</h3>
+      <p>Represents a paragraph of text.</p>
+      <article>
+        <h4>Basic Paragraph</h4>
+        <p>Standard paragraph with comfortable line height and spacing.</p>
+        <div class="preview">
+          <p>This is a paragraph of text. It has comfortable line height for readability and proper spacing between consecutive paragraphs.</p>
+<p>This is a second paragraph demonstrating the vertical rhythm between paragraphs.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;This is a paragraph of text. It has comfortable line height for readability and proper spacing between consecutive paragraphs.&lt;/p&gt;
+&lt;p&gt;This is a second paragraph demonstrating the vertical rhythm between paragraphs.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="picture">
+      <h3>&lt;picture&gt; - picture</h3>
+      <p>Contains source elements and one img element for responsive images.</p>
+      <article>
+        <h4>Picture</h4>
+        <p>Responsive image container for multiple sources.</p>
+        <div class="preview">
+          <picture>
+  <source srcset="https://picsum.photos/seed/button/800/400" media="(min-width: 800px)">
+  <img src="https://picsum.photos/seed/button/400/200" alt="Responsive image">
+</picture>
+        </div>
+        <pre><code class="language-html">&lt;picture&gt;
+  &lt;source srcset="https://picsum.photos/seed/button/800/400" media="(min-width: 800px)"&gt;
+  &lt;img src="https://picsum.photos/seed/button/400/200" alt="Responsive image"&gt;
+&lt;/picture&gt;</code></pre>
+      </article>
+    </section>
+<section id="pre">
+      <h3>&lt;pre&gt; - pre</h3>
+      <p>Represents preformatted text preserving whitespace and line breaks.</p>
+      <article>
+        <h4>Preformatted Text</h4>
+        <p>Preserves whitespace and uses monospace font with subtle background.</p>
+        <div class="preview">
+          <pre>Line 1
+Line 2
+  Indented line</pre>
+        </div>
+        <pre><code class="language-html">&lt;pre&gt;Line 1
+Line 2
+  Indented line&lt;/pre&gt;</code></pre>
+      </article>
+    </section>
+<section id="progress">
+      <h3>&lt;progress&gt; - progress</h3>
+      <p>Displays the completion progress of a task.</p>
+      <article>
+        <h4>Progress Bar</h4>
+        <p>Visual progress indicator using the primary color.</p>
+        <div class="preview">
+          <progress value="70" max="100"></progress>
+        </div>
+        <pre><code class="language-html">&lt;progress value="70" max="100"&gt;&lt;/progress&gt;</code></pre>
+      </article>
+    </section>
+<section id="q">
+      <h3>&lt;q&gt; - q</h3>
+      <p>Represents a short inline quotation.</p>
+      <article>
+        <h4>Inline Quote</h4>
+        <p>Automatically wrapped with quotation marks.</p>
+        <div class="preview">
+          <p>She said, <q>This is amazing!</q></p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;She said, &lt;q&gt;This is amazing!&lt;/q&gt;&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="rp">
+      <h3>&lt;rp&gt; - rp</h3>
+      <p>Provides fallback parentheses for browsers that don't support ruby annotations.</p>
+      <article>
+        <h4>Ruby Parentheses</h4>
+        <p>Fallback parentheses for non-ruby browsers.</p>
+        <div class="preview">
+          <ruby>漢<rp>(</rp><rt>kan</rt><rp>)</rp></ruby>
+        </div>
+        <pre><code class="language-html">&lt;ruby&gt;漢&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;kan&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;</code></pre>
+      </article>
+    </section>
+<section id="rt">
+      <h3>&lt;rt&gt; - rt</h3>
+      <p>Specifies the ruby text component of a ruby annotation.</p>
+      <article>
+        <h4>Ruby Text</h4>
+        <p>Small annotation text above base character.</p>
+        <div class="preview">
+          <ruby>漢<rt>kan</rt></ruby>
+        </div>
+        <pre><code class="language-html">&lt;ruby&gt;漢&lt;rt&gt;kan&lt;/rt&gt;&lt;/ruby&gt;</code></pre>
+      </article>
+    </section>
+<section id="ruby">
+      <h3>&lt;ruby&gt; - ruby</h3>
+      <p>Represents a ruby annotation for showing pronunciation of East Asian characters.</p>
+      <article>
+        <h4>Ruby Annotation</h4>
+        <p>Shows pronunciation above characters.</p>
+        <div class="preview">
+          <ruby>
+  漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
+  字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+</ruby>
+        </div>
+        <pre><code class="language-html">&lt;ruby&gt;
+  漢 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;kan&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;
+  字 &lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;ji&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;
+&lt;/ruby&gt;</code></pre>
+      </article>
+    </section>
+<section id="s">
+      <h3>&lt;s&gt; - s</h3>
+      <p>Represents text that is no longer accurate or relevant.</p>
+      <article>
+        <h4>Strikethrough</h4>
+        <p>Text with line through indicating outdated content.</p>
+        <div class="preview">
+          <p>Price: <s>$50</s> $35</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Price: &lt;s&gt;$50&lt;/s&gt; $35&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="samp">
+      <h3>&lt;samp&gt; - samp</h3>
+      <p>Represents sample output from a computer program.</p>
+      <article>
+        <h4>Sample Output</h4>
+        <p>Monospace font for computer output.</p>
+        <div class="preview">
+          <p>The error was: <samp>File not found</samp></p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;The error was: &lt;samp&gt;File not found&lt;/samp&gt;&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="script">
+      <h3>&lt;script&gt; - script</h3>
+      <p>Embeds or references executable JavaScript code.</p>
+      undefined
+    </section>
+<section id="section">
+      <h3>&lt;section&gt; - section</h3>
+      <p>Represents a standalone section of a document.</p>
+      <article>
+        <h4>Section</h4>
+        <p>Thematic grouping of content.</p>
+        <div class="preview">
+          <section>
+  <h2>Section Heading</h2>
+  <p>Section content...</p>
+</section>
+        </div>
+        <pre><code class="language-html">&lt;section&gt;
+  &lt;h2&gt;Section Heading&lt;/h2&gt;
+  &lt;p&gt;Section content...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+      </article>
+    </section>
+<section id="select">
+      <h3>&lt;select&gt; - select</h3>
+      <p>Represents a control providing a menu of options.</p>
+      <article>
+        <h4>Select Dropdown</h4>
+        <p>Dropdown menu for selecting from predefined options.</p>
+        <div class="preview">
+          <select>
+  <option>Choose an option</option>
+  <option>Option 1</option>
+  <option>Option 2</option>
+  <option>Option 3</option>
+</select>
+        </div>
+        <pre><code class="language-html">&lt;select&gt;
+  &lt;option&gt;Choose an option&lt;/option&gt;
+  &lt;option&gt;Option 1&lt;/option&gt;
+  &lt;option&gt;Option 2&lt;/option&gt;
+  &lt;option&gt;Option 3&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+      </article>
+    </section>
+<section id="slot">
+      <h3>&lt;slot&gt; - slot</h3>
+      <p>A placeholder inside a web component for custom markup.</p>
+      undefined
+    </section>
+<section id="small">
+      <h3>&lt;small&gt; - small</h3>
+      <p>Represents side comments or small print.</p>
+      <article>
+        <h4>Small Print</h4>
+        <p>Reduced font size for fine print or disclaimers.</p>
+        <div class="preview">
+          <p>Price: $99 <small>(plus tax)</small></p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Price: $99 &lt;small&gt;(plus tax)&lt;/small&gt;&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="source">
+      <h3>&lt;source&gt; - source</h3>
+      <p>Specifies multiple media resources for picture, audio, or video elements.</p>
+      undefined
+    </section>
+<section id="span">
+      <h3>&lt;span&gt; - span</h3>
+      <p>A generic inline container for phrasing content.</p>
+      <article>
+        <h4>Span</h4>
+        <p>Generic inline container.</p>
+        <div class="preview">
+          <p>This is <span>inline content</span> in a paragraph.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;This is &lt;span&gt;inline content&lt;/span&gt; in a paragraph.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="strong">
+      <h3>&lt;strong&gt; - strong</h3>
+      <p>Indicates text with strong importance or urgency.</p>
+      <article>
+        <h4>Strong Text</h4>
+        <p>Bold text for emphasis and importance.</p>
+        <div class="preview">
+          <p>This is <strong>very important</strong> information.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;This is &lt;strong&gt;very important&lt;/strong&gt; information.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="style">
+      <h3>&lt;style&gt; - style</h3>
+      <p>Contains CSS styling information for a document.</p>
+      undefined
+    </section>
+<section id="sub">
+      <h3>&lt;sub&gt; - sub</h3>
+      <p>Represents subscript text.</p>
+      <article>
+        <h4>Subscript</h4>
+        <p>Text positioned below the baseline.</p>
+        <div class="preview">
+          <p>H<sub>2</sub>O is the chemical formula for water.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O is the chemical formula for water.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="summary">
+      <h3>&lt;summary&gt; - summary</h3>
+      <p>Specifies a visible heading for a details element.</p>
+      <article>
+        <h4>Summary</h4>
+        <p>Clickable heading that toggles the details content.</p>
+        <div class="preview">
+          <details>
+  <summary>Show more info</summary>
+  <p>Additional information here.</p>
+</details>
+        </div>
+        <pre><code class="language-html">&lt;details&gt;
+  &lt;summary&gt;Show more info&lt;/summary&gt;
+  &lt;p&gt;Additional information here.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+      </article>
+    </section>
+<section id="sup">
+      <h3>&lt;sup&gt; - sup</h3>
+      <p>Represents superscript text.</p>
+      <article>
+        <h4>Superscript</h4>
+        <p>Text positioned above the baseline.</p>
+        <div class="preview">
+          <p>E = mc<sup>2</sup> is Einstein's famous equation.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;E = mc&lt;sup&gt;2&lt;/sup&gt; is Einstein's famous equation.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="table">
+      <h3>&lt;table&gt; - table</h3>
+      <p>Represents tabular data with rows and columns.</p>
+      <article>
+        <h4>Basic Table</h4>
+        <p>A simple table with headers and data cells.</p>
+        <div class="preview">
+          <table>
+  <thead>
+    <tr><th>Name</th><th>Age</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Alice</td><td>30</td></tr>
+    <tr><td>Bob</td><td>25</td></tr>
+  </tbody>
+</table>
+        </div>
+        <pre><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Alice&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Bob&lt;/td&gt;&lt;td&gt;25&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </article>
+    </section>
+<section id="tbody">
+      <h3>&lt;tbody&gt; - tbody</h3>
+      <p>Groups the body content rows of a table.</p>
+      <article>
+        <h4>Table Body</h4>
+        <p>Container for table body rows.</p>
+        <div class="preview">
+          <table>
+  <thead>
+    <tr><th>Name</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Alice</td></tr>
+    <tr><td>Bob</td></tr>
+  </tbody>
+</table>
+        </div>
+        <pre><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Alice&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Bob&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </article>
+    </section>
+<section id="td">
+      <h3>&lt;td&gt; - td</h3>
+      <p>Represents a data cell in a table.</p>
+      <article>
+        <h4>Table Data Cell</h4>
+        <p>Standard data cell with padding and border.</p>
+        <div class="preview">
+          <table>
+  <tr><th>Item</th><th>Price</th></tr>
+  <tr><td>Apple</td><td>$1.50</td></tr>
+  <tr><td>Banana</td><td>$0.75</td></tr>
+</table>
+        </div>
+        <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Apple&lt;/td&gt;&lt;td&gt;$1.50&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Banana&lt;/td&gt;&lt;td&gt;$0.75&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      </article>
+    </section>
+<section id="template">
+      <h3>&lt;template&gt; - template</h3>
+      <p>Holds HTML content that is not rendered but can be instantiated via JavaScript.</p>
+      undefined
+    </section>
+<section id="textarea">
+      <h3>&lt;textarea&gt; - textarea</h3>
+      <p>Represents a multi-line plain text editing control.</p>
+      <article>
+        <h4>Text Area</h4>
+        <p>Multi-line input with resizable height.</p>
+        <div class="preview">
+          <textarea placeholder="Enter your message..."></textarea>
+        </div>
+        <pre><code class="language-html">&lt;textarea placeholder="Enter your message..."&gt;&lt;/textarea&gt;</code></pre>
+      </article>
+    </section>
+<section id="tfoot">
+      <h3>&lt;tfoot&gt; - tfoot</h3>
+      <p>Groups the footer content rows of a table.</p>
+      <article>
+        <h4>Table Footer</h4>
+        <p>Container for table footer rows, often for totals.</p>
+        <div class="preview">
+          <table>
+  <thead><tr><th>Item</th><th>Cost</th></tr></thead>
+  <tbody><tr><td>Item 1</td><td>$5</td></tr></tbody>
+  <tfoot><tr><td>Total</td><td>$5</td></tr></tfoot>
+</table>
+        </div>
+        <pre><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Item&lt;/th&gt;&lt;th&gt;Cost&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Item 1&lt;/td&gt;&lt;td&gt;$5&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+  &lt;tfoot&gt;&lt;tr&gt;&lt;td&gt;Total&lt;/td&gt;&lt;td&gt;$5&lt;/td&gt;&lt;/tr&gt;&lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+      </article>
+    </section>
+<section id="th">
+      <h3>&lt;th&gt; - th</h3>
+      <p>Represents a header cell in a table.</p>
+      <article>
+        <h4>Table Header</h4>
+        <p>Bold header cell with bottom border.</p>
+        <div class="preview">
+          <table>
+  <tr><th>Name</th><th>Age</th><th>City</th></tr>
+  <tr><td>Alice</td><td>30</td><td>NYC</td></tr>
+</table>
+        </div>
+        <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;th&gt;City&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;Alice&lt;/td&gt;&lt;td&gt;30&lt;/td&gt;&lt;td&gt;NYC&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      </article>
+    </section>
+<section id="thead">
+      <h3>&lt;thead&gt; - thead</h3>
+      <p>Groups the header content rows of a table.</p>
+      <article>
+        <h4>Table Head</h4>
+        <p>Container for table header rows.</p>
+        <div class="preview">
+          <table>
+  <thead>
+    <tr><th>Product</th><th>Price</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Widget</td><td>$10</td></tr>
+  </tbody>
+</table>
+        </div>
+        <pre><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Product&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Widget&lt;/td&gt;&lt;td&gt;$10&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </article>
+    </section>
+<section id="time">
+      <h3>&lt;time&gt; - time</h3>
+      <p>Represents a specific period in time or a machine-readable datetime.</p>
+      <article>
+        <h4>Time</h4>
+        <p>Machine-readable date/time with human display.</p>
+        <div class="preview">
+          <p>Published on <time datetime="2024-01-15">January 15, 2024</time></p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Published on &lt;time datetime="2024-01-15"&gt;January 15, 2024&lt;/time&gt;&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="title">
+      <h3>&lt;title&gt; - title</h3>
+      <p>Defines the document title shown in the browser tab.</p>
+      undefined
+    </section>
+<section id="tr">
+      <h3>&lt;tr&gt; - tr</h3>
+      <p>Represents a row of cells in a table.</p>
+      <article>
+        <h4>Table Row</h4>
+        <p>Horizontal row containing table cells.</p>
+        <div class="preview">
+          <table>
+  <tr><th>Col 1</th><th>Col 2</th></tr>
+  <tr><td>A1</td><td>A2</td></tr>
+  <tr><td>B1</td><td>B2</td></tr>
+</table>
+        </div>
+        <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Col 1&lt;/th&gt;&lt;th&gt;Col 2&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;A1&lt;/td&gt;&lt;td&gt;A2&lt;/td&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;B1&lt;/td&gt;&lt;td&gt;B2&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      </article>
+    </section>
+<section id="track">
+      <h3>&lt;track&gt; - track</h3>
+      <p>Specifies timed text tracks for media elements.</p>
+      undefined
+    </section>
+<section id="u">
+      <h3>&lt;u&gt; - u</h3>
+      <p>Represents text with an unarticulated annotation, such as misspelled words.</p>
+      <article>
+        <h4>Underline</h4>
+        <p>Wavy underline for annotated text like spelling errors.</p>
+        <div class="preview">
+          <p>Check the <u>speling</u> of this word.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Check the &lt;u&gt;speling&lt;/u&gt; of this word.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="ul">
+      <h3>&lt;ul&gt; - ul</h3>
+      <p>Represents an unordered list of items.</p>
+      <article>
+        <h4>Basic Unordered List</h4>
+        <p>A bullet list with proper spacing and indentation.</p>
+        <div class="preview">
+          <ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ul>
+        </div>
+        <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item&lt;/li&gt;
+  &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </article>
+<article>
+        <h4>Nested List</h4>
+        <p>Lists can be nested for hierarchical content.</p>
+        <div class="preview">
+          <ul>
+  <li>Parent item
+    <ul>
+      <li>Child item</li>
+      <li>Another child</li>
+    </ul>
+  </li>
+  <li>Another parent</li>
+</ul>
+        </div>
+        <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Parent item
+    &lt;ul&gt;
+      &lt;li&gt;Child item&lt;/li&gt;
+      &lt;li&gt;Another child&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Another parent&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </article>
+    </section>
+<section id="var">
+      <h3>&lt;var&gt; - var</h3>
+      <p>Represents the name of a variable in a mathematical or programming context.</p>
+      <article>
+        <h4>Variable</h4>
+        <p>Italic monospace for variable names.</p>
+        <div class="preview">
+          <p>Let <var>x</var> equal the number of items.</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;Let &lt;var&gt;x&lt;/var&gt; equal the number of items.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+<section id="video">
+      <h3>&lt;video&gt; - video</h3>
+      <p>Embeds video content with playback controls.</p>
+      <article>
+        <h4>Video Player</h4>
+        <p>Responsive video with native controls.</p>
+        <div class="preview">
+          <video controls>
+  <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
+" type="video/mp4">
+  Your browser does not support video.
+</video>
+        </div>
+        <pre><code class="language-html">&lt;video controls&gt;
+  &lt;source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4
+" type="video/mp4"&gt;
+  Your browser does not support video.
+&lt;/video&gt;</code></pre>
+      </article>
+    </section>
+<section id="wbr">
+      <h3>&lt;wbr&gt; - wbr</h3>
+      <p>Represents an optional line break opportunity.</p>
+      <article>
+        <h4>Word Break Opportunity</h4>
+        <p>Suggests where a line break may occur.</p>
+        <div class="preview">
+          <p>super<wbr>cali<wbr>fragilistic</p>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;super&lt;wbr&gt;cali&lt;wbr&gt;fragilistic&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+    <section id="components">
+      <h2>Components</h2>
+      <p>
+        The following components are built using semantic HTML and styled by Before Style:
+      </p>
+       <ul style="list-style-type: none; display: flex; flex-wrap: wrap; row-gap: 0rem; column-gap: 1rem; padding: 0; margin: 0;">
+        <li><a href="#accordion">Accordion</a></li>
+<li><a href="#alert">Alert</a></li>
+<li><a href="#breadcrumb">Breadcrumb</a></li>
+<li><a href="#button">Button</a></li>
+<li><a href="#carousel">Carousel</a></li>
+<li><a href="#checkbox">Checkbox</a></li>
+<li><a href="#combobox">Combobox</a></li>
+<li><a href="#dialog">Dialog</a></li>
+<li><a href="#disclosure">Disclosure</a></li>
+<li><a href="#feed">Feed</a></li>
+<li><a href="#grid">Grid</a></li>
+<li><a href="#header">Header</a></li>
+<li><a href="#landmarks">Landmarks</a></li>
+<li><a href="#link">Link</a></li>
+<li><a href="#listbox">Listbox</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#meter">Meter</a></li>
+<li><a href="#radio">Radio</a></li>
+<li><a href="#slider">Slider</a></li>
+<li><a href="#spinbutton">Spinbutton</a></li>
+<li><a href="#switch">Switch</a></li>
+<li><a href="#table">Table</a></li>
+<li><a href="#tabs">Tabs</a></li>
+<li><a href="#toolbar">Toolbar</a></li>
+<li><a href="#tooltip">Tooltip</a></li>
+<li><a href="#treegrid">Treegrid</a></li>
+<li><a href="#treeview">Treeview</a></li>
+<li><a href="#window splitter">Window Splitter</a></li>
+      </ul>
+    </section>
+    <section id="accordion">
+      <h3>Accordion</h3>
+      <p>A vertically stacked set of interactive headings that each reveal a section of content.</p>
+      <article>
+        <h4>Basic Accordion</h4>
+        <p>A simple accordion using native details/summary elements with exclusive behavior via the name attribute.</p>
+        <div class="preview">
+          <div role="region" aria-label="FAQ">
+  <details name="accordion-basic">
+    <summary>What is an accordion?</summary>
+    <p>An accordion is a vertically stacked set of interactive headings that each reveal a section of content.</p>
+  </details>
+  <details name="accordion-basic">
+    <summary>When should I use an accordion?</summary>
+    <p>Use accordions when you have multiple sections of content that users may want to browse through without leaving the page.</p>
+  </details>
+  <details name="accordion-basic">
+    <summary>Are accordions accessible?</summary>
+    <p>Yes, when built with native details/summary elements, accordions are keyboard navigable and screen reader friendly.</p>
+  </details>
+</div>
+        </div>
+        <pre><code class="language-html">&lt;div role="region" aria-label="FAQ"&gt;
+  &lt;details name="accordion-group"&gt;
+    &lt;summary&gt;Section Title&lt;/summary&gt;
+    &lt;p&gt;Section content...&lt;/p&gt;
+  &lt;/details&gt;
+  &lt;details name="accordion-group"&gt;
+    &lt;summary&gt;Another Section&lt;/summary&gt;
+    &lt;p&gt;More content...&lt;/p&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+      </article>
+<article>
+        <h4>Accordion with Default Open</h4>
+        <p>An accordion where one panel starts expanded using the open attribute.</p>
+        <div class="preview">
+          <nav aria-label="Product categories">
+  <details name="accordion-open" open>
+    <summary>Electronics</summary>
+    <ul>
+      <li>Phones</li>
+      <li>Laptops</li>
+      <li>Tablets</li>
+    </ul>
+  </details>
+  <details name="accordion-open">
+    <summary>Clothing</summary>
+    <ul>
+      <li>Shirts</li>
+      <li>Pants</li>
+      <li>Shoes</li>
+    </ul>
+  </details>
+  <details name="accordion-open">
+    <summary>Home & Garden</summary>
+    <ul>
+      <li>Furniture</li>
+      <li>Decor</li>
+      <li>Plants</li>
+    </ul>
+  </details>
+</nav>
+        </div>
+        <pre><code class="language-html">&lt;nav aria-label="Categories"&gt;
+  &lt;details name="nav-accordion" open&gt;
+    &lt;summary&gt;First Section (Open)&lt;/summary&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Item 1&lt;/li&gt;
+      &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/details&gt;
+  &lt;details name="nav-accordion"&gt;
+    &lt;summary&gt;Second Section&lt;/summary&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Item 3&lt;/li&gt;
+      &lt;li&gt;Item 4&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/details&gt;
+&lt;/nav&gt;</code></pre>
+      </article>
+<article>
+        <h4>Nested Accordion</h4>
+        <p>Accordions can be nested to create hierarchical content structures.</p>
+        <div class="preview">
+          <section aria-labelledby="docs-heading">
+  <h3 id="docs-heading">Documentation</h3>
+  <details name="accordion-nested">
+    <summary>Getting Started</summary>
+    <details>
+      <summary>Installation</summary>
+      <p>Run npm install to get started with the project.</p>
+    </details>
+    <details>
+      <summary>Configuration</summary>
+      <p>Edit the config file to customize your setup.</p>
+    </details>
+  </details>
+  <details name="accordion-nested">
+    <summary>API Reference</summary>
+    <details>
+      <summary>Components</summary>
+      <p>Learn about available component APIs.</p>
+    </details>
+    <details>
+      <summary>Utilities</summary>
+      <p>Explore utility functions and helpers.</p>
+    </details>
+  </details>
+</section>
+        </div>
+        <pre><code class="language-html">&lt;section aria-labelledby="section-title"&gt;
+  &lt;h3 id="section-title"&gt;Section Title&lt;/h3&gt;
+  &lt;details name="parent-accordion"&gt;
+    &lt;summary&gt;Parent Item&lt;/summary&gt;
+    &lt;details&gt;
+      &lt;summary&gt;Child Item&lt;/summary&gt;
+      &lt;p&gt;Nested content...&lt;/p&gt;
+    &lt;/details&gt;
+  &lt;/details&gt;
+&lt;/section&gt;</code></pre>
+      </article>
+    </section>
+<section id="alert">
+      <h3>Alert</h3>
+      <p>A live region that displays important, time-sensitive information to the user.</p>
+      undefined
+    </section>
+<section id="breadcrumb">
+      <h3>Breadcrumb</h3>
+      <p>A navigation aid that shows the user's current location within a site hierarchy.</p>
+      undefined
+    </section>
+<section id="button">
+      <h3>Button</h3>
+      <p>An interactive element that triggers an action when activated by the user.</p>
+      undefined
+    </section>
+<section id="carousel">
+      <h3>Carousel</h3>
+      <p>A rotating set of content items that can be navigated through sequentially.</p>
+      undefined
+    </section>
+<section id="checkbox">
+      <h3>Checkbox</h3>
+      <p>A form control that allows users to select one or more options from a set.</p>
+      undefined
+    </section>
+<section id="combobox">
+      <h3>Combobox</h3>
+      <p>A composite widget combining a text input with a popup listbox for selecting values.</p>
+      undefined
+    </section>
+<section id="dialog">
+      <h3>Dialog</h3>
+      <p>A modal or non-modal window that appears above the page content requiring user interaction.</p>
+      undefined
+    </section>
+<section id="disclosure">
+      <h3>Disclosure</h3>
+      <p>A button that controls the visibility of a section of content.</p>
+      undefined
+    </section>
+<section id="feed">
+      <h3>Feed</h3>
+      <p>A scrollable list of articles where new content may be added as the user scrolls.</p>
+      undefined
+    </section>
+<section id="grid">
+      <h3>Grid</h3>
+      <p>An interactive two-dimensional data structure with rows and columns of cells.</p>
+      undefined
+    </section>
+<section id="header">
+      <h3>Header</h3>
+      <p>A container for introductory content or navigational aids at the top of a page or section.</p>
+      undefined
+    </section>
+<section id="landmarks">
+      <h3>Landmarks</h3>
+      <p>Semantic regions that help assistive technology users navigate and understand page structure.</p>
+      undefined
+    </section>
+<section id="link">
+      <h3>Link</h3>
+      <p>An interactive reference to a resource that navigates the user when activated.</p>
+      undefined
+    </section>
+<section id="listbox">
+      <h3>Listbox</h3>
+      <p>A widget that allows users to select one or more items from a list of choices.</p>
+      undefined
+    </section>
+<section id="menu">
+      <h3>Menu</h3>
+      <p>A widget that offers a list of actions or options that the user can invoke. Supports horizontal and vertical layouts, nested submenus, sticky positioning, and dividers—all with pure CSS and semantic HTML.</p>
+      <article>
+        <h4>Horizontal Menu</h4>
+        <p>A horizontal navigation menu with dropdown submenus. Uses aria-orientation='horizontal' (or omit for default horizontal behavior).</p>
+        <div class="preview">
+          <nav role="navigation" aria-label="Main menu" aria-orientation="horizontal">
+  <ul>
+    <li><a href="#" aria-current="page">Home</a></li>
+    <li>
+      <a href="#">Products</a>
+      <ul>
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Clothing</a></li>
+        <li role="separator"></li>
+        <li><a href="#">View All</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Services</a>
+      <ul>
+        <li><a href="#">Consulting</a></li>
+        <li>
+          <a href="#">Development</a>
+          <ul>
+            <li><a href="#">Web</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Desktop</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+        </div>
+        <pre><code class="language-html">&lt;nav role="navigation" aria-label="Main menu" aria-orientation="horizontal"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;Products&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Submenu Item&lt;/a&gt;&lt;/li&gt;
+        &lt;li role="separator"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Another Item&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+      </article>
+<article>
+        <h4>Vertical Menu</h4>
+        <p>A vertical sidebar-style menu with flyout submenus. Set aria-orientation='vertical' for vertical layout.</p>
+        <div class="preview">
+          <nav role="navigation" aria-label="Sidebar menu" aria-orientation="vertical" style="width: 200px;">
+  <ul>
+    <li><a href="#" aria-current="page">Dashboard</a></li>
+    <li>
+      <a href="#">Settings</a>
+      <ul>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="#">Notifications</a></li>
+      </ul>
+    </li>
+    <li role="separator"></li>
+    <li><a href="#">Users</a></li>
+    <li>
+      <a href="#">Reports</a>
+      <ul>
+        <li><a href="#">Monthly</a></li>
+        <li><a href="#">Quarterly</a></li>
+        <li><a href="#">Annual</a></li>
+      </ul>
+    </li>
+    <li role="separator"></li>
+    <li><a href="#" aria-disabled="true">Archived</a></li>
+    <li><a href="#">Logout</a></li>
+  </ul>
+</nav>
+        </div>
+        <pre><code class="language-html">&lt;nav role="navigation" aria-label="Sidebar" aria-orientation="vertical"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;With Submenu&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Sub-item&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li role="separator"&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#" aria-disabled="true"&gt;Disabled&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+      </article>
+<article>
+        <h4>Sticky Menu</h4>
+        <p>A menu that sticks to the top of the viewport while scrolling. Use data-sticky for top, or data-sticky='bottom' for bottom.</p>
+        <div class="preview">
+          <nav role="navigation" aria-label="Sticky navigation" aria-orientation="horizontal" data-sticky>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+</nav>
+        </div>
+        <pre><code class="language-html">&lt;!-- Sticky top --&gt;
+&lt;nav role="navigation" aria-label="Main" data-sticky&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Sticky bottom --&gt;
+&lt;nav role="navigation" aria-label="Footer" data-sticky="bottom"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Terms&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+      </article>
+<article>
+        <h4>Deeply Nested Menu</h4>
+        <p>Menus can be nested multiple levels deep with flyout submenus.</p>
+        <div class="preview">
+          <nav role="navigation" aria-label="Category menu" aria-orientation="horizontal">
+  <ul>
+    <li>
+      <a href="#">Categories</a>
+      <ul>
+        <li>
+          <a href="#">Electronics</a>
+          <ul>
+            <li>
+              <a href="#">Computers</a>
+              <ul>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Desktops</a></li>
+                <li><a href="#">Tablets</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Phones</a></li>
+            <li><a href="#">Accessories</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Clothing</a>
+          <ul>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Home & Garden</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Deals</a></li>
+    <li><a href="#">New Arrivals</a></li>
+  </ul>
+</nav>
+        </div>
+        <pre><code class="language-html">&lt;nav role="navigation" aria-label="Menu"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href="#"&gt;Level 1&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;
+          &lt;a href="#"&gt;Level 2&lt;/a&gt;
+          &lt;ul&gt;
+            &lt;li&gt;
+              &lt;a href="#"&gt;Level 3&lt;/a&gt;
+              &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Level 4&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+      </article>
+    </section>
+<section id="meter">
+      <h3>Meter</h3>
+      <p>A graphical display of a numeric value within a known range.</p>
+      undefined
+    </section>
+<section id="radio">
+      <h3>Radio</h3>
+      <p>A group of mutually exclusive options where only one can be selected at a time.</p>
+      undefined
+    </section>
+<section id="slider">
+      <h3>Slider</h3>
+      <p>An input control that allows users to select a value from a range by dragging a thumb.</p>
+      undefined
+    </section>
+<section id="spinbutton">
+      <h3>Spinbutton</h3>
+      <p>A numeric input field with increment and decrement buttons for adjusting values.</p>
+      undefined
+    </section>
+<section id="switch">
+      <h3>Switch</h3>
+      <p>A toggle control that represents an on/off or enabled/disabled state.</p>
+      undefined
+    </section>
+<section id="table">
+      <h3>Table</h3>
+      <p>A structured grid of data organized in rows and columns for displaying information.</p>
+      undefined
+    </section>
+<section id="tabs">
+      <h3>Tabs</h3>
+      <p>A set of layered content panels where only one panel is displayed at a time.</p>
+      undefined
+    </section>
+<section id="toolbar">
+      <h3>Toolbar</h3>
+      <p>A container for grouping related controls such as buttons and menu items.</p>
+      undefined
+    </section>
+<section id="tooltip">
+      <h3>Tooltip</h3>
+      <p>A contextual popup that displays descriptive information about an element on hover or focus.</p>
+      undefined
+    </section>
+<section id="treegrid">
+      <h3>Treegrid</h3>
+      <p>A grid widget that combines the features of a tree and a data grid.</p>
+      undefined
+    </section>
+<section id="treeview">
+      <h3>Treeview</h3>
+      <p>A hierarchical list that can have nested groups of items that can be expanded or collapsed.</p>
+      undefined
+    </section>
+<section id="window splitter">
+      <h3>Window Splitter</h3>
+      <p>A movable divider that separates two sections and allows resizing them.</p>
+      undefined
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  </body>
+</html>

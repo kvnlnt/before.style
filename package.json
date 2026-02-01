@@ -1,9 +1,9 @@
 {
-  "name": "Before",
+  "name": "before",
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun ---watch www.ts"
+    "before": "bun before.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
