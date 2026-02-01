@@ -4,7 +4,7 @@ export type Library = {
     [selector: string]: Partial<CSSStyleDeclaration> | { [selector: string]: Partial<CSSStyleDeclaration> };
   };
   tokens: {
-    [tokenName: string]: string;
+    [tokenName: string]: string | number;
   };
   elements: {
     title: string;
@@ -63,31 +63,113 @@ export const library: Library = {
     },
   },
   tokens: {
-    // Color Palette Channel Tokens (OKLCH Components: lightness chroma hue)
-    "--gray": "0.55 0.01 260",
-    "--red": "0.65 0.2 25",
-    "--orange": "0.7 0.18 55",
-    "--yellow": "0.85 0.18 95",
-    "--green": "0.7 0.17 145",
-    "--blue": "0.65 0.18 250",
-    "--purple": "0.6 0.2 300",
-    "--white": "0.98 0.005 260",
-    "--black": "0.15 0.01 260",
-    // Semantic Color Tokens (Resolved but still mixable downstream)
-    "--info": "oklch(var(--blue))",
-    "--success": "oklch(var(--green))",
-    "--warning": "oklch(var(--yellow))",
-    "--error": "oklch(var(--red))",
-    "--bg": "oklch(var(--gray))",
-    "--fg": "oklch(var(--gray))",
-    "--heading": "oklch(var(--white))",
-    "--text": "oklch(var(--white) / 0.7)",
-    "--border": "oklch(var(--gray))",
-    // Fonts
-    "--font-body": "system-ui, -apple-system, sans-serif",
-    "--font-heading": "system-ui, -apple-system, sans-serif",
-    "--font-code": 'SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace',
-    "--font-mono": 'ui-monospace, "SF Mono", monospace',
+    /* ============================================================
+     * COLOR PRIMITIVES (OKLCH: L C H)
+     * ============================================================ */
+    "--palette_gray": "0.55 0.01 260",
+    "--palette_red": "0.65 0.20 25",
+    "--palette_orange": "0.70 0.18 55",
+    "--palette_yellow": "0.85 0.18 95",
+    "--palette_green": "0.70 0.17 145",
+    "--palette_blue": "0.65 0.18 250",
+    "--palette_purple": "0.60 0.20 300",
+    "--palette_white": "0.98 0.005 260",
+    "--palette_black": "0.15 0.01 260",
+
+    /* ============================================================
+     * PROPERTY MODIFIER COFACTORS (THE "HOW MUCH" OF THE PROPERTY)
+     * ============================================================ */
+    "--scale_opacity": 1,
+    "--scale_contrast": 1,
+    "--scale_font_scaling": 1,
+    "--scale_line_height": 1,
+    "--scale_font_weight": 1,
+    "--scale_border_radius": 0.5,
+    "--scale_shadow_intensity": 1,
+    "--scale_spacing": 1,
+    "--scale_transition_speed": 1,
+
+    /* ============================================================
+     * OPACITY LEVELS (DIALS FOR TEXT / SURFACE)
+     * ============================================================ */
+    "--tone_opacity_solid": 1,
+    "--tone_opacity_strong": 0.85,
+    "--tone_opacity_normal": 0.7,
+    "--tone_opacity_muted": 0.5,
+    "--tone_opacity_faint": 0.25,
+
+    /* ============================================================
+     * TONE COLORS (THE "MOOD" OF THE COLOR)
+     * ============================================================ */
+    "--tone_neutral": `oklch(var(--palette_gray))`,
+    "--tone_info": `oklch(var(--palette_blue))`,
+    "--tone_success": `oklch(var(--palette_green))`,
+    "--tone_warning": `oklch(var(--palette_yellow))`,
+    "--tone_error": `oklch(var(--palette_red))`,
+    "--tone_accent": `oklch(var(--palette_purple))`,
+
+    /* ============================================================
+     * TEXT COLOR ROLES
+     * ============================================================ */
+    "--text_color_primary": `oklch(var(--palette_white) / var(--tone_opacity_normal))`,
+    "--text_color_heading": `oklch(var(--palette_white))`,
+    "--text_color_muted": `oklch(var(--palette_white) / var(--tone_opacity_muted))`,
+    "--text_color_inverse": `oklch(var(--palette_black))`,
+    "--text_color_link": `oklch(var(--palette_blue))`,
+
+    /* ============================================================
+     * FONT PRIMITIVES
+     * ============================================================ */
+    "--font_family_serif": "ui-serif, Georgia, serif",
+    "--font_family_sans": "system-ui, -apple-system, sans-serif",
+    "--font_family_mono": 'ui-monospace, "SF Mono", Menlo, monospace',
+    "--font_family_script": '"Comic Sans MS", cursive, sans-serif',
+    "--font_family_display": "system-ui, -apple-system, sans-serif",
+
+    "--font_weight_regular": 400,
+    "--font_weight_medium": 500,
+    "--font_weight_bold": 700,
+
+    "--font_size_body": "1rem",
+    "--font_size_label": "0.875rem",
+    "--font_size_heading": "1.5rem",
+    "--font_size_code": "0.9rem",
+
+    /* ============================================================
+     * SEMANTIC TEXT ROLES
+     * ============================================================ */
+    "--text_font_body": `var(--font_family_sans)`,
+    "--text_font_heading": `var(--font_family_display)`,
+    "--text_font_label": `var(--font_family_sans)`,
+    "--text_font_code": `var(--font_family_mono)`,
+    "--text_font_system": `var(--font_family_sans)`,
+
+    /* ============================================================
+     * SURFACE COLORS (BACKGROUNDS)
+     * ============================================================ */
+    // Light mode surfaces (high lightness)
+    "--surface_base": `oklch(var(--palette_white))`,
+    "--surface_raised": "oklch(0.96 0.005 260)",
+    "--surface_overlay": "oklch(0.92 0.005 260)",
+    "--surface_sunken": "oklch(0.9 0.005 260)",
+    "--surface_muted": "oklch(0.85 0.005 260)",
+
+    // Dark mode surfaces (low lightness)
+    "--surface_base_dark": `oklch(var(--palette_black))`,
+    "--surface_raised_dark": "oklch(0.2 0.01 260)",
+    "--surface_overlay_dark": "oklch(0.25 0.01 260)",
+    "--surface_elevated_dark": "oklch(0.3 0.01 260)",
+    "--surface_border_dark": "oklch(0.35 0.01 260)",
+
+    // Interactive surfaces
+    "--surface_interactive": `oklch(var(--palette_blue))`,
+    "--surface_interactive_hover": "oklch(0.55 0.18 250)",
+    "--surface_interactive_active": "oklch(0.5 0.18 250)",
+
+    // Special surfaces
+    "--surface_backdrop": "oklch(0 0 0 / 0.5)",
+    "--surface_highlight": "oklch(0.92 0.15 95)",
+    "--surface_highlight_dark": "oklch(0.45 0.12 95)",
   },
   elements: [
     {
@@ -286,12 +368,12 @@ export const library: Library = {
         aside: {
           marginBlock: "1em",
           padding: "1em",
-          background: "oklch(0.96 0.005 260)",
+          background: "var(--surface_raised)",
           borderRadius: "0.5em",
         },
         "@media (prefers-color-scheme: dark)": {
           aside: {
-            background: "oklch(0.2 0.01 260)",
+            background: "var(--surface_raised_dark)",
           },
         },
       },
@@ -382,7 +464,7 @@ export const library: Library = {
           marginBlock: "1em",
           marginInline: "0",
           paddingInlineStart: "1em",
-          borderInlineStart: "3px solid oklch(var(--neutral))",
+          borderInlineStart: `3px solid oklch(var(--palette_gray))`,
           color: "oklch(0.4 0.01 260)",
         },
         "@media (prefers-color-scheme: dark)": {
@@ -422,10 +504,10 @@ export const library: Library = {
       description: "Represents the content of an HTML document.",
       styles: {
         body: {
-          fontFamily: "var(--font-body)",
+          fontFamily: "var(--text_font_body)",
           lineHeight: "1.6",
           color: "oklch(0.2 0.01 260)",
-          background: "oklch(0.98 0.005 260)",
+          background: `oklch(var(--palette_white))`,
           maxWidth: "65ch",
           margin: "0 auto",
           padding: "2rem 1rem",
@@ -433,7 +515,7 @@ export const library: Library = {
         "@media (prefers-color-scheme: dark)": {
           body: {
             color: "oklch(0.9 0.01 260)",
-            background: "oklch(0.15 0.01 260)",
+            background: `oklch(var(--palette_black))`,
           },
         },
       },
@@ -524,30 +606,30 @@ export const library: Library = {
       description: "Displays a fragment of computer code.",
       styles: {
         code: {
-          fontFamily: "var(--font-code)",
+          fontFamily: "var(--text_font_code)",
           fontSize: "0.875em",
-          background: "oklch(0.92 0.005 260)",
+          background: "var(--surface_overlay)",
           padding: "0.125em 0.375em",
           borderRadius: "0.25em",
         },
         "@media (prefers-color-scheme: dark)": {
           code: {
-            background: "oklch(0.25 0.01 260)",
+            background: "var(--surface_overlay_dark)",
           },
           pre: {
-            background: "oklch(0.2 0.01 260)",
+            background: "var(--surface_raised_dark)",
           },
           kbd: {
-            background: "oklch(0.3 0.01 260)",
+            background: "var(--surface_elevated_dark)",
             borderColor: "oklch(0.4 0.01 260)",
-            boxShadow: "0 1px 0 oklch(0.2 0.01 260)",
+            boxShadow: "0 1px 0 var(--surface_raised_dark)",
           },
         },
         pre: {
-          fontFamily: "var(--font-code)",
+          fontFamily: "var(--text_font_code)",
           fontSize: "0.875em",
           lineHeight: "1.5",
-          background: "oklch(0.92 0.005 260)",
+          background: "var(--surface_overlay)",
           padding: "1em",
           borderRadius: "0.5em",
           overflowX: "auto",
@@ -559,16 +641,16 @@ export const library: Library = {
           fontSize: "inherit",
         },
         kbd: {
-          fontFamily: "var(--font-code)",
+          fontFamily: "var(--text_font_code)",
           fontSize: "0.875em",
-          background: "oklch(0.95 0.005 260)",
+          background: "var(--surface_raised)",
           border: "1px solid oklch(0.8 0.01 260)",
           borderRadius: "0.25em",
           padding: "0.125em 0.375em",
           boxShadow: "0 1px 0 oklch(0.7 0.01 260)",
         },
         samp: {
-          fontFamily: "var(--font-code)",
+          fontFamily: "var(--text_font_code)",
           fontSize: "0.875em",
         },
         var: {
@@ -745,11 +827,11 @@ export const library: Library = {
           boxShadow: "0 4px 24px oklch(0 0 0 / 0.15)",
         },
         "dialog::backdrop": {
-          background: "oklch(0 0 0 / 0.5)",
+          background: "var(--surface_backdrop)",
         },
         "@media (prefers-color-scheme: dark)": {
           dialog: {
-            background: "oklch(0.2 0.01 260)",
+            background: "var(--surface_raised_dark)",
             color: "oklch(0.9 0.01 260)",
           },
         },
@@ -984,7 +1066,7 @@ export const library: Library = {
           },
           "input, textarea, select": {
             borderColor: "oklch(0.4 0.01 260)",
-            background: "oklch(0.2 0.01 260)",
+            background: "var(--surface_raised_dark)",
           },
         },
         legend: {
@@ -1003,13 +1085,13 @@ export const library: Library = {
           padding: "0.5em 0.75em",
           border: "1px solid oklch(0.8 0.01 260)",
           borderRadius: "0.375em",
-          background: "oklch(1 0 0)",
+          background: "var(--surface_base)",
           color: "inherit",
           width: "100%",
           maxWidth: "100%",
         },
         "input:focus, textarea:focus, select:focus": {
-          outline: "2px solid oklch(var(--primary))",
+          outline: `2px solid oklch(var(--palette_blue))`,
           outlineOffset: "1px",
         },
         "input::placeholder, textarea::placeholder": {
@@ -1018,7 +1100,7 @@ export const library: Library = {
         'input[type="checkbox"], input[type="radio"]': {
           width: "auto",
           marginInlineEnd: "0.5em",
-          accentColor: "oklch(var(--primary))",
+          accentColor: `oklch(var(--palette_blue))`,
         },
         'button, input[type="submit"], input[type="reset"], input[type="button"]': {
           fontFamily: "inherit",
@@ -1028,19 +1110,19 @@ export const library: Library = {
           padding: "0.5em 1em",
           border: "none",
           borderRadius: "0.375em",
-          background: "oklch(var(--primary))",
-          color: "oklch(1 0 0)",
+          background: "var(--surface_interactive)",
+          color: "var(--surface_base)",
           cursor: "pointer",
           width: "auto",
         },
         'button:hover, input[type="submit"]:hover': {
-          background: "oklch(0.55 0.18 250)",
+          background: "var(--surface_interactive_hover)",
         },
         'button:active, input[type="submit"]:active': {
-          background: "oklch(0.5 0.18 250)",
+          background: "var(--surface_interactive_active)",
         },
         "button:focus-visible": {
-          outline: "2px solid oklch(var(--primary))",
+          outline: `2px solid oklch(var(--palette_blue))`,
           outlineOffset: "2px",
         },
         "button:disabled, input:disabled": {
@@ -1064,15 +1146,15 @@ export const library: Library = {
           overflow: "hidden",
         },
         "progress::-webkit-progress-bar": {
-          background: "oklch(0.9 0.005 260)",
+          background: "var(--surface_sunken)",
           borderRadius: "0.25em",
         },
         "progress::-webkit-progress-value": {
-          background: "oklch(var(--primary))",
+          background: "var(--surface_interactive)",
           borderRadius: "0.25em",
         },
         "progress::-moz-progress-bar": {
-          background: "oklch(var(--primary))",
+          background: "var(--surface_interactive)",
           borderRadius: "0.25em",
         },
         meter: {
@@ -1100,11 +1182,11 @@ export const library: Library = {
       description: "Represents the highest level section heading.",
       styles: {
         h1: {
-          fontFamily: "var(--font-heading)",
+          fontFamily: "var(--text_font_heading)",
           fontWeight: "600",
           lineHeight: "1.25",
           marginBlock: "1.5em 0.5em",
-          color: "oklch(var(--heading))",
+          color: `oklch(var(--palette_white))`,
           fontSize: "2rem",
         },
         "h1:first-child": {
@@ -1125,11 +1207,11 @@ export const library: Library = {
       description: "Represents a second-level section heading.",
       styles: {
         h2: {
-          fontFamily: "var(--font-heading)",
+          fontFamily: "var(--text_font_heading)",
           fontWeight: "600",
           lineHeight: "1.25",
           marginBlock: "1.5em 0.5em",
-          color: "oklch(var(--heading))",
+          color: `oklch(var(--palette_white))`,
           fontSize: "1.5rem",
         },
         "h2:first-child": {
@@ -1150,11 +1232,11 @@ export const library: Library = {
       description: "Represents a third-level section heading.",
       styles: {
         h3: {
-          fontFamily: "var(--font-heading)",
+          fontFamily: "var(--text_font_heading)",
           fontWeight: "600",
           lineHeight: "1.25",
           marginBlock: "1.5em 0.5em",
-          color: "oklch(var(--heading))",
+          color: `oklch(var(--palette_white))`,
           fontSize: "1.25rem",
         },
         "h3:first-child": {
@@ -1175,11 +1257,11 @@ export const library: Library = {
       description: "Represents a fourth-level section heading.",
       styles: {
         h4: {
-          fontFamily: "var(--font-heading)",
+          fontFamily: "var(--text_font_heading)",
           fontWeight: "600",
           lineHeight: "1.25",
           marginBlock: "1.5em 0.5em",
-          color: "oklch(var(--heading))",
+          color: `oklch(var(--palette_white))`,
           fontSize: "1rem",
         },
         "h4:first-child": {
@@ -1200,11 +1282,11 @@ export const library: Library = {
       description: "Represents a fifth-level section heading.",
       styles: {
         h5: {
-          fontFamily: "var(--font-heading)",
+          fontFamily: "var(--text_font_heading)",
           fontWeight: "600",
           lineHeight: "1.25",
           marginBlock: "1.5em 0.5em",
-          color: "oklch(var(--heading))",
+          color: `oklch(var(--palette_white))`,
           fontSize: "0.875rem",
           textTransform: "uppercase",
         },
@@ -1226,11 +1308,11 @@ export const library: Library = {
       description: "Represents the lowest level section heading.",
       styles: {
         h6: {
-          fontFamily: "var(--font-heading)",
+          fontFamily: "var(--text_font_heading)",
           fontWeight: "600",
           lineHeight: "1.25",
           marginBlock: "1.5em 0.5em",
-          color: "oklch(var(--heading))",
+          color: `oklch(var(--palette_white))`,
           fontSize: "0.75rem",
           textTransform: "uppercase",
         },
@@ -1486,7 +1568,7 @@ export const library: Library = {
           marginBlock: "0.25em",
         },
         "li::marker": {
-          color: "oklch(var(--neutral))",
+          color: `oklch(var(--palette_gray))`,
         },
       },
       variants: [
@@ -1531,13 +1613,13 @@ export const library: Library = {
       description: "Represents text marked or highlighted for reference or notation.",
       styles: {
         mark: {
-          background: "oklch(0.92 0.15 95)",
+          background: "var(--surface_highlight)",
           paddingInline: "0.125em",
           borderRadius: "0.125em",
         },
         "@media (prefers-color-scheme: dark)": {
           mark: {
-            background: "oklch(0.45 0.12 95)",
+            background: "var(--surface_highlight_dark)",
             color: "oklch(0.95 0.01 95)",
           },
         },
@@ -2223,7 +2305,7 @@ Line 2
         u: {
           textDecoration: "underline",
           textDecorationStyle: "wavy",
-          textDecorationColor: "oklch(var(--danger))",
+          textDecorationColor: `oklch(var(--palette_red))`,
         },
       },
       variants: [
@@ -2591,46 +2673,12 @@ Line 2
         },
         'nav[role="navigation"] a:hover, nav[role="navigation"] a:focus, nav[role="navigation"] button:hover, nav[role="navigation"] button:focus':
           {
-            backgroundColor: "oklch(0.95 0 0)",
+            backgroundColor: "var(--surface_raised)",
             outline: "none",
           },
         'nav[role="navigation"] a[aria-current="page"]': {
           fontWeight: "600",
-          backgroundColor: "oklch(0.92 0.02 250)",
-        },
-        "@media (prefers-color-scheme: dark)": {
-          'nav[role="navigation"] a:hover, nav[role="navigation"] a:focus, nav[role="navigation"] button:hover, nav[role="navigation"] button:focus':
-            {
-              backgroundColor: "oklch(0.25 0.01 260)",
-            },
-          'nav[role="navigation"] a[aria-current="page"]': {
-            backgroundColor: "oklch(0.3 0.02 250)",
-          },
-          'nav[role="navigation"][aria-orientation="horizontal"] > ul > li, nav[role="navigation"]:not([aria-orientation]) > ul > li':
-            {
-              borderColor: "oklch(0.35 0.01 260)",
-            },
-          'nav[role="navigation"][aria-orientation="horizontal"] ul ul, nav[role="navigation"]:not([aria-orientation]) ul ul':
-            {
-              background: "oklch(0.2 0.01 260)",
-              borderColor: "oklch(0.35 0.01 260)",
-              boxShadow: "0 4px 12px oklch(0 0 0 / 0.3)",
-            },
-          'nav[role="navigation"][aria-orientation="vertical"] li': {
-            borderColor: "oklch(0.35 0.01 260)",
-          },
-          'nav[role="navigation"][aria-orientation="vertical"] ul ul': {
-            background: "oklch(0.2 0.01 260)",
-            borderColor: "oklch(0.35 0.01 260)",
-            boxShadow: "0 4px 12px oklch(0 0 0 / 0.3)",
-          },
-          'nav[role="navigation"][data-sticky]': {
-            background: "oklch(0.15 0.01 260)",
-            borderColor: "oklch(0.35 0.01 260)",
-          },
-          'nav[role="navigation"] li[role="separator"]': {
-            background: "oklch(0.35 0.01 260)",
-          },
+          backgroundColor: "var(--surface_overlay)",
         },
         'nav[role="navigation"][aria-orientation="horizontal"] > ul, nav[role="navigation"]:not([aria-orientation]) > ul':
           {
@@ -2653,8 +2701,8 @@ Line 2
             maxHeight: "calc(100vh - 4rem)",
             overflowY: "auto",
             flexDirection: "column",
-            background: "oklch(1 0 0)",
-            border: "1px solid oklch(0.85 0.005 260)",
+            background: "var(--surface_base)",
+            border: "1px solid var(--surface_muted)",
             borderRadius: "0.5em",
             boxShadow: "0 4px 12px oklch(0 0 0 / 0.1)",
             opacity: "0",
@@ -2677,7 +2725,7 @@ Line 2
           flexDirection: "column",
         },
         'nav[role="navigation"][aria-orientation="vertical"] li': {
-          borderBlockEnd: "1px solid oklch(0.9 0 0)",
+          borderBlockEnd: "1px solid var(--surface_sunken)",
         },
         'nav[role="navigation"][aria-orientation="vertical"] li:last-child': {
           borderBlockEnd: "none",
@@ -2690,8 +2738,8 @@ Line 2
           maxHeight: "calc(100vh - 4rem)",
           overflowY: "auto",
           flexDirection: "column",
-          background: "oklch(1 0 0)",
-          border: "1px solid oklch(0.85 0.005 260)",
+          background: "var(--surface_base)",
+          border: "1px solid var(--surface_muted)",
           borderRadius: "0.5em",
           boxShadow: "0 4px 12px oklch(0 0 0 / 0.1)",
           opacity: "0",
@@ -2710,14 +2758,14 @@ Line 2
           position: "sticky",
           top: "0",
           zIndex: "1000",
-          background: "oklch(1 0 0)",
-          borderBlockEnd: "1px solid oklch(0.85 0.005 260)",
+          background: "var(--surface_base)",
+          borderBlockEnd: "1px solid var(--surface_muted)",
         },
         'nav[role="navigation"][data-sticky="bottom"]': {
           top: "auto",
           bottom: "0",
           borderBlockEnd: "none",
-          borderBlockStart: "1px solid oklch(0.85 0.005 260)",
+          borderBlockStart: "1px solid var(--surface_muted)",
         },
         'nav[role="navigation"] li:has(> ul) > a::after, nav[role="navigation"] li:has(> ul) > button::after': {
           content: '""',
@@ -2744,7 +2792,7 @@ Line 2
         'nav[role="navigation"] li[role="separator"]': {
           height: "1px",
           margin: "0.25em 0",
-          background: "oklch(0.85 0.005 260)",
+          background: "var(--surface_muted)",
         },
         'nav[role="navigation"][aria-orientation="horizontal"] > ul > li[role="separator"], nav[role="navigation"]:not([aria-orientation]) > ul > li[role="separator"]':
           {
@@ -2756,6 +2804,40 @@ Line 2
           opacity: "0.5",
           pointerEvents: "none",
           cursor: "not-allowed",
+        },
+        "@media (prefers-color-scheme: dark)": {
+          'nav[role="navigation"] a:hover, nav[role="navigation"] a:focus, nav[role="navigation"] button:hover, nav[role="navigation"] button:focus':
+            {
+              backgroundColor: "var(--surface_overlay_dark)",
+            },
+          'nav[role="navigation"] a[aria-current="page"]': {
+            backgroundColor: "var(--surface_elevated_dark)",
+          },
+          'nav[role="navigation"][aria-orientation="horizontal"] > ul > li, nav[role="navigation"]:not([aria-orientation]) > ul > li':
+            {
+              borderColor: "var(--surface_border_dark)",
+            },
+          'nav[role="navigation"][aria-orientation="horizontal"] ul ul, nav[role="navigation"]:not([aria-orientation]) ul ul':
+            {
+              background: "var(--surface_raised_dark)",
+              borderColor: "var(--surface_border_dark)",
+              boxShadow: "0 4px 12px oklch(0 0 0 / 0.3)",
+            },
+          'nav[role="navigation"][aria-orientation="vertical"] li': {
+            borderColor: "var(--surface_border_dark)",
+          },
+          'nav[role="navigation"][aria-orientation="vertical"] ul ul': {
+            background: "var(--surface_raised_dark)",
+            borderColor: "var(--surface_border_dark)",
+            boxShadow: "0 4px 12px oklch(0 0 0 / 0.3)",
+          },
+          'nav[role="navigation"][data-sticky]': {
+            background: "var(--surface_base_dark)",
+            borderColor: "var(--surface_border_dark)",
+          },
+          'nav[role="navigation"] li[role="separator"]': {
+            background: "var(--surface_border_dark)",
+          },
         },
       },
       example: [
@@ -2969,281 +3051,7 @@ Line 2
     },
     {
       title: "Tabs",
-      description:
-        "A set of layered content panels where only one panel is displayed at a time. Uses native radio inputs for state management, providing full keyboard navigation and accessibility without JavaScript.",
-      styles: {
-        // Container
-        '[role="tablist"]': {
-          display: "flex",
-          flexDirection: "column",
-        },
-        // Tab list wrapper
-        '[role="tablist"] > div:first-child': {
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "0",
-          borderBlockEnd: "2px solid oklch(0.85 0.005 260)",
-          marginBlockEnd: "0",
-        },
-        // Hide radio inputs visually but keep accessible
-        '[role="tablist"] input[type="radio"]': {
-          position: "absolute",
-          opacity: "0",
-          pointerEvents: "none",
-          width: "1px",
-          height: "1px",
-          margin: "-1px",
-          overflow: "hidden",
-          clip: "rect(0, 0, 0, 0)",
-          whiteSpace: "nowrap",
-          border: "0",
-        },
-        // Tab labels (buttons)
-        '[role="tablist"] label[role="tab"]': {
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "0.5em",
-          padding: "0.75em 1.25em",
-          cursor: "pointer",
-          border: "2px solid transparent",
-          borderBlockEnd: "none",
-          borderRadius: "0.5em 0.5em 0 0",
-          marginBlockEnd: "-2px",
-          background: "transparent",
-          color: "inherit",
-          fontWeight: "500",
-          transition: "background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease",
-          position: "relative",
-        },
-        '[role="tablist"] label[role="tab"]:hover': {
-          backgroundColor: "oklch(0.95 0 0)",
-        },
-        // Focus styles for keyboard navigation
-        '[role="tablist"] input[type="radio"]:focus-visible + label[role="tab"]': {
-          outline: "2px solid oklch(0.65 0.18 250)",
-          outlineOffset: "2px",
-        },
-        // Selected tab styling
-        '[role="tablist"] input[type="radio"]:checked + label[role="tab"]': {
-          backgroundColor: "oklch(1 0 0)",
-          borderColor: "oklch(0.85 0.005 260)",
-          color: "oklch(0.25 0.01 260)",
-          fontWeight: "600",
-        },
-        '[role="tablist"] input[type="radio"]:checked + label[role="tab"]::after': {
-          content: '""',
-          position: "absolute",
-          bottom: "-2px",
-          left: "0",
-          right: "0",
-          height: "2px",
-          backgroundColor: "oklch(1 0 0)",
-        },
-        // Tab panels container
-        '[role="tablist"] > div:last-child': {
-          position: "relative",
-        },
-        // Tab panels - all hidden by default
-        '[role="tablist"] [role="tabpanel"]': {
-          display: "none",
-          padding: "1.5em",
-          border: "2px solid oklch(0.85 0.005 260)",
-          borderBlockStart: "none",
-          borderRadius: "0 0 0.5em 0.5em",
-          backgroundColor: "oklch(1 0 0)",
-        },
-        // Show panel when corresponding radio is checked using :has()
-        '[role="tablist"]:has(#tab1:checked) [role="tabpanel"][aria-labelledby="tab1-label"]': {
-          display: "block",
-        },
-        '[role="tablist"]:has(#tab2:checked) [role="tabpanel"][aria-labelledby="tab2-label"]': {
-          display: "block",
-        },
-        '[role="tablist"]:has(#tab3:checked) [role="tabpanel"][aria-labelledby="tab3-label"]': {
-          display: "block",
-        },
-        '[role="tablist"]:has(#tab4:checked) [role="tabpanel"][aria-labelledby="tab4-label"]': {
-          display: "block",
-        },
-        '[role="tablist"]:has(#tab5:checked) [role="tabpanel"][aria-labelledby="tab5-label"]': {
-          display: "block",
-        },
-        // Disabled tabs
-        '[role="tablist"] label[role="tab"][aria-disabled="true"]': {
-          opacity: "0.5",
-          cursor: "not-allowed",
-          pointerEvents: "none",
-        },
-        // Dark mode
-        "@media (prefers-color-scheme: dark)": {
-          '[role="tablist"] > div:first-child': {
-            borderColor: "oklch(0.35 0.01 260)",
-          },
-          '[role="tablist"] label[role="tab"]:hover': {
-            backgroundColor: "oklch(0.25 0.01 260)",
-          },
-          '[role="tablist"] input[type="radio"]:checked + label[role="tab"]': {
-            backgroundColor: "oklch(0.2 0.01 260)",
-            borderColor: "oklch(0.35 0.01 260)",
-            color: "oklch(0.95 0.005 260)",
-          },
-          '[role="tablist"] input[type="radio"]:checked + label[role="tab"]::after': {
-            backgroundColor: "oklch(0.2 0.01 260)",
-          },
-          '[role="tablist"] [role="tabpanel"]': {
-            borderColor: "oklch(0.35 0.01 260)",
-            backgroundColor: "oklch(0.2 0.01 260)",
-          },
-        },
-      },
-      example: [
-        {
-          title: "Basic Tabs",
-          description:
-            "A simple tabbed interface using radio inputs for state management. Fully keyboard accessible - use Tab to focus, arrow keys to navigate between tabs.",
-          preview: `<div role="tablist" aria-label="Product information">
-  <div>
-    <input type="radio" name="tabs-basic" id="tab1" checked>
-    <label role="tab" id="tab1-label" for="tab1" aria-controls="panel1">Overview</label>
-    <input type="radio" name="tabs-basic" id="tab2">
-    <label role="tab" id="tab2-label" for="tab2" aria-controls="panel2">Features</label>
-    <input type="radio" name="tabs-basic" id="tab3">
-    <label role="tab" id="tab3-label" for="tab3" aria-controls="panel3">Reviews</label>
-  </div>
-  <div>
-    <div role="tabpanel" id="panel1" aria-labelledby="tab1-label">
-      <h4>Product Overview</h4>
-      <p>This is the main overview content for the product. It provides a general introduction and key highlights.</p>
-    </div>
-    <div role="tabpanel" id="panel2" aria-labelledby="tab2-label">
-      <h4>Key Features</h4>
-      <ul>
-        <li>Feature one with detailed description</li>
-        <li>Feature two with benefits explained</li>
-        <li>Feature three highlighting unique aspects</li>
-      </ul>
-    </div>
-    <div role="tabpanel" id="panel3" aria-labelledby="tab3-label">
-      <h4>Customer Reviews</h4>
-      <p>See what our customers are saying about this product.</p>
-      <blockquote>"Excellent quality and great value!" - Happy Customer</blockquote>
-    </div>
-  </div>
-</div>`,
-          code: `<div role="tablist" aria-label="Example tabs">
-  <div>
-    <input type="radio" name="tabs-example" id="tab1" checked>
-    <label role="tab" id="tab1-label" for="tab1" aria-controls="panel1">Tab 1</label>
-    <input type="radio" name="tabs-example" id="tab2">
-    <label role="tab" id="tab2-label" for="tab2" aria-controls="panel2">Tab 2</label>
-    <input type="radio" name="tabs-example" id="tab3">
-    <label role="tab" id="tab3-label" for="tab3" aria-controls="panel3">Tab 3</label>
-  </div>
-  <div>
-    <div role="tabpanel" id="panel1" aria-labelledby="tab1-label">
-      <p>Content for tab 1</p>
-    </div>
-    <div role="tabpanel" id="panel2" aria-labelledby="tab2-label">
-      <p>Content for tab 2</p>
-    </div>
-    <div role="tabpanel" id="panel3" aria-labelledby="tab3-label">
-      <p>Content for tab 3</p>
-    </div>
-  </div>
-</div>`,
-        },
-        {
-          title: "Tabs with Icons",
-          description: "Tabs can include icons alongside text for enhanced visual communication.",
-          preview: `<div role="tablist" aria-label="Settings sections">
-  <div>
-    <input type="radio" name="tabs-icons" id="tab-profile" checked>
-    <label role="tab" id="tab-profile-label" for="tab-profile" aria-controls="panel-profile">👤 Profile</label>
-    <input type="radio" name="tabs-icons" id="tab-security">
-    <label role="tab" id="tab-security-label" for="tab-security" aria-controls="panel-security">🔒 Security</label>
-    <input type="radio" name="tabs-icons" id="tab-notifications">
-    <label role="tab" id="tab-notifications-label" for="tab-notifications" aria-controls="panel-notifications">🔔 Notifications</label>
-  </div>
-  <div>
-    <div role="tabpanel" id="panel-profile" aria-labelledby="tab-profile-label">
-      <h4>Profile Settings</h4>
-      <p>Manage your personal information, avatar, and display preferences.</p>
-    </div>
-    <div role="tabpanel" id="panel-security" aria-labelledby="tab-security-label">
-      <h4>Security Settings</h4>
-      <p>Update your password, enable two-factor authentication, and review active sessions.</p>
-    </div>
-    <div role="tabpanel" id="panel-notifications" aria-labelledby="tab-notifications-label">
-      <h4>Notification Preferences</h4>
-      <p>Control which notifications you receive via email, push, or SMS.</p>
-    </div>
-  </div>
-</div>`,
-          code: `<div role="tablist" aria-label="Settings">
-  <div>
-    <input type="radio" name="tabs-icons" id="tab-profile" checked>
-    <label role="tab" id="tab-profile-label" for="tab-profile">👤 Profile</label>
-    <input type="radio" name="tabs-icons" id="tab-security">
-    <label role="tab" id="tab-security-label" for="tab-security">🔒 Security</label>
-  </div>
-  <div>
-    <div role="tabpanel" aria-labelledby="tab-profile-label">
-      <p>Profile content...</p>
-    </div>
-    <div role="tabpanel" aria-labelledby="tab-security-label">
-      <p>Security content...</p>
-    </div>
-  </div>
-</div>`,
-        },
-        {
-          title: "Tabs with Default Selection",
-          description: "Any tab can be pre-selected by adding the checked attribute to the corresponding radio input.",
-          preview: `<div role="tablist" aria-label="Documentation sections">
-  <div>
-    <input type="radio" name="tabs-default" id="tab-intro">
-    <label role="tab" id="tab-intro-label" for="tab-intro" aria-controls="panel-intro">Introduction</label>
-    <input type="radio" name="tabs-default" id="tab-guide" checked>
-    <label role="tab" id="tab-guide-label" for="tab-guide" aria-controls="panel-guide">Quick Start</label>
-    <input type="radio" name="tabs-default" id="tab-api">
-    <label role="tab" id="tab-api-label" for="tab-api" aria-controls="panel-api">API Reference</label>
-  </div>
-  <div>
-    <div role="tabpanel" id="panel-intro" aria-labelledby="tab-intro-label">
-      <h4>Introduction</h4>
-      <p>Welcome to our documentation. This section covers the basics.</p>
-    </div>
-    <div role="tabpanel" id="panel-guide" aria-labelledby="tab-guide-label">
-      <h4>Quick Start Guide</h4>
-      <p>Get up and running in minutes with our step-by-step guide.</p>
-      <ol>
-        <li>Install the package</li>
-        <li>Import the module</li>
-        <li>Configure your settings</li>
-        <li>Start building!</li>
-      </ol>
-    </div>
-    <div role="tabpanel" id="panel-api" aria-labelledby="tab-api-label">
-      <h4>API Reference</h4>
-      <p>Detailed documentation of all available methods and properties.</p>
-    </div>
-  </div>
-</div>`,
-          code: `<!-- Use checked on whichever tab should be selected by default -->
-<div role="tablist" aria-label="Docs">
-  <div>
-    <input type="radio" name="tabs" id="tab-intro">
-    <label role="tab" for="tab-intro">Intro</label>
-    <input type="radio" name="tabs" id="tab-guide" checked>
-    <label role="tab" for="tab-guide">Guide</label>
-  </div>
-  <div>
-    <div role="tabpanel" aria-labelledby="tab-intro-label">...</div>
-    <div role="tabpanel" aria-labelledby="tab-guide-label">...</div>
-  </div>
-</div>`,
-        },
-      ],
+      description: "A set of layered content panels where only one panel is displayed at a time.",
     },
     {
       title: "Toolbar",
@@ -3380,8 +3188,86 @@ function compile() {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   </body>
 </html>`;
-
   Bun.file("docs/before.html").write(html);
+
+  // Helper to convert camelCase to kebab-case
+  const toKebab = (str: string) => str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+
+  // Helper to render a style object to CSS
+  const renderStyles = (styles: Record<string, unknown>): string => {
+    return Object.entries(styles)
+      .map(([prop, value]) => `  ${toKebab(prop)}: ${value};`)
+      .join("\n");
+  };
+
+  // Helper to render a selector block (handles nested media queries)
+  const renderBlock = (selector: string, value: unknown): string => {
+    if (selector.startsWith("@media")) {
+      // It's a media query - value is an object of selectors
+      const innerRules = Object.entries(value as Record<string, unknown>)
+        .map(
+          ([innerSelector, innerStyles]) =>
+            `  ${innerSelector} {\n${renderStyles(innerStyles as Record<string, unknown>)
+              .split("\n")
+              .map((l) => "  " + l)
+              .join("\n")}\n  }`,
+        )
+        .join("\n");
+      return `${selector} {\n${innerRules}\n}`;
+    }
+    // Regular selector
+    return `${selector} {\n${renderStyles(value as Record<string, unknown>)}\n}`;
+  };
+
+  // Render CSS
+  const css = `/* Before Style - A classless, semantic CSS reset for HTML5 elements and accessible components */
+/* Version: ${library.version} */
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+${Object.entries(library.reset)
+  .map(([selector, styles]) => renderBlock(selector, styles))
+  .join("\n\n")}
+
+/* ==========================================================================
+   Tokens (CSS Custom Properties)
+   ========================================================================== */
+
+:root {
+${Object.entries(library.tokens)
+  .map(([token, value]) => `  ${token}: ${value};`)
+  .join("\n")}
+}
+
+/* ==========================================================================
+   Elements
+   ========================================================================== */
+
+${library.elements
+  .filter((el) => el.styles && Object.keys(el.styles).length > 0)
+  .map((el) =>
+    Object.entries(el.styles)
+      .map(([selector, styles]) => renderBlock(selector, styles))
+      .join("\n\n"),
+  )
+  .join("\n\n")}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+${library.components
+  .filter((comp) => comp.styles && Object.keys(comp.styles).length > 0)
+  .map((comp) =>
+    Object.entries(comp.styles!)
+      .map(([selector, styles]) => renderBlock(selector, styles))
+      .join("\n\n"),
+  )
+  .join("\n\n")}
+`;
+  Bun.file("docs/before.css").write(css);
 }
 
 compile();

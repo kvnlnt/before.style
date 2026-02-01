@@ -3,7 +3,7 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "before": "bun before.ts"
+    "pkg": "bun build.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
