@@ -1,6 +1,6 @@
-# Before 1.0.0 - Agent Skill Guide
+# Before 1.0.0
 
-## Strategy
+## Goal
 Before is a classless, semantic style reset that styles HTML5 elements directly, providing accessible defaults without relying on
 <a target="_blank" href="https://css-tricks.com/different-ways-to-write-css/">utility-first CSS libraries</a> or overly complex frameworks.
 It is themeable (via <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS custom properties</a>) and designed for
@@ -9,8 +9,6 @@ By targeting <a target="_blank" href="https://developer.mozilla.org/en-US/docs/G
 All components are implemented according to the
 <a href="https://www.w3.org/WAI/ARIA/apg/patterns/">ARIA Authoring Practices Guide (APG)</a>, ensuring they are accessible, predictable, and keyboard-friendly, so your semantic HTML remains usable for everyone.
     
-
-This document teaches AI agents how to write correct HTML markup that works with the Before Style classless CSS library.
 
 ## Core Principle: Classless CSS
 
@@ -572,7 +570,7 @@ Represents a dialog box or other interactive component.
 A modal dialog box for user interaction.
 
 ```html
-<dialog open>
+<dialog>
   <p>This is a dialog box.</p>
   <button>Close</button>
 </dialog>
@@ -1880,13 +1878,17 @@ A simple accordion using native details/summary elements with exclusive behavior
 
 ```html
 <div role="region" aria-label="FAQ">
-  <details name="accordion-group">
-    <summary>Section Title</summary>
-    <p>Section content...</p>
+  <details name="accordion-basic">
+    <summary>What is an accordion?</summary>
+    <p>An accordion is a vertically stacked set of interactive headings that each reveal a section of content.</p>
   </details>
-  <details name="accordion-group">
-    <summary>Another Section</summary>
-    <p>More content...</p>
+  <details name="accordion-basic">
+    <summary>When should I use an accordion?</summary>
+    <p>Use accordions when you have multiple sections of content that users may want to browse through without leaving the page.</p>
+  </details>
+  <details name="accordion-basic">
+    <summary>Are accordions accessible?</summary>
+    <p>Yes, when built with native details/summary elements, accordions are keyboard navigable and screen reader friendly.</p>
   </details>
 </div>
 ```
@@ -1896,19 +1898,29 @@ A simple accordion using native details/summary elements with exclusive behavior
 An accordion where one panel starts expanded using the open attribute.
 
 ```html
-<nav aria-label="Categories">
-  <details name="nav-accordion" open>
-    <summary>First Section (Open)</summary>
+<nav aria-label="Product categories">
+  <details name="accordion-open" open>
+    <summary>Electronics</summary>
     <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
+      <li>Phones</li>
+      <li>Laptops</li>
+      <li>Tablets</li>
     </ul>
   </details>
-  <details name="nav-accordion">
-    <summary>Second Section</summary>
+  <details name="accordion-open">
+    <summary>Clothing</summary>
     <ul>
-      <li>Item 3</li>
-      <li>Item 4</li>
+      <li>Shirts</li>
+      <li>Pants</li>
+      <li>Shoes</li>
+    </ul>
+  </details>
+  <details name="accordion-open">
+    <summary>Home & Garden</summary>
+    <ul>
+      <li>Furniture</li>
+      <li>Decor</li>
+      <li>Plants</li>
     </ul>
   </details>
 </nav>
@@ -1919,13 +1931,28 @@ An accordion where one panel starts expanded using the open attribute.
 Accordions can be nested to create hierarchical content structures.
 
 ```html
-<section aria-labelledby="section-title">
-  <h3 id="section-title">Section Title</h3>
-  <details name="parent-accordion">
-    <summary>Parent Item</summary>
+<section aria-labelledby="docs-heading">
+  <h3 id="docs-heading">Documentation</h3>
+  <details name="accordion-nested">
+    <summary>Getting Started</summary>
     <details>
-      <summary>Child Item</summary>
-      <p>Nested content...</p>
+      <summary>Installation</summary>
+      <p>Run npm install to get started with the project.</p>
+    </details>
+    <details>
+      <summary>Configuration</summary>
+      <p>Edit the config file to customize your setup.</p>
+    </details>
+  </details>
+  <details name="accordion-nested">
+    <summary>API Reference</summary>
+    <details>
+      <summary>Components</summary>
+      <p>Learn about available component APIs.</p>
+    </details>
+    <details>
+      <summary>Utilities</summary>
+      <p>Explore utility functions and helpers.</p>
     </details>
   </details>
 </section>
@@ -1946,7 +1973,7 @@ A simple alert for displaying messages to users.
 
 ```html
 <div role="alert">
-  <strong>Notice:</strong> Your message here.
+  <strong>Notice:</strong> Your session will expire in 5 minutes.
 </div>
 ```
 
@@ -1955,10 +1982,18 @@ A simple alert for displaying messages to users.
 Alerts with different semantic tones using data-tone attribute.
 
 ```html
-<div role="alert" data-tone="success">Success message</div>
-<div role="alert" data-tone="warning">Warning message</div>
-<div role="alert" data-tone="error">Error message</div>
-<div role="alert" data-tone="info">Info message</div>
+<div role="alert" data-tone="success">
+  <strong>Success!</strong> Your changes have been saved.
+</div>
+<div role="alert" data-tone="warning">
+  <strong>Warning:</strong> This action cannot be undone.
+</div>
+<div role="alert" data-tone="error">
+  <strong>Error:</strong> Failed to save changes.
+</div>
+<div role="alert" data-tone="info">
+  <strong>Info:</strong> New features are available.
+</div>
 ```
 
 ---
@@ -1978,8 +2013,9 @@ A simple breadcrumb navigation showing the page hierarchy.
 <nav aria-label="Breadcrumb">
   <ol>
     <li><a href="#">Home</a></li>
-    <li><a href="#">Category</a></li>
-    <li><a href="#" aria-current="page">Current Page</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Electronics</a></li>
+    <li><a href="#" aria-current="page">Laptops</a></li>
   </ol>
 </nav>
 ```
@@ -1998,11 +2034,13 @@ An interactive element that triggers an action when activated by the user.
 Different button styles using data-variant attribute.
 
 ```html
-<button>Primary</button>
-<button data-variant="secondary">Secondary</button>
-<button data-variant="ghost">Ghost</button>
-<button data-variant="danger">Danger</button>
-<button disabled>Disabled</button>
+<div style="display: flex; gap: 1em; flex-wrap: wrap;">
+  <button>Primary</button>
+  <button data-variant="secondary">Secondary</button>
+  <button data-variant="ghost">Ghost</button>
+  <button data-variant="danger">Danger</button>
+  <button disabled>Disabled</button>
+</div>
 ```
 
 #### Button as Link
@@ -2027,13 +2065,16 @@ A rotating set of content items that can be navigated through sequentially.
 A simple image carousel with navigation buttons.
 
 ```html
-<section aria-roledescription="carousel" aria-label="Featured">
+<section aria-roledescription="carousel" aria-label="Featured images">
   <div aria-live="polite">
-    <article aria-roledescription="slide" aria-label="Slide 1">
-      <img src="..." alt="...">
+    <article aria-roledescription="slide" aria-label="Slide 1 of 3">
+      <img src="https://picsum.photos/400/200?random=1" alt="Sample image 1" style="width: 100%;">
     </article>
-    <article aria-roledescription="slide" aria-label="Slide 2">
-      <img src="..." alt="...">
+    <article aria-roledescription="slide" aria-label="Slide 2 of 3">
+      <img src="https://picsum.photos/400/200?random=2" alt="Sample image 2" style="width: 100%;">
+    </article>
+    <article aria-roledescription="slide" aria-label="Slide 3 of 3">
+      <img src="https://picsum.photos/400/200?random=3" alt="Sample image 3" style="width: 100%;">
     </article>
   </div>
 </section>
@@ -2053,9 +2094,12 @@ A form control that allows users to select one or more options from a set.
 Checkboxes in various states.
 
 ```html
-<label><input type="checkbox"> Option</label>
-<label><input type="checkbox" checked> Selected</label>
-<label><input type="checkbox" disabled> Disabled</label>
+<div style="display: flex; flex-direction: column; gap: 0.5em;">
+  <label><input type="checkbox"> Unchecked</label>
+  <label><input type="checkbox" checked> Checked</label>
+  <label><input type="checkbox" disabled> Disabled</label>
+  <label><input type="checkbox" checked disabled> Checked & Disabled</label>
+</div>
 ```
 
 ---
@@ -2073,10 +2117,12 @@ A text input with an associated listbox.
 
 ```html
 <div role="combobox" aria-expanded="true" aria-haspopup="listbox">
-  <input type="text" aria-autocomplete="list">
+  <input type="text" placeholder="Select a fruit..." aria-autocomplete="list">
   <ul role="listbox">
-    <li role="option">Option 1</li>
-    <li role="option" aria-selected="true">Option 2</li>
+    <li role="option">Apple</li>
+    <li role="option" aria-selected="true">Banana</li>
+    <li role="option">Cherry</li>
+    <li role="option">Date</li>
   </ul>
 </div>
 ```
@@ -2095,9 +2141,11 @@ A modal or non-modal window that appears above the page content requiring user i
 A modal dialog with header and footer.
 
 ```html
-<dialog open>
-  <header><h3>Title</h3></header>
-  <p>Content...</p>
+<dialog>
+  <header>
+    <h3>Confirm Action</h3>
+  </header>
+  <p>Are you sure you want to proceed with this action?</p>
   <footer>
     <button data-variant="secondary">Cancel</button>
     <button>Confirm</button>
@@ -2120,8 +2168,9 @@ A collapsible section using the native details/summary elements.
 
 ```html
 <details>
-  <summary>Toggle content</summary>
-  <p>Hidden content...</p>
+  <summary>Click to reveal more information</summary>
+  <p>This content is hidden by default and revealed when the summary is clicked.</p>
+  <p>You can include any content here.</p>
 </details>
 ```
 
@@ -2131,8 +2180,8 @@ A disclosure that starts in the open state.
 
 ```html
 <details open>
-  <summary>Expanded</summary>
-  <p>Visible content...</p>
+  <summary>Already expanded</summary>
+  <p>This content is visible by default because the open attribute is present.</p>
 </details>
 ```
 
@@ -2150,10 +2199,18 @@ A scrollable list of articles where new content may be added as the user scrolls
 A feed of articles with proper ARIA attributes.
 
 ```html
-<section role="feed" aria-label="Feed">
-  <article aria-posinset="1" aria-setsize="-1" tabindex="0">
-    <h4>Article Title</h4>
-    <p>Content...</p>
+<section role="feed" aria-label="News feed">
+  <article aria-posinset="1" aria-setsize="3" tabindex="0">
+    <h4>First Article</h4>
+    <p>Content of the first article...</p>
+  </article>
+  <article aria-posinset="2" aria-setsize="3" tabindex="0">
+    <h4>Second Article</h4>
+    <p>Content of the second article...</p>
+  </article>
+  <article aria-posinset="3" aria-setsize="3" tabindex="0">
+    <h4>Third Article</h4>
+    <p>Content of the third article...</p>
   </article>
 </section>
 ```
@@ -2172,12 +2229,21 @@ An interactive two-dimensional data structure with rows and columns of cells.
 An interactive grid with keyboard navigation support.
 
 ```html
-<div role="grid" aria-label="Data" style="grid-template-columns: repeat(3, 1fr);">
+<div role="grid" aria-label="Sample data" style="grid-template-columns: repeat(3, 1fr);">
   <div role="row">
-    <div role="columnheader">Header</div>
+    <div role="columnheader">Name</div>
+    <div role="columnheader">Email</div>
+    <div role="columnheader">Role</div>
   </div>
   <div role="row">
-    <div role="gridcell" tabindex="0">Cell</div>
+    <div role="gridcell" tabindex="0">Alice</div>
+    <div role="gridcell">alice@example.com</div>
+    <div role="gridcell">Admin</div>
+  </div>
+  <div role="row">
+    <div role="gridcell" tabindex="-1">Bob</div>
+    <div role="gridcell">bob@example.com</div>
+    <div role="gridcell">User</div>
   </div>
 </div>
 ```
@@ -2197,8 +2263,8 @@ A header element at the top of a page.
 
 ```html
 <header>
-  <h1>Title</h1>
-  <p>Description</p>
+  <h1>Page Title</h1>
+  <p>A brief description of the page content.</p>
 </header>
 ```
 
@@ -2216,13 +2282,23 @@ Semantic regions that help assistive technology users navigate and understand pa
 Semantic landmark elements for page structure.
 
 ```html
-<header>Site header</header>
-<nav>Navigation</nav>
-<main>
-  <aside>Sidebar</aside>
-  Main content
-</main>
-<footer>Footer</footer>
+<div style="border: 1px dashed var(--surface_muted); padding: 1em;">
+  <header style="padding: 0.5em; background: var(--surface_raised);">
+    &lt;header&gt; - Page header
+  </header>
+  <nav style="padding: 0.5em; background: var(--surface_overlay); margin-block: 0.5em;">
+    &lt;nav&gt; - Navigation
+  </nav>
+  <main style="padding: 0.5em; background: var(--surface_raised);">
+    &lt;main&gt; - Main content
+    <aside style="margin: 0.5em 0;">
+      &lt;aside&gt; - Sidebar
+    </aside>
+  </main>
+  <footer style="padding: 0.5em; background: var(--surface_overlay);">
+    &lt;footer&gt; - Page footer
+  </footer>
+</div>
 ```
 
 ---
@@ -2239,11 +2315,13 @@ An interactive reference to a resource that navigates the user when activated.
 Different link states and types.
 
 ```html
-<a href="#">Link</a>
-<a href="#" aria-current="page">Current</a>
-<a href="#" aria-disabled="true">Disabled</a>
-<a href="#" target="_blank">External</a>
-<a href="#" download>Download</a>
+<div style="display: flex; flex-direction: column; gap: 0.5em;">
+  <a href="#">Standard Link</a>
+  <a href="#" aria-current="page">Current Page</a>
+  <a href="#" aria-disabled="true">Disabled Link</a>
+  <a href="#" target="_blank">External Link</a>
+  <a href="#" download>Download Link</a>
+</div>
 ```
 
 ---
@@ -2260,9 +2338,11 @@ A widget that allows users to select one or more items from a list of choices.
 A listbox for selecting a single option.
 
 ```html
-<ul role="listbox" aria-label="Options">
-  <li role="option" aria-selected="false" tabindex="0">Option 1</li>
-  <li role="option" aria-selected="true" tabindex="-1">Option 2</li>
+<ul role="listbox" aria-label="Select a color">
+  <li role="option" aria-selected="false" tabindex="0">Red</li>
+  <li role="option" aria-selected="true" tabindex="-1">Green</li>
+  <li role="option" aria-selected="false" tabindex="-1">Blue</li>
+  <li role="option" aria-disabled="true" tabindex="-1">Yellow (unavailable)</li>
 </ul>
 ```
 
@@ -2286,12 +2366,29 @@ A horizontal navigation menu with dropdown submenus. Uses aria-orientation='hori
     <li>
       <a href="#">Products</a>
       <ul>
-        <li><a href="#">Submenu Item</a></li>
+        <li><a href="#">Electronics</a></li>
+        <li><a href="#">Clothing</a></li>
         <li role="separator"></li>
-        <li><a href="#">Another Item</a></li>
+        <li><a href="#">View All</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Services</a>
+      <ul>
+        <li><a href="#">Consulting</a></li>
+        <li>
+          <a href="#">Development</a>
+          <ul>
+            <li><a href="#">Web</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Desktop</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Support</a></li>
       </ul>
     </li>
     <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
   </ul>
 </nav>
 ```
@@ -2301,17 +2398,30 @@ A horizontal navigation menu with dropdown submenus. Uses aria-orientation='hori
 A vertical sidebar-style menu with flyout submenus. Set aria-orientation='vertical' for vertical layout.
 
 ```html
-<nav role="navigation" aria-label="Sidebar" aria-orientation="vertical">
+<nav role="navigation" aria-label="Sidebar menu" aria-orientation="vertical" style="width: 200px;">
   <ul>
-    <li><a href="#">Item 1</a></li>
+    <li><a href="#" aria-current="page">Dashboard</a></li>
     <li>
-      <a href="#">With Submenu</a>
+      <a href="#">Settings</a>
       <ul>
-        <li><a href="#">Sub-item</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="#">Notifications</a></li>
       </ul>
     </li>
     <li role="separator"></li>
-    <li><a href="#" aria-disabled="true">Disabled</a></li>
+    <li><a href="#">Users</a></li>
+    <li>
+      <a href="#">Reports</a>
+      <ul>
+        <li><a href="#">Monthly</a></li>
+        <li><a href="#">Quarterly</a></li>
+        <li><a href="#">Annual</a></li>
+      </ul>
+    </li>
+    <li role="separator"></li>
+    <li><a href="#" aria-disabled="true">Archived</a></li>
+    <li><a href="#">Logout</a></li>
   </ul>
 </nav>
 ```
@@ -2321,19 +2431,13 @@ A vertical sidebar-style menu with flyout submenus. Set aria-orientation='vertic
 A menu that sticks to the top of the viewport while scrolling. Use data-sticky for top, or data-sticky='bottom' for bottom.
 
 ```html
-<!-- Sticky top -->
-<nav role="navigation" aria-label="Main" data-sticky>
+<nav role="navigation" aria-label="Sticky navigation" aria-orientation="horizontal" data-sticky>
   <ul>
     <li><a href="#">Home</a></li>
-    <li><a href="#">About</a></li>
-  </ul>
-</nav>
-
-<!-- Sticky bottom -->
-<nav role="navigation" aria-label="Footer" data-sticky="bottom">
-  <ul>
-    <li><a href="#">Privacy</a></li>
-    <li><a href="#">Terms</a></li>
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Pricing</a></li>
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">Blog</a></li>
   </ul>
 </nav>
 ```
@@ -2343,24 +2447,39 @@ A menu that sticks to the top of the viewport while scrolling. Use data-sticky f
 Menus can be nested multiple levels deep with flyout submenus.
 
 ```html
-<nav role="navigation" aria-label="Menu">
+<nav role="navigation" aria-label="Category menu" aria-orientation="horizontal">
   <ul>
     <li>
-      <a href="#">Level 1</a>
+      <a href="#">Categories</a>
       <ul>
         <li>
-          <a href="#">Level 2</a>
+          <a href="#">Electronics</a>
           <ul>
             <li>
-              <a href="#">Level 3</a>
+              <a href="#">Computers</a>
               <ul>
-                <li><a href="#">Level 4</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Desktops</a></li>
+                <li><a href="#">Tablets</a></li>
               </ul>
             </li>
+            <li><a href="#">Phones</a></li>
+            <li><a href="#">Accessories</a></li>
           </ul>
         </li>
+        <li>
+          <a href="#">Clothing</a>
+          <ul>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Home & Garden</a></li>
       </ul>
     </li>
+    <li><a href="#">Deals</a></li>
+    <li><a href="#">New Arrivals</a></li>
   </ul>
 </nav>
 ```
@@ -2379,7 +2498,11 @@ A graphical display of a numeric value within a known range.
 Meters showing different value ranges.
 
 ```html
-<meter value="0.5" min="0" max="1" low="0.25" high="0.75" optimum="0.5">50%</meter>
+<div style="display: flex; flex-direction: column; gap: 1em;">
+  <label>Storage (optimal): <meter value="0.3" min="0" max="1" low="0.25" high="0.75" optimum="0.1"></meter></label>
+  <label>Memory (suboptimal): <meter value="0.7" min="0" max="1" low="0.25" high="0.75" optimum="0.1"></meter></label>
+  <label>CPU (critical): <meter value="0.95" min="0" max="1" low="0.25" high="0.75" optimum="0.1"></meter></label>
+</div>
 ```
 
 ---
@@ -2396,10 +2519,12 @@ A group of mutually exclusive options where only one can be selected at a time.
 A group of radio buttons for single selection.
 
 ```html
-<fieldset role="radiogroup">
-  <legend>Options:</legend>
-  <label><input type="radio" name="option"> Option 1</label>
-  <label><input type="radio" name="option" checked> Option 2</label>
+<fieldset role="radiogroup" aria-label="Favorite color">
+  <legend>Choose a color:</legend>
+  <label><input type="radio" name="color" value="red"> Red</label>
+  <label><input type="radio" name="color" value="green" checked> Green</label>
+  <label><input type="radio" name="color" value="blue"> Blue</label>
+  <label><input type="radio" name="color" value="yellow" disabled> Yellow (unavailable)</label>
 </fieldset>
 ```
 
@@ -2417,7 +2542,11 @@ An input control that allows users to select a value from a range by dragging a 
 A slider for selecting a value within a range.
 
 ```html
-<label>Value: <input type="range" min="0" max="100" value="50"></label>
+<div style="display: flex; flex-direction: column; gap: 1em;">
+  <label>Volume: <input type="range" min="0" max="100" value="50"></label>
+  <label>Brightness: <input type="range" min="0" max="100" value="75"></label>
+  <label>Disabled: <input type="range" min="0" max="100" value="25" disabled></label>
+</div>
 ```
 
 ---
@@ -2434,7 +2563,11 @@ A numeric input field with increment and decrement buttons for adjusting values.
 A numeric input with spin buttons.
 
 ```html
-<label>Value: <input type="number" min="0" max="100" value="1"></label>
+<div style="display: flex; flex-direction: column; gap: 1em;">
+  <label>Quantity: <input type="number" min="0" max="100" value="1"></label>
+  <label>Price: <input type="number" min="0" step="0.01" value="9.99"></label>
+  <label>Disabled: <input type="number" value="5" disabled></label>
+</div>
 ```
 
 ---
@@ -2451,8 +2584,20 @@ A toggle control that represents an on/off or enabled/disabled state.
 Toggle switches for on/off states.
 
 ```html
-<span role="switch" aria-checked="false" tabindex="0"></span>
-<span role="switch" aria-checked="true" tabindex="0"></span>
+<div style="display: flex; flex-direction: column; gap: 1em;">
+  <label style="display: flex; align-items: center; gap: 0.75em;">
+    <span role="switch" aria-checked="false" tabindex="0"></span>
+    Off
+  </label>
+  <label style="display: flex; align-items: center; gap: 0.75em;">
+    <span role="switch" aria-checked="true" tabindex="0"></span>
+    On
+  </label>
+  <label style="display: flex; align-items: center; gap: 0.75em;">
+    <span role="switch" aria-checked="false" aria-disabled="true" tabindex="-1"></span>
+    Disabled
+  </label>
+</div>
 ```
 
 ---
@@ -2470,12 +2615,30 @@ A data table with headers and rows.
 
 ```html
 <table>
-  <caption>Title</caption>
+  <caption>User Data</caption>
   <thead>
-    <tr><th>Header</th></tr>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+    </tr>
   </thead>
   <tbody>
-    <tr><td>Cell</td></tr>
+    <tr>
+      <td>Alice Johnson</td>
+      <td>alice@example.com</td>
+      <td>Admin</td>
+    </tr>
+    <tr>
+      <td>Bob Smith</td>
+      <td>bob@example.com</td>
+      <td>User</td>
+    </tr>
+    <tr>
+      <td>Carol White</td>
+      <td>carol@example.com</td>
+      <td>Moderator</td>
+    </tr>
   </tbody>
 </table>
 ```
@@ -2494,22 +2657,25 @@ A set of layered content panels where only one panel is displayed at a time. Use
 Standard horizontal tabs with radio inputs for CSS-only state management.
 
 ```html
-<ul role="tablist" aria-label="Settings tabs">
-  <li>
-    <input type="radio" name="tabs" id="tab1" checked />
-    <label for="tab1" id="tab1-label">General</label>
-  </li>
-  <li>
-    <input type="radio" name="tabs" id="tab2" />
-    <label for="tab2" id="tab2-label">Profile</label>
-  </li>
-</ul>
-<div role="group" aria-label="Tab panels">
-  <div role="tabpanel" aria-labelledby="tab1-label">
-    <p>General content...</p>
-  </div>
-  <div role="tabpanel" aria-labelledby="tab2-label">
-    <p>Profile content...</p>
+<div>
+  <ul role="tablist" aria-label="Settings tabs">
+    <li><input type="radio" name="tabs-demo" id="tab1" checked /><label for="tab1" id="tab1-label">General</label></li>
+    <li><input type="radio" name="tabs-demo" id="tab2" /><label for="tab2" id="tab2-label">Profile</label></li>
+    <li><input type="radio" name="tabs-demo" id="tab3" /><label for="tab3" id="tab3-label">Security</label></li>
+  </ul>
+  <div role="group" aria-label="Tab panels">
+    <div role="tabpanel" aria-labelledby="tab1-label">
+      <h4>General Settings</h4>
+      <p>Configure your general application settings here.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="tab2-label">
+      <h4>Profile Settings</h4>
+      <p>Update your profile information and preferences.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="tab3-label">
+      <h4>Security Settings</h4>
+      <p>Manage your password and security options.</p>
+    </div>
   </div>
 </div>
 ```
@@ -2520,15 +2686,24 @@ Vertical tab orientation for sidebar-style navigation. Use aria-orientation='ver
 
 ```html
 <div style="display: flex;">
-  <ul role="tablist" aria-orientation="vertical">
-    <li>
-      <input type="radio" name="vtabs" id="vtab1" checked />
-      <label for="vtab1">Dashboard</label>
-    </li>
-    <!-- More tabs... -->
+  <ul role="tablist" aria-label="Navigation tabs" aria-orientation="vertical">
+    <li><input type="radio" name="vtabs-demo" id="vtab1" checked /><label for="vtab1" id="vtab1-label">Dashboard</label></li>
+    <li><input type="radio" name="vtabs-demo" id="vtab2" /><label for="vtab2" id="vtab2-label">Analytics</label></li>
+    <li><input type="radio" name="vtabs-demo" id="vtab3" /><label for="vtab3" id="vtab3-label">Reports</label></li>
   </ul>
   <div role="group" aria-label="Tab panels">
-    <!-- Panels... -->
+    <div role="tabpanel" aria-labelledby="vtab1-label">
+      <h4>Dashboard</h4>
+      <p>Welcome to your dashboard overview.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="vtab2-label">
+      <h4>Analytics</h4>
+      <p>View your analytics and metrics here.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="vtab3-label">
+      <h4>Reports</h4>
+      <p>Generate and download reports.</p>
+    </div>
   </div>
 </div>
 ```
@@ -2538,8 +2713,24 @@ Vertical tab orientation for sidebar-style navigation. Use aria-orientation='ver
 Tabs can be disabled using the disabled attribute on the radio input.
 
 ```html
-<input type="radio" name="tabs" id="tab2" disabled />
-<label for="tab2">Disabled Tab</label>
+<div>
+  <ul role="tablist" aria-label="Feature tabs">
+    <li><input type="radio" name="dtabs-demo" id="dtab1" checked /><label for="dtab1" id="dtab1-label">Active</label></li>
+    <li><input type="radio" name="dtabs-demo" id="dtab2" disabled /><label for="dtab2" id="dtab2-label">Disabled</label></li>
+    <li><input type="radio" name="dtabs-demo" id="dtab3" /><label for="dtab3" id="dtab3-label">Available</label></li>
+  </ul>
+  <div role="group" aria-label="Tab panels">
+    <div role="tabpanel" aria-labelledby="dtab1-label">
+      <p>This tab is active and selectable.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="dtab2-label">
+      <p>This content is not accessible.</p>
+    </div>
+    <div role="tabpanel" aria-labelledby="dtab3-label">
+      <p>This tab is also available for selection.</p>
+    </div>
+  </div>
+</div>
 ```
 
 ---
@@ -2556,13 +2747,20 @@ A container for grouping related controls such as buttons and menu items.
 A horizontal toolbar with grouped controls.
 
 ```html
-<div role="toolbar" aria-label="Actions">
-  <div role="group" aria-label="Group 1">
-    <button>Action 1</button>
-    <button>Action 2</button>
+<div role="toolbar" aria-label="Text formatting">
+  <div role="group" aria-label="Text style">
+    <button data-variant="ghost">B</button>
+    <button data-variant="ghost">I</button>
+    <button data-variant="ghost">U</button>
   </div>
   <span role="separator"></span>
-  <button>Action 3</button>
+  <div role="group" aria-label="Alignment">
+    <button data-variant="ghost">Left</button>
+    <button data-variant="ghost">Center</button>
+    <button data-variant="ghost">Right</button>
+  </div>
+  <span role="separator"></span>
+  <button data-variant="ghost">Link</button>
 </div>
 ```
 
@@ -2571,9 +2769,12 @@ A horizontal toolbar with grouped controls.
 A vertical toolbar using aria-orientation.
 
 ```html
-<div role="toolbar" aria-orientation="vertical">
-  <button>Tool 1</button>
-  <button>Tool 2</button>
+<div role="toolbar" aria-label="Tools" aria-orientation="vertical">
+  <button data-variant="ghost">Select</button>
+  <button data-variant="ghost">Move</button>
+  <span role="separator"></span>
+  <button data-variant="ghost">Draw</button>
+  <button data-variant="ghost">Erase</button>
 </div>
 ```
 
@@ -2591,8 +2792,11 @@ A contextual popup that displays descriptive information about an element on hov
 CSS-only tooltips using data-tooltip attribute.
 
 ```html
-<button data-tooltip="Tooltip text">Hover me</button>
-<button data-tooltip="Bottom tooltip" data-tooltip-position="bottom">Bottom</button>
+<div style="display: flex; gap: 2em; padding: 2em;">
+  <button data-tooltip="Save your changes">Save</button>
+  <button data-tooltip="Delete this item" data-tooltip-position="bottom">Delete</button>
+  <button data-tooltip="Edit content" data-tooltip-position="right">Edit</button>
+</div>
 ```
 
 #### ARIA Tooltip
@@ -2600,8 +2804,12 @@ CSS-only tooltips using data-tooltip attribute.
 Tooltip with proper ARIA role for accessibility.
 
 ```html
-<button aria-describedby="my-tooltip">Trigger</button>
-<span role="tooltip" id="my-tooltip">Tooltip content</span>
+<div style="position: relative; display: inline-block;">
+  <button aria-describedby="tooltip1">Hover for info</button>
+  <span role="tooltip" id="tooltip1" style="top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.5em;">
+    Additional information about this button
+  </span>
+</div>
 ```
 
 ---
@@ -2618,12 +2826,26 @@ A grid widget that combines the features of a tree and a data grid.
 A hierarchical data grid with expandable rows.
 
 ```html
-<div role="treegrid">
-  <div role="row" aria-level="1" aria-expanded="true">
-    <span role="gridcell">Parent</span>
+<div role="treegrid" aria-label="File browser">
+  <div role="row">
+    <span role="columnheader">Name</span>
+    <span role="columnheader">Size</span>
+    <span role="columnheader">Modified</span>
   </div>
-  <div role="row" aria-level="2">
-    <span role="gridcell">Child</span>
+  <div role="row" aria-level="1" aria-expanded="true" tabindex="0">
+    <span role="gridcell">Documents</span>
+    <span role="gridcell">—</span>
+    <span role="gridcell">Today</span>
+  </div>
+  <div role="row" aria-level="2" tabindex="-1">
+    <span role="gridcell">Report.pdf</span>
+    <span role="gridcell">2.4 MB</span>
+    <span role="gridcell">Yesterday</span>
+  </div>
+  <div role="row" aria-level="2" tabindex="-1">
+    <span role="gridcell">Notes.txt</span>
+    <span role="gridcell">12 KB</span>
+    <span role="gridcell">Last week</span>
   </div>
 </div>
 ```
@@ -2642,13 +2864,28 @@ A hierarchical list that can have nested groups of items that can be expanded or
 A hierarchical tree with expandable nodes.
 
 ```html
-<ul role="tree">
+<ul role="tree" aria-label="File system">
   <li role="treeitem" aria-expanded="true" tabindex="0">
-    Parent
+    Documents
     <ul role="group">
-      <li role="treeitem" tabindex="-1">Child</li>
+      <li role="treeitem" aria-expanded="false" tabindex="-1">
+        Work
+        <ul role="group">
+          <li role="treeitem" tabindex="-1">Report.docx</li>
+          <li role="treeitem" tabindex="-1">Presentation.pptx</li>
+        </ul>
+      </li>
+      <li role="treeitem" tabindex="-1">Personal</li>
     </ul>
   </li>
+  <li role="treeitem" aria-expanded="false" tabindex="-1">
+    Pictures
+    <ul role="group">
+      <li role="treeitem" tabindex="-1">Vacation</li>
+      <li role="treeitem" tabindex="-1">Family</li>
+    </ul>
+  </li>
+  <li role="treeitem" aria-selected="true" tabindex="-1">Downloads</li>
 </ul>
 ```
 
@@ -2666,10 +2903,10 @@ A movable divider that separates two sections and allows resizing them.
 A vertical divider between two horizontal panes.
 
 ```html
-<div style="display: flex;">
-  <div>Left</div>
-  <div role="separator" aria-orientation="vertical" tabindex="0"></div>
-  <div>Right</div>
+<div style="display: flex; height: 150px; border: 1px solid var(--surface_muted); border-radius: 0.5em; overflow: hidden;">
+  <div style="flex: 1; padding: 1em; background: var(--surface_raised);">Left Pane</div>
+  <div role="separator" aria-orientation="vertical" aria-valuenow="50" tabindex="0"></div>
+  <div style="flex: 1; padding: 1em;">Right Pane</div>
 </div>
 ```
 
@@ -2678,10 +2915,10 @@ A vertical divider between two horizontal panes.
 A horizontal divider between two vertical panes.
 
 ```html
-<div style="display: flex; flex-direction: column;">
-  <div>Top</div>
-  <div role="separator" aria-orientation="horizontal" tabindex="0"></div>
-  <div>Bottom</div>
+<div style="display: flex; flex-direction: column; height: 200px; border: 1px solid var(--surface_muted); border-radius: 0.5em; overflow: hidden;">
+  <div style="flex: 1; padding: 1em; background: var(--surface_raised);">Top Pane</div>
+  <div role="separator" aria-orientation="horizontal" aria-valuenow="50" tabindex="0"></div>
+  <div style="flex: 1; padding: 1em;">Bottom Pane</div>
 </div>
 ```
 
